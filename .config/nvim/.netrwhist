@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/bcb'
+let g:netrw_dirhist_0='/home/bcb/.config'
+let g:netrw_dirhist_9='/home/bcb/random_code/dart_pi_game'
+let g:netrw_dirhist_8='/home/bcb/.config'
+let g:netrw_dirhist_7='/home/bcb/git/scripts'
+let g:netrw_dirhist_6='/home/bcb/random_code/van_eck_sequence'
+let g:netrw_dirhist_5='/home/bcb/.config'
+let g:netrw_dirhist_4='/home/bcb'
+let g:netrw_dirhist_3='/home/bcb/.config'
+let g:netrw_dirhist_2='/home/bcb/git/dotfiles'
