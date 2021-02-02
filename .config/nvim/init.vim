@@ -18,6 +18,8 @@ Plug 'norcalli/snippets.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'dense-analysis/ale'
+
 " quality of life
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
