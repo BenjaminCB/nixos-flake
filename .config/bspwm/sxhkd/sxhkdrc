@@ -34,31 +34,27 @@ super + F11
 super + F12
     pavucontrol
 
-#Conky-toggle
-super + c
-    conky-toggle
-
 #alacritty
 super + t
     kitty
 
-#Pavucontrol
-super + v
-    pavucontrol
+#kitty in the same directory
+super + c
+    ~/git/scripts/kitty_in_current_dir.sh
 
 #Xkill
 super + Escape
     xkill
 
 #dmenu
-super + shift + d
-	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+#super + shift + d
+#	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
-#Gmrun
+#rofi
 alt + F2
     rofi -show run
 
-#Scrot
+#screenshot
 Print
     flameshot gui
 #}}}
