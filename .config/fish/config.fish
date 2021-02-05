@@ -26,7 +26,7 @@ alias sn='shutdown now'
 alias rn='reboot'
 alias tpush='~/git/scripts/task/task_update.sh'
 alias tpull='~/git/scripts/task/task_pull.sh'
-alias ll='ls -lah'
+alias ll='ls -lAh'
 alias maple='~/git/scripts/maple_work.sh'
 alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
 
