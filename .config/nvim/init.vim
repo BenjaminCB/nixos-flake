@@ -246,16 +246,16 @@ require('telescope').setup {
 EOF
 
 " find files from current directory
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>ps <cmd>lua require('telescope.builtin').find_files()<cr>
 
 " find files from current repo
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
 
 " NOT WORKING but should grep through files in current directory
-" nnoremap <leader>fl <cmd>lua require('telescope.builtin').grep_string()<cr>
+" nnoremap <leader>pl <cmd>lua require('telescope.builtin').grep_string()<cr>
 
 " find files from opened buffers
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
 "}}}
 
 " git gutter{{{
