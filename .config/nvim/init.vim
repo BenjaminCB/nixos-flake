@@ -221,7 +221,7 @@ require('telescope').setup {
         layout_defaults = {
           -- TODO add builtin options.
         },
-        file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+        file_sorter =  require'telescope.sorters'.get_fzy_sorter,
         file_ignore_patterns = {},
         generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
@@ -246,13 +246,14 @@ require('telescope').setup {
 EOF
 
 " find files from current directory
-nnoremap <leader>ps <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>pf <cmd>lua require('telescope.builtin').find_files()<cr>
 
 " find files from current repo
 nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
 
-" NOT WORKING but should grep through files in current directory
-" nnoremap <leader>pl <cmd>lua require('telescope.builtin').grep_string()<cr>
+" grep through files in current directory
+" nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<cr>
+nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string()<cr>
 
 " find files from opened buffers
 nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
