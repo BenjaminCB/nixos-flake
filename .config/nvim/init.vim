@@ -78,6 +78,24 @@ set updatetime=100
 set signcolumn=yes
 "}}}
 
+" keybinds {{{
+" recursivelly grep through directiries with a user input and open a list with
+" all the accurences
+" nnoremap <leader>cs <cmd>execute 'grep! '.input('Grep for > ').' **/*'<cr>
+nnoremap <leader>cs <cmd>call MyGrep()<cr>
+
+" go to next, previous and close the list
+nnoremap <leader>cn <cmd>cnext<cr>
+nnoremap <leader>cp <cmd>cprev<cr>
+nnoremap <leader>co <cmd>copen<cr>
+nnoremap <leader>cc <cmd>cclose<cr>
+
+function MyGrep()
+    execute 'silent grep! '.input('Grep for > ').' **/*'
+    copen
+endfunction
+" }}}
+
 " auto commands {{{
 "}}}
 
@@ -253,7 +271,7 @@ nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
 
 " grep through files in current directory
 " nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<cr>
-nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>
 
 " find files from opened buffers
 nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
