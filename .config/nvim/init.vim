@@ -185,7 +185,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "completion nvim {{{
 " needed since there is overlap between vim-closer and completion.nvim <CR>
-let g:completion_confirm_key = "<c-l>"
+let g:completion_confirm_key = "<c-s>"
 autocmd BufEnter * lua require'completion'.on_attach()
 "}}}
 
@@ -289,6 +289,10 @@ local U = require'snippets.utils'
 require'snippets'.snippets = {
     _global = {
         test = "it worked";
+        date = os.date("%y-%m-%d");
+    };
+    markdown = {
+        ["smeeting"] = "### Intro\nThis is a summary of our ${1} supervisor metting.\n\nDate of the metting: ${2=os.date(\"%y-%m-%d\")} (actually document creation, but close enough).\n\n### Agenda\n${0}\n\n### Meetting notes";
     };
     c = {
         ["if"] = U.match_indentation "if (${1}) {\n\t$0\n}";
