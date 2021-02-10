@@ -42,6 +42,9 @@ super + t
 super + c
     ~/git/scripts/kitty_in_current_dir.sh
 
+super + l
+    ~/git/scripts/tile_stack.sh
+
 #Xkill
 super + Escape
     xkill
