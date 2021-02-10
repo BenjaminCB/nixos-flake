@@ -79,9 +79,10 @@ set signcolumn=yes
 "}}}
 
 " keybinds {{{
+" keybinds for lsp is under lsp tab
+
 " recursivelly grep through directiries with a user input and open a list with
 " all the accurences
-" nnoremap <leader>cs <cmd>execute 'grep! '.input('Grep for > ').' **/*'<cr>
 nnoremap <leader>cs <cmd>call MyGrep()<cr>
 
 " go to next, previous and close the list
@@ -90,6 +91,44 @@ nnoremap <leader>cp <cmd>cprev<cr>
 nnoremap <leader>co <cmd>copen<cr>
 nnoremap <leader>cc <cmd>cclose<cr>
 
+" newline without entering insert mode
+" newline above does not work
+" nnoremap <S-Enter> O<Esc>j
+nnoremap <CR> o<Esc>k
+
+" grab right (h) or left (u) side in a merge conflict
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
+
+" git status
+nmap <leader>gs :G<CR>
+
+" git checkout
+nnoremap <leader>gc :GCheckout<CR>
+
+" find files from current directory
+nnoremap <leader>pf <cmd>lua require('telescope.builtin').find_files()<cr>
+
+" find files from current repo
+nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
+
+" grep through files in current directory
+" nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<cr>
+nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>
+
+" find files from opened buffers
+nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
+" move to next and previous hunk changes
+nnoremap <leader>]c <Plug>(GitGutterNextHunk)
+nnoremap <leader>[c <Plug>(GitGutterPrevHunk)
+
+" toggle highlighting with leader th
+map <leader>th :ColorToggle<CR>
+
+" snippet expand and advande (1) and (-1)
+inoremap <c-l> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>
+inoremap <c-h> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
+
 function MyGrep()
     execute 'silent grep! '.input('Grep for > ').' **/*'
     copen
@@ -97,10 +136,8 @@ endfunction
 " }}}
 
 " auto commands {{{
-"}}}
-
-" file specific settings {{{
 filetype plugin on
+
 " better readability and spell checking in tex documents
 autocmd FileType tex setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
 autocmd FileType markdown setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
@@ -209,17 +246,6 @@ let g:completion_confirm_key = "<c-s>"
 autocmd BufEnter * lua require'completion'.on_attach()
 "}}}
 
-" fugitive{{{
-" grab right (h) or left (u) side in a merge conflict
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
-
-" git status
-nmap <leader>gs :G<CR>
-
-nnoremap <leader>gc :GCheckout<CR>
-"}}}
-
 " telescope{{{
 lua << EOF
 require('telescope').setup {
@@ -264,27 +290,11 @@ require('telescope').setup {
     }
 }
 EOF
-
-" find files from current directory
-nnoremap <leader>pf <cmd>lua require('telescope.builtin').find_files()<cr>
-
-" find files from current repo
-nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
-
-" grep through files in current directory
-" nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<cr>
-nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>
-
-" find files from opened buffers
-nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
 "}}}
 
 " git gutter{{{
 " don't want any key maps for staging hunks and such
 let g:gutgutter_map_keys=0
-" move to next and previous hunk changes
-nnoremap <leader>]c <Plug>(GitGutterNextHunk)
-nnoremap <leader>[c <Plug>(GitGutterPrevHunk)
 "}}}
 
 " Color highlighting{{{
@@ -293,9 +303,6 @@ let g:colorizer_auto_filetype='css,html,conkyrc'
 
 " 24-bit color
 set termguicolors
-
-" toggle highlighting with leader th
-map <leader>th :ColorToggle<CR>
 "}}}
 
 " vimtex{{{
@@ -354,7 +361,4 @@ require'snippets'.snippets = {
     };
 }
 EOF
-
-inoremap <c-l> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>
-inoremap <c-h> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 "}}}
