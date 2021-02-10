@@ -103,9 +103,11 @@ endfunction
 filetype plugin on
 " better readability and spell checking in tex documents
 autocmd FileType tex setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
+autocmd FileType markdown setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
 
 " go to the previous spelling mistake and open the suggestions
 autocmd FileType tex nnoremap <buffer> <leader>sc [slz=
+autocmd FileType markdown nnoremap <buffer> <leader>sc [slz=
 
 " better readability in when opening email in vim
 autocmd BufRead /tmp/neomutt* setlocal wrap colorcolumn=0
@@ -311,7 +313,7 @@ require'snippets'.snippets = {
         date = os.date("%y-%m-%d");
     };
     markdown = {
-        ["smeeting"] = "### Intro\nThis is a summary of our ${1} supervisor metting.\n\nDate of the metting: ${2=os.date(\"%y-%m-%d\")} (actually document creation, but close enough).\n\n### Agenda\n${0}\n\n### Meetting notes";
+        ["smeeting"] = "### Intro\nThis is a summary of our ${1} supervisor meeting.\n\nDate of the meeting: ${2=os.date(\"%y-%m-%d\")} (actually document creation, but close enough).\n\n### Agenda\n${0}\n\n### Meeting notes";
     };
     c = {
         ["if"] = U.match_indentation "if (${1}) {\n\t$0\n}";
