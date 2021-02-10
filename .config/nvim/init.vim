@@ -36,7 +36,6 @@ Plug 'hugolgst/vimsence'
 " Plug 'bignimbus/pop-punk.vim'
 " Plug 'tomasiser/vim-code-dark'
 
-
 call plug#end()"}}}
 
 " theme and look{{{
@@ -138,16 +137,16 @@ endfunction
 " auto commands {{{
 filetype plugin on
 
-" better readability and spell checking in tex documents
-autocmd FileType tex setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
-autocmd FileType markdown setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
-
+" better readability and spell checking in documents
 " go to the previous spelling mistake and open the suggestions
-autocmd FileType tex nnoremap <buffer> <leader>sc [slz=
-autocmd FileType markdown nnoremap <buffer> <leader>sc [slz=
-
-" better readability in when opening email in vim
-autocmd BufRead /tmp/neomutt* setlocal wrap colorcolumn=0
+augroup readability
+    autocmd!
+    autocmd FileType tex setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
+    autocmd FileType markdown setlocal wrap colorcolumn=0 spell spelllang=da,en_gb
+    autocmd FileType tex nnoremap <buffer> <leader>sc [slz=
+    autocmd FileType markdown nnoremap <buffer> <leader>sc [slz=
+    autocmd BufRead /tmp/neomutt* setlocal wrap colorcolumn=0
+augroup END
 "}}}
 
 " vimsence {{{
