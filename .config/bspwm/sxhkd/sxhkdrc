@@ -42,7 +42,7 @@ super + t
 super + c
     ~/git/scripts/kitty_in_current_dir.sh
 
-super + l
+super + shift + l
     ~/git/scripts/tile_stack.sh
 
 #Xkill
