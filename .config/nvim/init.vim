@@ -216,7 +216,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "clangd", "tsserver", "texlab", "html", "vimls" }
+local servers = { "clangd", "tsserver", "texlab", "html", "cssls" }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         capabilities = capabilities,
