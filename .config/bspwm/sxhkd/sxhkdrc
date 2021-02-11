@@ -30,6 +30,10 @@ super + F6
 super + F7
     teams
 
+#steam
+super + F8
+    steam
+
 #kmag
 super + F11
     kmag
