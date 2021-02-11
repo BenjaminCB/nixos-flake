@@ -26,6 +26,10 @@ super + F5
 super + F6
     ~/git/scripts/maple_work.sh
 
+#maple
+super + F7
+    teams
+
 #kmag
 super + F11
     kmag
