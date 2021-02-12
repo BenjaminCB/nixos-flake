@@ -319,7 +319,7 @@ require'snippets'.snippets = {
         date = os.date("%y-%m-%d");
     };
     markdown = {
-        ["smeeting"] = "### Intro\nThis is a summary of our ${1} supervisor meeting.\n\nDate of the meeting: ${2=os.date(\"%y-%m-%d\")} (actually document creation, but close enough).\n\n### Agenda\n${0}\n\n### Meeting notes";
+        ["smeeting"] = "# Intro\nThis is a summary of our ${1} supervisor meeting.\n\nDate of the meeting: ${2=os.date(\"%y-%m-%d\")} (actually document creation, but close enough).\n\n# Agenda\n${0}\n\n# Meeting notes";
     };
     c = {
         ["if"] = U.match_indentation "if (${1}) {\n\t$0\n}";
