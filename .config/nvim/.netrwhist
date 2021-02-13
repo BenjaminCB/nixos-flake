@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/bcb/git/iwp/2_lektion'
+let g:netrw_dirhist_6='/home/bcb/git/scripts'
 let g:netrw_dirhist_5='/home/bcb/.config/nvim'
 let g:netrw_dirhist_4='/home/bcb/git/learning-area/html/forms/your-first-HTML-form'
 let g:netrw_dirhist_3='/home/bcb/git/learning-area/html/introduction-to-html/debugging-html'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/home/bcb/git/learning-area/html/introduction-to-html/nav
 let g:netrw_dirhist_0='/home/bcb/git/learning-area/html/introduction-to-html'
 let g:netrw_dirhist_9='/home/bcb/git/learning-area/html/introduction-to-html/navigation-menu-start'
 let g:netrw_dirhist_8='/home/bcb/git/learning-area/html/introduction-to-html/creating-hyperlinks'
-let g:netrw_dirhist_7='/home/bcb/git/learning-area/html/introduction-to-html/creating-hyperlinks/pdfs'
-let g:netrw_dirhist_6='/home/bcb/git/learning-area/html/introduction-to-html/creating-hyperlinks'

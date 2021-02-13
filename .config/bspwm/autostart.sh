@@ -22,8 +22,8 @@ function run {
 
 # im am root picture
 # https://imgur.com/a/Ix8QBfl
-nitrogen --head=0 --set-auto ~/Pictures/i_am_root.jpg 
-nitrogen --head=1 --set-auto ~/Pictures/explosion_vertical.png 
+nitrogen --head=0 --set-auto ~/Pictures/wallpapers/horizontal/i_am_root.jpg 
+nitrogen --head=1 --set-auto ~/Pictures/wallpapers/vertical/explosion_vertical.png 
 
 dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 xsetroot -cursor_name left_ptr &

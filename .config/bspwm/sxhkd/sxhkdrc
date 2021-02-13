@@ -47,8 +47,8 @@ super + t
     kitty
 
 #kitty in the same directory
-super + c
-    ~/git/scripts/kitty_in_current_dir.sh
+# super + c
+    # ~/git/scripts/kitty_in_current_dir.sh
 
 super + shift + l
     ~/git/scripts/tile_stack.sh
