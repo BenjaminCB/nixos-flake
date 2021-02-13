@@ -330,7 +330,17 @@ require'snippets'.snippets = {
         ["for"] = U.match_indentation "for (${1}) {\n\t$0\n}";
     };
     html = {
-        ["html"] = "<!DOCTYPE HTML>\n<html>\n\t<body>\n\t\t<script src=\"$0\"></script>\n\t</body>\n</html>";
+        ["html"] =                     "<!DOCTYPE html>\n<html>$0\n\t<head>\n\t\t<meta charset=\"UTF-8\">\n\t</head>\n\n\t<body>\n\t</body>\n</html>";
+        ["css"]  = U.match_indentation "<link rel=\"stylesheet\" href=\"$0\">";
+        ["js"]   = U.match_indentation "<script src=\"$0\"></script>";
+        ["pa"]   = U.match_indentation "<p>\n\t$0\n</p>";
+        ["an"]   = U.match_indentation "<a href=\"$0\"></a>";
+        ["div"]  = U.match_indentation "<div>\n\t$0\n</div>";
+        ["ul"]   = U.match_indentation "<ul>\n\t$0\n</ul>";
+        ["ol"]   = U.match_indentation "<ol>\n\t$0\n</ol>";
+        ["li"]   = U.match_indentation "<li>$0</li>";
+        ["em"]   = U.match_indentation "<em>$0</em>";
+        ["str"]  = U.match_indentation "<strong>$0</strong>";
     };
     tex = {
         ["beg"]  = U.match_indentation "\\begin{${1}}\n\t$0\n\\end{$1}";
