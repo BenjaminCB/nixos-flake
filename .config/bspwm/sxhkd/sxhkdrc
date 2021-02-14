@@ -50,9 +50,6 @@ super + t
 # super + c
     # ~/git/scripts/kitty_in_current_dir.sh
 
-super + shift + l
-    ~/git/scripts/tile_stack.sh
-
 #Xkill
 super + Escape
     xkill
@@ -225,6 +222,10 @@ super + {1-9,0}
 # Send focused node no another desktop
 super + alt + {1-9,0}
     bspc node -d '^{1-9,10}'
+
+#switch between master stack and default layout
+super + u
+    ~/git/scripts/tile_stack.sh
 
 #}}}
 
