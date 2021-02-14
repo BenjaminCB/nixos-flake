@@ -172,6 +172,9 @@ super + ctrl + space
 # Expand tiled space
 super + {Left,Down,Up,Right}
 	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+super + e
+    bspc query -N -d | xargs -I % bspc node % -B
 #}}}
 
 # Misc {{{
