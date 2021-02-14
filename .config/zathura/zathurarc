@@ -2,3 +2,4 @@ map <C-c> recolor
 set default-bg "#282828"
 set font "FiraCode 16"
 set recolor-lightcolor "#282828"
+set recolor true
