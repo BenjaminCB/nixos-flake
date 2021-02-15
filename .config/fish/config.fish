@@ -28,7 +28,7 @@ alias tpush='~/git/scripts/task/task_update.sh'
 alias tpull='~/git/scripts/task/task_pull.sh'
 alias ll='ls -lAh'
 alias maple='~/git/scripts/maple_work.sh'
-alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
+alias dots='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for software managment
 # pacman or pm
