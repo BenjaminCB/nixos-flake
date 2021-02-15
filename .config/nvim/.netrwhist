@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/bcb/Documents/UNI/2_semester/project'
 let g:netrw_dirhist_9='/home/bcb/git/bsp-layout/src'
 let g:netrw_dirhist_8='/home/bcb/git/bsp-layout'
 let g:netrw_dirhist_7='/home/bcb/git/bsp-layout/src/utils'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_4='/home/bcb/git/bsp-layout/src/utils'
 let g:netrw_dirhist_3='/home/bcb/git/bsp-layout/src'
 let g:netrw_dirhist_2='/home/bcb/git/bsp-layout'
 let g:netrw_dirhist_1='/home/bcb/git/bsp-layout/src/layouts'
-let g:netrw_dirhist_0='/home/bcb/git/bsp-layout/src'

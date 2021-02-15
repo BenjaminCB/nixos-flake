@@ -25,6 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'chrisbra/Colorizer'
 Plug 'rstacruz/vim-closer'
+Plug 'junegunn/vim-easy-align'
 
 " themes
 Plug 'vim-airline/vim-airline'
@@ -127,6 +128,9 @@ map <leader>th :ColorToggle<CR>
 " snippet expand and advande (1) and (-1)
 inoremap <c-l> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>
 inoremap <c-h> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
+
+" easy-align
+nmap <leader>ea <Plug>(EasyAlign)
 
 function MyGrep()
     execute 'silent grep! '.input('Grep for > ').' **/*'
@@ -322,12 +326,12 @@ require'snippets'.snippets = {
         ["smeeting"] = "# Intro\nThis is a summary of our ${1} supervisor meeting.\n\nDate of the meeting: ${2=os.date(\"%y-%m-%d\")} (actually document creation, but close enough).\n\n# Agenda\n${0}\n\n# Meeting notes";
     };
     c = {
-        ["if"] = U.match_indentation "if (${1}) {\n\t$0\n}";
-        ["elif"] = U.match_indentation "else if (${1}) {\n\t$0\n}";
-        ["switch"] = U.match_indentation "switch (${1}) {\n\tcase ${2}:\n\t\t$0\n\tdefault:\n}";
-        ["while"] = U.match_indentation "while (${1}) {\n\t$0\n}";
+        ["if"]      = U.match_indentation "if (${1}) {\n\t$0\n}";
+        ["elif"]    = U.match_indentation "else if (${1}) {\n\t$0\n}";
+        ["switch"]  = U.match_indentation "switch (${1}) {\n\tcase ${2}:\n\t\t$0\n\tdefault:\n}";
+        ["while"]   = U.match_indentation "while (${1}) {\n\t$0\n}";
         ["dowhile"] = U.match_indentation "do {\n\t$0\n} while (${1});";
-        ["for"] = U.match_indentation "for (${1}) {\n\t$0\n}";
+        ["for"]     = U.match_indentation "for (${1}) {\n\t$0\n}";
     };
     html = {
         ["html"] =                     "<!DOCTYPE html>\n<html>$0\n\t<head>\n\t\t<meta charset=\"UTF-8\">\n\t</head>\n\n\t<body>\n\t</body>\n</html>";
