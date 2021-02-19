@@ -34,6 +34,10 @@ super + F7
 super + F8
     steam
 
+#zotero 
+super + F9
+    ~/zotero/zotero
+
 #kmag
 super + F11
     kmag

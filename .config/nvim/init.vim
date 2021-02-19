@@ -133,7 +133,7 @@ inoremap <c-h> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 nmap <leader>ea <Plug>(EasyAlign)
 
 function MyGrep()
-    execute 'silent grep! '.input('Grep for > ').' **/*'
+    execute 'silent grep! '.input('Grep for > ').' **/**'
     copen
 endfunction
 " }}}
