@@ -15,9 +15,6 @@ export EDITOR='nvim'
 #swap caps lock and escape key
 setxkbmap -option caps:swapescape
 
-#add doom to path
-export PATH="$HOME/.emacs.d/bin:$PATH"
-
 ###############################################
 #aliases
 ###############################################
@@ -29,6 +26,7 @@ alias tpull='~/git/scripts/task/task_pull.sh'
 alias ll='ls -lAh'
 alias maple='~/git/scripts/maple_work.sh'
 alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for software managment
 # pacman or pm
