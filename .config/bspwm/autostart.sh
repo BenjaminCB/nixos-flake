@@ -22,7 +22,7 @@ function run {
 
 # im am root picture
 # https://imgur.com/a/Ix8QBfl
-nitrogen --head=0 --set-zoom-fill ~/git/Anime-Girls-Holding-Books/c/Shiomiya_Shiori_Holding_Shy_C_Programming_Language_wp.png
+nitrogen --head=0 --set-zoom-fill ~/git/Anime-Girls-Holding-Programming-Books/C/Shiomiya_Shiori_Holding_Shy_C_Programming_language_wp.png
 nitrogen --head=1 --set-auto ~/Pictures/wallpapers/vertical/explosion_vertical.png 
 
 dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
