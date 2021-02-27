@@ -20,6 +20,9 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'dense-analysis/ale'
 
+" For c and c++ debugging look into this
+" https://github.com/sakhnik/nvim-gdb
+
 " quality of life
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'

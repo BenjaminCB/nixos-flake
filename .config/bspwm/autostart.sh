@@ -22,10 +22,10 @@ function run {
 
 # im am root picture
 # https://imgur.com/a/Ix8QBfl
-nitrogen --head=0 --set-zoom-fill ~/git/Anime-Girls-Holding-Programming-Books/C/Shiomiya_Shiori_Holding_Shy_C_Programming_language_wp.png
-nitrogen --head=1 --set-auto ~/Pictures/wallpapers/vertical/explosion_vertical.png 
+nitrogen --head=0 --set-zoom-fill ~/git/wallpapers/horizontal/Shiomiya_Shiori_Holding_Shy_C_Programming_language_wp_gruvbox.png
+nitrogen --head=1 --set-auto ~/git/wallpapers/vertical/anime_book_computer.png
 
-dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
+# dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
