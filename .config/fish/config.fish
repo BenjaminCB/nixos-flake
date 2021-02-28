@@ -43,5 +43,3 @@ alias pksyua="yay -Syu --noconfirm"
 alias upall="yay -Syu --noconfirm"
 
 cat ~/.config/kitty/ascii_cat.txt
-
-thefuck --alias | source
