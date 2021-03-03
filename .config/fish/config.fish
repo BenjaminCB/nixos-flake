@@ -17,7 +17,7 @@ setxkbmap -option caps:swapescape
 
 #set manpager
 #set -x MANPAGER "nvim -c 'set ft=man' -"
-set -x MANPAGER "bat -p --tabs 2 --theme gruvbox"
+set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
 
 ###############################################
 #aliases
@@ -31,7 +31,7 @@ alias ll='ls -lAh'
 alias maple='~/git/scripts/maple_work.sh'
 alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias bat='bat --theme gruvbox'
+alias bat='bat --theme gruvbox-dark'
 
 # Aliases for software managment
 # pacman or pm
