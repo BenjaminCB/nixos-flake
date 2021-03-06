@@ -29,6 +29,7 @@ Plug 'tpope/vim-commentary'
 Plug 'chrisbra/Colorizer'
 Plug 'rstacruz/vim-closer'
 Plug 'junegunn/vim-easy-align'
+Plug 'iamcco/markdown-preview.nvim'
 
 " themes
 Plug 'vim-airline/vim-airline'
@@ -134,6 +135,9 @@ inoremap <c-h> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 
 " easy-align
 nmap <leader>ea <Plug>(EasyAlign)
+
+" markdown preview
+nnoremap <leader>mp :MarkdownPreview<cr>
 
 function MyGrep()
     execute 'silent grep! '.input('Grep for > ').' **/**'
