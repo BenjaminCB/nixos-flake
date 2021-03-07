@@ -7,7 +7,7 @@ function run {
   fi
 }
 
-if [[ $(hostname) == 'arco-desktop' ]]; then
+if [[ $(cat /proc/sys/kernel/hostname) == 'arco-desktop' ]]; then
     /home/bcb/git/scripts/screen_rotation.sh 
 fi
 
@@ -21,7 +21,7 @@ nitrogen --head=1 --set-auto ~/git/wallpapers/vertical/anime_book_computer_grevb
 xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
-if [[ $(hostname) == 'arco-desktop' ]]; then
+if [[ $(cat /proc/sys/kernel/hostname) == 'arco-desktop' ]]; then
     run nm-applet &
     run xfce4-power-manager &
     picom --config $HOME/.config/bspwm/picom.conf &
