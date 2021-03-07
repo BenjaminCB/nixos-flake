@@ -36,7 +36,7 @@ super + F8
 
 #zotero 
 super + F9
-    ~/zotero/zotero
+    zotero
 
 #kmag
 super + F11
