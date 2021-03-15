@@ -21,7 +21,7 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'dense-analysis/ale'
 
-" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " For c and c++ debugging look into this
 " https://github.com/sakhnik/nvim-gdb
@@ -86,7 +86,7 @@ set signcolumn=yes
 "}}}
 
 lua require("bcb")
-" lua require'nvim-treesitter.configs'.setup{highlight = { enable = true }}
+lua require'nvim-treesitter.configs'.setup{highlight = { enable = true }}
 
 " go to next, previous and close the list
 " commands for old grep but could be used when i get around to using quick fix
