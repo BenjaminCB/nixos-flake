@@ -72,10 +72,10 @@ set wildmode=longest,list,full
 set ruler
 set undolevels=1000
 set foldmethod=marker
-set exrc                       " when nvim . is used to open a project nvim will automatically source a config file if one exists it should be called .exrc
+set exrc                        " when nvim . is used to open a project nvim will automatically source a config file if one exists it should be called .exrc
 set nohlsearch
 set scrolloff=6
-set shell=/usr/bin/bash        " some plugins (fzf but maybe others) doesnt like fish
+set shell=/usr/bin/bash         " some plugins (fzf but maybe others) doesnt like fish
 set hidden
 set nobackup
 set nowritebackup
@@ -83,8 +83,7 @@ set updatetime=100
 set signcolumn=yes
 "}}}
 
-" keybinds {{{
-" keybinds for lsp is under lsp tab
+lua require("bcb")
 
 " go to next, previous and close the list
 " commands for old grep but could be used when i get around to using quick fix
@@ -98,41 +97,6 @@ nnoremap <leader>cc <cmd>cclose<cr>
 " nnoremap <S-Enter> O<Esc>j
 nnoremap <CR> o<Esc>k
 
-" grab right (h) or left (u) side in a merge conflict
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
-
-" git status
-nmap <leader>gs :G<CR>
-
-" git checkout
-nnoremap <leader>gc :GCheckout<CR>
-
-""" Telescope
-nnoremap <leader>pf <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>pg <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<cr>
-
-" move to next and previous hunk changes
-nnoremap <leader>]c <Plug>(GitGutterNextHunk)
-nnoremap <leader>[c <Plug>(GitGutterPrevHunk)
-
-" toggle highlighting with leader th
-map <leader>th :ColorToggle<CR>
-
-" snippet expand and advande (1) and (-1)
-inoremap <c-l> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>
-inoremap <c-h> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
-
-" easy-align
-nmap <leader>ea <Plug>(EasyAlign)
-
-" markdown preview
-nnoremap <leader>mp :MarkdownPreview<cr>
-" }}}
-
-" auto commands {{{
 filetype plugin on
 
 " better readability and spell checking in documents
@@ -145,57 +109,3 @@ augroup readability
     autocmd FileType markdown nnoremap <buffer> <leader>sc [slz=
     autocmd BufRead /tmp/neomutt* setlocal wrap colorcolumn=0
 augroup END
-"}}}
-
-" lua require {{{
-lua require("bcb")
-" }}}
-
-" vimsence {{{
-
-" let g:vimsence_client_id = '439476230543245312'
-let g:vimsence_small_text = 'NeoVim'
-let g:vimsence_small_image = 'neovim'
-" let g:vimsence_editing_details = 'Editing: {}'
-" let g:vimsence_editing_state = 'Working on: {}'
-" let g:vimsence_file_explorer_text = 'In NERDTree'
-" let g:vimsence_file_explorer_details = 'Looking for files'
-" let g:vimsence_custom_icons = {'filetype': 'iconname'}
-
-"}}}
-
-" lsp {{{
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
-set cmdheight=2 " probably not needed error might not be in the cmd
-
-let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
-let g:completion_enable_snippet='UltiSnips'
-
-" use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-"}}}
-
-"completion nvim {{{
-" needed since there is overlap between vim-closer and completion.nvim <CR>
-let g:completion_confirm_key = "<c-s>"
-autocmd BufEnter * lua require'completion'.on_attach()
-"}}}
-
-" git gutter{{{
-" don't want any key maps for staging hunks and such
-let g:gutgutter_map_keys=0
-"}}}
-
-" Color highlighting{{{
-" automatically start in css and html files
-let g:colorizer_auto_filetype='css,html,conkyrc'
-
-" 24-bit color
-set termguicolors
-"}}}
-
-" vimtex{{{
-let g:tex_flavor = 'latex'
-"}}}
