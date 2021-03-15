@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/bcb/git/haskell_book'
 let g:netrw_dirhist_7='/home/bcb/.config/nvim/plugin'
 let g:netrw_dirhist_6='/home/bcb/.config/nvim'
 let g:netrw_dirhist_5='/home/bcb/git/haskell_book'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_2='/home/bcb/git/haskell_book'
 let g:netrw_dirhist_1='/home/bcb/.config/nvim/lua/bcb'
 let g:netrw_dirhist_0='/home/bcb/git/iwp/5_lektion'
 let g:netrw_dirhist_9='/home/bcb/git/iwp/6_lektion/resources'
-let g:netrw_dirhist_8='/home/bcb/git/iwp/6_lektion'
