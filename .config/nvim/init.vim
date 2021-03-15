@@ -35,8 +35,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'iamcco/markdown-preview.nvim'
 
 " themes
+Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'npxbr/gruvbox.nvim'
 Plug 'sjl/badwolf'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'hugolgst/vimsence'
@@ -51,7 +53,7 @@ set number
 set relativenumber
 set background=dark
 colorscheme gruvbox
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
 set nowrap
 set colorcolumn=80
 "}}}
@@ -83,6 +85,7 @@ set nobackup
 set nowritebackup
 set updatetime=100
 set signcolumn=yes
+set termguicolors
 "}}}
 
 lua require("bcb")
