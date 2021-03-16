@@ -97,11 +97,16 @@ nnoremap <leader>cn <cmd>cnext<cr>
 nnoremap <leader>cp <cmd>cprev<cr>
 nnoremap <leader>co <cmd>copen<cr>
 nnoremap <leader>cc <cmd>cclose<cr>
+nnoremap <leader>cf :call setqflist([])<cr>
+
+" Same as above but for local quickfix list
+nnoremap <leader>ln <cmd>lnext<cr>
+nnoremap <leader>lp <cmd>lprev<cr>
+nnoremap <leader>lo <cmd>lopen<cr>
+nnoremap <leader>lc <cmd>lclose<cr>
 
 " newline without entering insert mode
-" newline above does not work
-" nnoremap <S-Enter> O<Esc>j
-nnoremap <CR> o<Esc>k
+nnoremap <C-n> o<Esc>k
 
 filetype plugin on
 
@@ -114,4 +119,15 @@ augroup readability
     autocmd FileType tex nnoremap <buffer> <leader>sc [slz=
     autocmd FileType markdown nnoremap <buffer> <leader>sc [slz=
     autocmd BufRead /tmp/neomutt* setlocal wrap colorcolumn=0
+augroup END
+
+augroup trim_whitespace
+    autocmd!
+    autocmd BufWrite * %s/\s\+$//e
+augroup END
+
+" add lsp errors to local quickfix list
+augroup lsp_enter
+    autocmd!
+    autocmd BufEnter,BufWinEnter,TabEnter :lua vim.lsp.diagnostic.set_loclist()<CR>
 augroup END
