@@ -8,7 +8,7 @@ function run {
 }
 
 if [[ $(cat /proc/sys/kernel/hostname) == 'arco-desktop' ]]; then
-    /home/bcb/git/scripts/screen_rotation.sh 
+    /home/bcb/git/scripts/screen_rotation.sh
 fi
 
 #$HOME/.config/polybar/launch.sh &
@@ -28,7 +28,7 @@ if [[ $(cat /proc/sys/kernel/hostname) == 'arco-desktop' ]]; then
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
     run volumeicon &
 else
-    batsignal -b &
+    batsignal -b -w 25 -c 10 -d 5 -f 80 &
 fi
 numlockx on &
 dunst &
