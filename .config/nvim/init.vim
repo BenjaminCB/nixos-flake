@@ -13,15 +13,12 @@ Plug 'nvim-telescope/telescope.nvim' "some dependencies might be optional
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'lervag/vimtex'
-
 Plug 'norcalli/snippets.nvim'
-
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
-Plug 'dense-analysis/ale'
-
+" Plug 'dense-analysis/ale'
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'dbeniamine/cheat.sh-vim'
 
 " For c and c++ debugging look into this
 " https://github.com/sakhnik/nvim-gdb
@@ -129,5 +126,5 @@ augroup END
 " add lsp errors to local quickfix list
 augroup lsp_enter
     autocmd!
-    autocmd BufEnter,BufWinEnter,TabEnter :lua vim.lsp.diagnostic.set_loclist()<CR>
+    autocmd BufEnter,BufWrite :lua vim.lsp.diagnostic.set_loclist()<CR>
 augroup END

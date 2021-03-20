@@ -32,6 +32,7 @@ alias maple='~/git/scripts/maple_work.sh'
 alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias bat='bat --theme gruvbox-dark'
+alias cht='cht.sh --shell'
 
 # Aliases for software managment
 # pacman or pm
