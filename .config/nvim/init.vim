@@ -122,9 +122,3 @@ augroup trim_whitespace
     autocmd!
     autocmd BufWrite * %s/\s\+$//e
 augroup END
-
-" add lsp errors to local quickfix list
-augroup lsp_enter
-    autocmd!
-    autocmd BufEnter,BufWrite :lua vim.lsp.diagnostic.set_loclist()<CR>
-augroup END
