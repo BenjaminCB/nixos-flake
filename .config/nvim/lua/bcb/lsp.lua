@@ -25,15 +25,17 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "tsserver", "texlab", "html", "cssls", "hls" }
+local servers = { "clangd", "tsserver", "texlab", "html", "cssls", "hls" }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         capabilities = capabilities,
         on_attach = on_attach,
+        root_dir = function() return vim.loop.cwd() end
     }
 end
 
-nvim_lsp.clangd.setup {
-    on_attach = on_attach,
-    root_dir = function() return vim.loop.cwd() end
-}
+-- nvim_lsp.tsserver.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     root_dir = should be package.json but can not remember syntax
+-- }
