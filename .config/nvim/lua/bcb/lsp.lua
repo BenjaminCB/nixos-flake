@@ -8,13 +8,6 @@ on_attach = function(client, bufnr)
 
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    -- Set some keybinds conditional on server capabilities
-    -- if client.resolved_capabilities.document_formatting then
-    --     buf_set_keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    -- elseif client.resolved_capabilities.document_range_formatting then
-    --     buf_set_keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    -- end
-
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
