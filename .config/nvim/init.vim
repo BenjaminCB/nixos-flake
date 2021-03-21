@@ -7,7 +7,6 @@ Plug 'nvim-lua/completion-nvim'
 
 Plug 'nvim-lua/popup.nvim' "telescope dependency
 Plug 'nvim-lua/plenary.nvim' "telescope dependency
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "telescope dependency
 " Plug 'kyazdani42/nvim-web-devicons' "telescope dependency
 Plug 'nvim-telescope/telescope.nvim' "some dependencies might be optional
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
