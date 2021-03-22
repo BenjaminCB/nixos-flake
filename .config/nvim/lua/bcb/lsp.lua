@@ -1,5 +1,4 @@
 local nvim_lsp = require('lspconfig')
-local on_attach = require('completion').on_attach
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true;
 
