@@ -4,6 +4,7 @@ call plug#begin('~/local/share/nvim/plugged')
 " actually useful
 Plug 'neovim/nvim-lspconfig' "there is also a diagnostic plugin that gives control over error msg
 Plug 'nvim-lua/completion-nvim'
+" Plug 'glepnir/lspsaga.nvim'
 
 Plug 'nvim-lua/popup.nvim' "telescope dependency
 Plug 'nvim-lua/plenary.nvim' "telescope dependency
@@ -33,8 +34,8 @@ Plug 'iamcco/markdown-preview.nvim'
 " themes
 Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline'
-" Plug 'morhetz/gruvbox'
-Plug 'npxbr/gruvbox.nvim'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'sjl/badwolf'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'hugolgst/vimsence'
@@ -48,7 +49,7 @@ call plug#end()"}}}
 set number
 set relativenumber
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
 " let g:airline_theme='gruvbox'
 set nowrap
 set colorcolumn=80
