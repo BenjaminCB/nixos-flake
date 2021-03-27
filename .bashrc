@@ -140,11 +140,13 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
 #systeminfo
-alias probe="sudo -E hw-probe -all -upload"
+alias probe="doas -E hw-probe -all -upload"
 
 #shutdown or reboot
-alias sn="sudo shutdown now"
-alias rn="sudo reboot"
+alias sn="doas shutdown now"
+alias rn="doas reboot"
+
+alias sudo="doas"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
