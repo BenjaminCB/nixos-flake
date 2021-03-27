@@ -3,7 +3,7 @@ call plug#begin('~/local/share/nvim/plugged')
 
 " actually useful
 Plug 'neovim/nvim-lspconfig' "there is also a diagnostic plugin that gives control over error msg
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 " Plug 'glepnir/lspsaga.nvim'
 
 Plug 'nvim-lua/popup.nvim' "telescope dependency
@@ -13,7 +13,8 @@ Plug 'nvim-telescope/telescope.nvim' "some dependencies might be optional
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'lervag/vimtex'
-Plug 'norcalli/snippets.nvim'
+" Plug 'norcalli/snippets.nvim'
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Plug 'dense-analysis/ale'
