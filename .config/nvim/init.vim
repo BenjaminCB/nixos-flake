@@ -1,5 +1,8 @@
 lua require("bcb.plugins")
 
+call plug#begin('~/.vim/plugged')
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+call plug#end()
 " theme and look{{{
 set number
 set relativenumber
