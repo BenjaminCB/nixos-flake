@@ -1,56 +1,10 @@
-" plugins{{{
-call plug#begin('~/local/share/nvim/plugged')
-
-" actually useful
-Plug 'neovim/nvim-lspconfig' "there is also a diagnostic plugin that gives control over error msg
-Plug 'hrsh7th/nvim-compe'
-" Plug 'glepnir/lspsaga.nvim'
-
-Plug 'nvim-lua/popup.nvim' "telescope dependency
-Plug 'nvim-lua/plenary.nvim' "telescope dependency
-" Plug 'kyazdani42/nvim-web-devicons' "telescope dependency
-Plug 'nvim-telescope/telescope.nvim' "some dependencies might be optional
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
-Plug 'lervag/vimtex'
-" Plug 'norcalli/snippets.nvim'
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-" Plug 'dense-analysis/ale'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'dbeniamine/cheat.sh-vim'
-
-" For c and c++ debugging look into this
-" https://github.com/sakhnik/nvim-gdb
-
-" quality of life
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'chrisbra/Colorizer'
-Plug 'rstacruz/vim-closer'
-Plug 'junegunn/vim-easy-align'
-Plug 'iamcco/markdown-preview.nvim'
-
-" themes
-Plug 'rktjmp/lush.nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
-Plug 'sjl/badwolf'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'hugolgst/vimsence'
-" Plug 'tomasr/molokai'
-" Plug 'bignimbus/pop-punk.vim'
-" Plug 'tomasiser/vim-code-dark'
-
-call plug#end()"}}}
+lua require("bcb.plugins")
 
 " theme and look{{{
 set number
 set relativenumber
 set background=dark
-colorscheme gruvbox-material
+colorscheme gruvbox
 " let g:airline_theme='gruvbox'
 set nowrap
 set colorcolumn=80
@@ -85,9 +39,6 @@ set updatetime=100
 set signcolumn=yes
 set termguicolors
 "}}}
-
-lua require("bcb")
-lua require'nvim-treesitter.configs'.setup{highlight = { enable = true }}
 
 " go to next, previous and close the list
 " commands for old grep but could be used when i get around to using quick fix

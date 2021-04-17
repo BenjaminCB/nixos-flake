@@ -13,7 +13,7 @@ export _JAVA_AWT_WM_NOREPARENTING 1
 export EDITOR='nvim'
 
 #swap caps lock and escape key
-setxkbmap -option caps:swapescape
+#setxkbmap -option caps:swapescape
 
 #set manpager
 #set -x MANPAGER "nvim -c 'set ft=man' -"
