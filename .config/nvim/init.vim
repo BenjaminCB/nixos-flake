@@ -1,16 +1,14 @@
 lua require("bcb.plugins")
 
-" theme and look{{{
+" theme and look
 set number
 set relativenumber
 set background=dark
 colorscheme gruvbox
-" let g:airline_theme='gruvbox'
 set nowrap
 set colorcolumn=80
-"}}}
 
-" basic settings{{{
+" basic settings
 let mapleader=" "
 set clipboard+=unnamedplus
 set incsearch
@@ -28,17 +26,16 @@ set wildmode=longest,list,full
 set ruler
 set undolevels=1000
 set foldmethod=marker
-set exrc                        " when nvim . is used to open a project nvim will automatically source a config file if one exists it should be called .exrc
+set exrc
 set nohlsearch
 set scrolloff=6
-set shell=/usr/bin/bash         " some plugins (fzf but maybe others) doesnt like fish
+set shell=/usr/bin/bash
 set hidden
 set nobackup
 set nowritebackup
 set updatetime=100
 set signcolumn=yes
 set termguicolors
-"}}}
 
 " go to next, previous and close the list
 " commands for old grep but could be used when i get around to using quick fix
