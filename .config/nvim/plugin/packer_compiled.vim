@@ -145,23 +145,23 @@ _G.packer_plugins = {
   }
 }
 
--- Config for: nvim-compe
-require('bcb.compe')
--- Config for: nvim-lspconfig
-require('bcb.lsp')
--- Config for: lualine.nvim
-require('bcb.lualine')
 -- Config for: telescope.nvim
 require('bcb.telescope')
+-- Config for: nvim-lspconfig
+require('bcb.lsp')
+-- Config for: nvim-compe
+require('bcb.compe')
+-- Config for: lualine.nvim
+require('bcb.lualine')
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "tex" }, _G.packer_plugins)]]
-vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
-vim.cmd [[au FileType hs ++once lua require("packer.load")({'ale'}, { ft = "hs" }, _G.packer_plugins)]]
+vim.cmd [[au FileType haskell ++once lua require("packer.load")({'ale'}, { ft = "haskell" }, _G.packer_plugins)]]
+vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "tex" }, _G.packer_plugins)]]
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
 vim.cmd [[source /home/bcb/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
