@@ -25,7 +25,7 @@ return require('packer').startup {
         use 'airblade/vim-gitgutter'
         use {
             'dense-analysis/ale',
-            ft = {'sh', 'haskell', 'bash', 'lua'}
+            ft = {'sh', 'haskell', 'bash', 'lua', 'python'}
         }
         use {
             'nvim-treesitter/nvim-treesitter',
