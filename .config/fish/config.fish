@@ -35,6 +35,7 @@ alias bat='bat --theme gruvbox-dark'
 alias cht='cht.sh --shell'
 alias sudo='doas'
 alias mon2cam='deno run --unstable --allow-run --allow-read --allow-env ~/git/Mon2Cam/src/mod.ts'
+alias ds='node ~/git/scripts/danishLetterParser/danishSearch.mjs'
 
 # Aliases for software managment
 # pacman or pm
