@@ -17,6 +17,7 @@ fi
 # https://imgur.com/a/Ix8QBfl
 nitrogen --head=0 --set-zoom-fill ~/git/wallpapers/horizontal/Shiomiya_Shiori_Holding_Shy_C_Programming_language_wp_gruvbox.png
 nitrogen --head=1 --set-auto ~/git/wallpapers/vertical/anime_book_computer_grevbox_neofetch_vim.png
+nitrogen --head=2 --set-auto ~/git/wallpapers/vertical/akiyama_c.png
 
 xsetroot -cursor_name left_ptr &
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &

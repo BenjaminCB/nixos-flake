@@ -29,7 +29,7 @@ return require('packer').startup {
         }
         use {
             'nvim-treesitter/nvim-treesitter',
-            config = require('nvim-treesitter.configs').setup{highlight = { enable = true }}
+            -- config = require('nvim-treesitter.configs').setup{highlight = { enable = true }}
         }
         use 'dbeniamine/cheat.sh-vim'
         use 'tpope/vim-surround'
