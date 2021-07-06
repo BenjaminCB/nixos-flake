@@ -4,7 +4,7 @@ set -U SXHKD_SHELL /usr/bin/bash
 #Program hotkeys {{{
 #Firefox
 super + F1
-	brave
+    firefox
 
 #Qutebrowser
 super + F2

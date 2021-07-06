@@ -33,7 +33,6 @@ alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias bat='bat --theme gruvbox-dark'
 alias cht='cht.sh --shell'
-alias sudo='doas'
 alias mon2cam='deno run --unstable --allow-run --allow-read --allow-env ~/git/Mon2Cam/src/mod.ts'
 alias ds='node ~/git/scripts/danishLetterParser/danishSearch.mjs'
 

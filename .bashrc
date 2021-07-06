@@ -143,10 +143,8 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias probe="doas -E hw-probe -all -upload"
 
 #shutdown or reboot
-alias sn="doas shutdown now"
-alias rn="doas reboot"
-
-alias sudo="doas"
+alias sn="sudo shutdown now"
+alias rn="sudo reboot"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>

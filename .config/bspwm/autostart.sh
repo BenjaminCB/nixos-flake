@@ -30,6 +30,7 @@ if [[ $(cat /proc/sys/kernel/hostname) == 'arco-desktop' ]]; then
     run volumeicon &
 else
     batsignal -b -w 25 -c 10 -d 5 -f 80 &
+    setxkbmap -layout us -variant dvorak -option "caps:swapescape"
 fi
 numlockx on &
 dunst &
