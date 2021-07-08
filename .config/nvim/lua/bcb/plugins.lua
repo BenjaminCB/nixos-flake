@@ -21,8 +21,15 @@ return require('packer').startup {
         use 'nvim-telescope/telescope-fzy-native.nvim'
         use {'lervag/vimtex', ft = {'tex'}}
         use 'SirVer/ultisnips'
-        use 'tpope/vim-fugitive'
-        use 'airblade/vim-gitgutter'
+        -- use 'tpope/vim-fugitive'
+        -- use 'airblade/vim-gitgutter'
+        use {
+            'TimUntersberger/neogit',
+            requires = {
+                { 'nvim-lua/plenary.nvim' },
+                { 'sindrets/diffview.nvim' }
+            }
+        }
         use {
             'dense-analysis/ale',
             ft = {'sh', 'haskell', 'bash', 'lua', 'python'}
