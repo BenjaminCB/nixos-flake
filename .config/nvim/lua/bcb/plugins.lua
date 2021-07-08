@@ -21,7 +21,7 @@ return require('packer').startup {
         use 'nvim-telescope/telescope-fzy-native.nvim'
         use {'lervag/vimtex', ft = {'tex'}}
         use 'SirVer/ultisnips'
-        -- use 'tpope/vim-fugitive'
+        use 'tpope/vim-fugitive'
         -- use 'airblade/vim-gitgutter'
         use {
             'TimUntersberger/neogit',

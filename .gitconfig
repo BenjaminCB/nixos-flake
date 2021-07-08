@@ -1,0 +1,16 @@
+[user]
+	name = BenjaminCB
+	email = benjamincb@hotmail.dk
+[pull]
+	rebase = false
+[init]
+	defaultBranch = master
+[credential]
+	helper = cache
+	helper = cache
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+	tool = nvim
+[mergetool]
+	prompt = false
