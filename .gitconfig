@@ -9,7 +9,7 @@
 	helper = cache
 	helper = cache
 [mergetool "nvim"]
-    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+    cmd = nvim -f -d -c '$wincmd w' -c 'wincmd j' $LOCAL $REMOTE $MERGED
 [merge]
 	tool = nvim
 [mergetool]
