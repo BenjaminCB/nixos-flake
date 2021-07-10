@@ -14,7 +14,7 @@ super + F2
 super + F3
     kitty neomutt
 
-@Discord
+#Discord
 super + F4
     discord
 
@@ -34,7 +34,7 @@ super + F7
 super + F8
     steam
 
-#zotero 
+#zotero
 super + F9
     zotero
 
@@ -150,7 +150,7 @@ super + q
 super + shift + r
 	~/.config/bspwm/bspwmrc
 #}}}
-    
+
 # Basic movement and swapping {{{
 # Focus/swap windows by direction
 super + {_,alt + }{h,j,k,l}
