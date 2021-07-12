@@ -5,6 +5,7 @@ set number
 set relativenumber
 set background=dark
 colorscheme gruvbox
+let g:gruvbox_conrast_dark = 'hard'
 set nowrap
 set colorcolumn=80
 
