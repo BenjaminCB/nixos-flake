@@ -23,26 +23,15 @@ set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
 #aliases
 ###############################################
 alias rr='ranger'
-alias sn='shutdown now'
-alias rn='reboot'
 alias tpush='~/git/scripts/task/task_update.sh'
 alias tpull='~/git/scripts/task/task_pull.sh'
 alias ll='ls -lAh'
 alias maple='~/git/scripts/maple_work.sh'
-alias dots='git --git-dir=$HOME/.config/ --work-tree=$HOME'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias bat='bat --theme gruvbox-dark'
 alias cht='cht.sh --shell'
 alias mon2cam='deno run --unstable --allow-run --allow-read --allow-env ~/git/Mon2Cam/src/mod.ts'
 alias ds='node ~/git/scripts/danishLetterParser/danishSearch.mjs'
-
-# Aliases for software managment
-# pacman or pm
-alias pacman='doas pacman --color auto'
-alias update='doas pacman -Syyu'
-
-# yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
-alias upall="yay -Syu --noconfirm"
+alias lock='xsecurelock'
 
 cat ~/.config/kitty/ascii_cat.txt
