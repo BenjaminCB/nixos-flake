@@ -22,7 +22,7 @@ return require('packer').startup {
         use {'lervag/vimtex', ft = {'tex'}}
         use 'SirVer/ultisnips'
         -- use 'tpope/vim-fugitive'
-        -- use 'airblade/vim-gitgutter'
+        use 'airblade/vim-gitgutter'
         use {
             'TimUntersberger/neogit',
             requires = {
@@ -46,8 +46,8 @@ return require('packer').startup {
         use 'junegunn/vim-easy-align'
         use {
             'iamcco/markdown-preview.nvim',
-            -- run = 'cd app && yarn install',
-            run = '{ -> mkdp#util#install() }',
+            run = 'cd app && yarn install',
+            -- run = '{ -> mkdp#util#install() }',
             ft = {'markdown'}
         }
 

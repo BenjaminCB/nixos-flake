@@ -7,6 +7,8 @@ if [ -d "$HOME/.local/bin" ]
   set PATH "$HOME/.local/bin:$PATH"
 end
 
+set PATH "$HOME/.cargo/bin:$PATH"
+
 export _JAVA_AWT_WM_NOREPARENTING 1
 
 #set default editor to neovim

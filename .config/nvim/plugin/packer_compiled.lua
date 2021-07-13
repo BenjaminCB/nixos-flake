@@ -167,6 +167,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bcb/.local/share/nvim/site/pack/packer/start/vim-easy-align"
   },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/bcb/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/bcb/.local/share/nvim/site/pack/packer/start/vim-surround"
@@ -183,10 +187,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('bcb.compe')
-time([[Config for nvim-compe]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('bcb.lsp')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('bcb.telescope')
@@ -195,10 +199,10 @@ time([[Config for telescope.nvim]], false)
 time([[Config for lualine.nvim]], true)
 require('bcb.lualine')
 time([[Config for lualine.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('bcb.lsp')
-time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require('bcb.compe')
+time([[Config for nvim-compe]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
