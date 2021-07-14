@@ -38,3 +38,12 @@ nvim_lsp.clangd.setup {
     on_attach = on_attach,
     root_dir = function() return vim.loop.cwd() end
 }
+
+local pid = vim.fn.getpid()
+local omnisharp_bin = "/home/bcb/.omnisharp/run"
+nvim_lsp.omnisharp.setup {
+    cmd = { omnisharp_bin,
+            "--languageserver",
+            "--hostPID",
+            tostring(pid) };
+}
