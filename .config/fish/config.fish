@@ -8,7 +8,9 @@ if [ -d "$HOME/.local/bin" ]
 end
 
 set PATH "$HOME/.cargo/bin:$PATH"
+set PATH "$HOME/dotnet:$PATH"
 
+export DOTNET_ROOT="$HOME/dotnet"
 export _JAVA_AWT_WM_NOREPARENTING 1
 
 #set default editor to neovim
