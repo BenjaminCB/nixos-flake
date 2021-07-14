@@ -32,7 +32,7 @@ return require('packer').startup {
         }
         use {
             'dense-analysis/ale',
-            ft = {'sh', 'haskell', 'bash', 'lua', 'python'}
+            ft = {'sh', 'haskell', 'bash', 'lua', 'python', 'cs'}
         }
         use {
             'nvim-treesitter/nvim-treesitter',
