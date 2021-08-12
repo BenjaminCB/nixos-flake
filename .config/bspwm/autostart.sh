@@ -15,7 +15,7 @@ case $(cat /proc/sys/kernel/hostname) in
     ("void-desktop")
         /home/bcb/git/scripts/screen_rotation.sh
     ;;
-    ("void-loptop")
+    ("void-laptop")
         batsignal -b -w 25 -c 10 -d 5 -f 80 &
         setxkbmap -layout us -variant dvorak -option "caps:swapescape"
     ;;
