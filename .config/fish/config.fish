@@ -9,6 +9,7 @@ end
 
 set PATH "$HOME/.cargo/bin:$PATH"
 set PATH "$HOME/dotnet:$PATH"
+set PATH "$HOME/git/Vieb/dist/linux-unpacked/:$PATH"
 
 export DOTNET_ROOT="$HOME/dotnet"
 export _JAVA_AWT_WM_NOREPARENTING 1
@@ -39,3 +40,4 @@ alias ds='node ~/git/scripts/danishLetterParser/danishSearch.mjs'
 alias lock='xsecurelock'
 
 cat ~/.config/kitty/ascii_cat.txt
+alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
