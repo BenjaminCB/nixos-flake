@@ -12,7 +12,7 @@ set PATH "$HOME/dotnet:$PATH"
 set PATH "$HOME/git/Vieb/dist/linux-unpacked/:$PATH"
 
 export DOTNET_ROOT="$HOME/dotnet"
-export _JAVA_AWT_WM_NOREPARENTING 1
+export _JAVA_AWT_WM_NOREPARENTING=1
 
 #set default editor to neovim
 export EDITOR='nvim'
