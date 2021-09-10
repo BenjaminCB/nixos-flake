@@ -42,7 +42,7 @@ case $(cat /proc/sys/kernel/hostname) in
         bspc monitor DP-0 -d 4 5 6 7
         bspc monitor DVI-D-0 -d 8 9 10
     ;;
-    ("void-laptop")
+    ("arch-laptop")
         bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
     ;;
 esac
