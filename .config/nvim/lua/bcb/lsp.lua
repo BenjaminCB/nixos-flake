@@ -42,7 +42,7 @@ nvim_lsp.clangd.setup {
 local pid = vim.fn.getpid()
 local omnisharp_bin = "/home/bcb/.omnisharp/run"
 nvim_lsp.omnisharp.setup {
-    cmd = { omnisharp_bin,
+    cmd = { "omnisharp",
             "--languageserver",
             "--hostPID",
             tostring(pid) };
