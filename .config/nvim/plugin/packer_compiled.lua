@@ -130,9 +130,24 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bcb/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  ["open-browser.vim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/bcb/.local/share/nvim/site/pack/packer/opt/open-browser.vim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/bcb/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plantuml-previewer.vim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/bcb/.local/share/nvim/site/pack/packer/opt/plantuml-previewer.vim"
+  },
+  ["plantuml-syntax"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/bcb/.local/share/nvim/site/pack/packer/opt/plantuml-syntax"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -187,14 +202,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('bcb.lsp')
-time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('bcb.telescope')
 time([[Config for telescope.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('bcb.lsp')
+time([[Config for nvim-lspconfig]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require('bcb.lualine')
@@ -208,12 +223,13 @@ vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType plantuml ++once lua require("packer.load")({'plantuml-syntax', 'plantuml-previewer.vim', 'open-browser.vim'}, { ft = "plantuml" }, _G.packer_plugins)]]
 vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
-vim.cmd [[au FileType cs ++once lua require("packer.load")({'ale'}, { ft = "cs" }, _G.packer_plugins)]]
 vim.cmd [[au FileType haskell ++once lua require("packer.load")({'ale'}, { ft = "haskell" }, _G.packer_plugins)]]
 vim.cmd [[au FileType python ++once lua require("packer.load")({'ale'}, { ft = "python" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cs ++once lua require("packer.load")({'ale'}, { ft = "cs" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "tex" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

@@ -44,11 +44,21 @@ return require('packer').startup {
         use 'chrisbra/Colorizer'
         use 'rstacruz/vim-closer'
         use 'junegunn/vim-easy-align'
+
         use {
             'iamcco/markdown-preview.nvim',
             run = 'cd app && yarn install',
             -- run = '{ -> mkdp#util#install() }',
             ft = {'markdown'}
+        }
+
+        use {
+            'weirongxu/plantuml-previewer.vim',
+            requires = {
+                {'tyru/open-browser.vim', ft = 'plantuml'},
+                {'aklt/plantuml-syntax', ft = 'plantuml'}
+            },
+            ft = 'plantuml'
         }
 
         use 'rktjmp/lush.nvim'
