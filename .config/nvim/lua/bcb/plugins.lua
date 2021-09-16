@@ -52,15 +52,6 @@ return require('packer').startup {
             ft = {'markdown'}
         }
 
-        use {
-            'weirongxu/plantuml-previewer.vim',
-            requires = {
-                {'tyru/open-browser.vim', ft = 'plantuml'},
-                {'aklt/plantuml-syntax', ft = 'plantuml'}
-            },
-            ft = 'plantuml'
-        }
-
         use 'rktjmp/lush.nvim'
         use 'morhetz/gruvbox'
         use 'sjl/badwolf'
