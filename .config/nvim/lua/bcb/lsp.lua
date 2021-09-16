@@ -40,9 +40,17 @@ nvim_lsp.clangd.setup {
 }
 
 local pid = vim.fn.getpid()
-local omnisharp_bin = "/home/bcb/.omnisharp/run"
+local hostname = vim.api.nvim_exec([[echo system('hostname')]], true)
+local omnisharp_bin
+
+if hostname == "void-desktop" then
+    omnisharp_bin = "/home/.omnisharp/run"
+else
+    omnisharp_bin = "omnisharp"
+end
+
 nvim_lsp.omnisharp.setup {
-    cmd = { "omnisharp",
+    cmd = { omnisharp_bin,
             "--languageserver",
             "--hostPID",
             tostring(pid) };
