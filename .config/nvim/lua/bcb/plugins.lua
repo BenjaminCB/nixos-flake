@@ -55,10 +55,9 @@ return require('packer').startup {
         use {
             'weirongxu/plantuml-previewer.vim',
             requires = {
-                {'tyru/open-browser.vim', ft = 'plantuml'},
-                {'aklt/plantuml-syntax', ft = 'plantuml'}
-            },
-            ft = 'plantuml'
+                {'tyru/open-browser.vim'},
+                {'aklt/plantuml-syntax'}
+            }
         }
 
         use 'rktjmp/lush.nvim'
