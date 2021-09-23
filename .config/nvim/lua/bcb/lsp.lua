@@ -43,8 +43,8 @@ local pid = vim.fn.getpid()
 local hostname = vim.api.nvim_exec([[echo system('hostname')]], true)
 local omnisharp_bin
 
-if hostname == "void-desktop" then
-    omnisharp_bin = "/home/.omnisharp/run"
+if hostname == "void-desktop\n" then
+    omnisharp_bin = "/home/bcb/.omnisharp/run"
 else
     omnisharp_bin = "omnisharp"
 end
