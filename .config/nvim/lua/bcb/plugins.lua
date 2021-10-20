@@ -61,5 +61,7 @@ return require('packer').startup {
             requires = {'kyazdani42/nvim-web-devicons', opt = true},
             config = [[require('bcb.lualine')]]
         }
+
+        use 'sheerun/vim-polyglot'
     end
 }

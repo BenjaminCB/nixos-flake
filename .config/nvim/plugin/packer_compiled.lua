@@ -171,6 +171,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bcb/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
   },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/home/bcb/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/bcb/.local/share/nvim/site/pack/packer/start/vim-surround"
