@@ -55,10 +55,6 @@ nnoremap <leader>lc <cmd>lclose<cr>
 " newline without entering insert mode
 nnoremap <C-n> o<Esc>k
 
-" grab local and remote sides when merging
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
-
 filetype plugin on
 
 " better readability and spell checking in documents
