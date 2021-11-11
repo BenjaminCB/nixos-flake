@@ -5,6 +5,6 @@ nmap <leader>gs :G<CR>
 nnoremap <leader>gc :GCheckout<CR>
 
 " confilt resolution
-nnoremap <leader> :Gvdiff<CR>
+nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gu :diffget //2<CR>
