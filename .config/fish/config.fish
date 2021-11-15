@@ -37,7 +37,6 @@ alias ll='ls -lAh'
 alias maple='~/git/scripts/maple_work.sh'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cht='cht.sh --shell'
-alias mon2cam='deno run --unstable --allow-run --allow-read --allow-env ~/git/Mon2Cam/src/mod.ts'
 alias ds='node ~/git/scripts/danishLetterParser/danishSearch.mjs'
 alias lock='xsecurelock'
 
