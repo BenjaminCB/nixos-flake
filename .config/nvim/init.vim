@@ -37,6 +37,7 @@ set nowritebackup
 set updatetime=100
 set signcolumn=yes
 set termguicolors
+set fileencoding=utf-8
 
 " go to next, previous and close the list
 " commands for old grep but could be used when i get around to using quick fix
