@@ -64,7 +64,7 @@ super + Escape
 
 #rofi
 super + r
-    rofi -show run
+    rofi -m -4 -show run
 
 #screenshot
 Print
