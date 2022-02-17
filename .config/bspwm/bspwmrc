@@ -5,6 +5,8 @@ $HOME/.config/bspwm/autostart.sh
 #fix for moving spotify to specific workspace
 #bspc config external_rules_command ~/.config/bspwm/scripts/external_rules_command
 
+wmname LG3D
+
 #BSPWM configuration
 #bspc config border_radius       8
 bspc config border_width         2

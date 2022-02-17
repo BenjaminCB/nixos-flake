@@ -38,7 +38,9 @@ local servers = { "tsserver"
                 , "hls"
                 , "elmls"
                 , "purescriptls"
+                , "sumneko_lua"
                 }
+
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         capabilities = capabilities,
