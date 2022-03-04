@@ -20,6 +20,9 @@ export DOTNET_ROOT=/home/bcb/dotnet
 #set default editor to neovim
 export EDITOR='nvim'
 
+alias antlr4='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
 #swap caps lock and escape key
 #setxkbmap -option caps:swapescape
 
