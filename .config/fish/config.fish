@@ -22,6 +22,7 @@ export EDITOR='nvim'
 
 alias antlr4='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
+export CLASSPATH=".:/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH"
 alias sablecc='java -jar /home/bcb/Downloads/sablecc-3.7/lib/sablecc.jar'
 
 #swap caps lock and escape key
