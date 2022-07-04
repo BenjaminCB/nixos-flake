@@ -47,3 +47,6 @@ alias lock='xsecurelock'
 
 cat ~/.config/kitty/ascii_cat.txt
 alias montocam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/bcb/google-cloud-sdk/path.fish.inc' ]; . '/home/bcb/google-cloud-sdk/path.fish.inc'; end
