@@ -39,7 +39,6 @@ local servers = { "tsserver"
                 , "elmls"
                 , "purescriptls"
                 , "sumneko_lua"
-                , "java-language-server"
                 }
 
 for _, lsp in ipairs(servers) do
