@@ -45,7 +45,9 @@ case $(cat /proc/sys/kernel/hostname) in
         bspc monitor DVI-D-0 -d 8 9 10
     ;;
     ("arch-laptop")
-        bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
+        xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+        bspc monitor eDP1 -d 1 2 3 4 5
+        bspc monitor DP2 -d 6 7 8 9 0
     ;;
 esac
 
