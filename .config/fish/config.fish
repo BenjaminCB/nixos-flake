@@ -12,6 +12,7 @@ set PATH "$HOME/dotnet:$PATH"
 set PATH "$HOME/git/Vieb/dist/linux-unpacked/:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
 set PATH "$HOME/.dotnet/tools:$PATH"
+set PATH "$HOME/.local/bin:$PATH"
 
 export _JAVA_AWT_WM_NOREPARENTING=1
 export DOTNET_HOME=/home/bcb/dotnet
