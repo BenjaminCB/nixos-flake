@@ -70,6 +70,7 @@ return require('packer').startup {
         use 'morhetz/gruvbox'
         use 'sjl/badwolf'
         use 'hugolgst/vimsence'
+        use 'NLKNguyen/papercolor-theme'
         use {
             'hoob3rt/lualine.nvim',
             requires = {'kyazdani42/nvim-web-devicons', opt = true},
