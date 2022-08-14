@@ -34,5 +34,10 @@ fi
 
 xrandr --output DVI-D-0 --mode 1920x1080 --pos 3000x587 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate left --output DP-0 --primary --mode 1920x1080 --pos 1080x364 --rotate normal --output DP-1 --off --output DVI-D-1 --off
 
+nitrogen --head=1 --set-zoom-fill ~/git/wallpapers/horizontal/Shiomiya_Shiori_Holding_Shy_C_Programming_language_wp_gruvbox.png
+nitrogen --head=0 --set-auto ~/git/wallpapers/horizontal/i_am_root_gruvbox.jpg
+nitrogen --head=2 --set-auto ~/git/wallpapers/vertical/anime_book_computer_grevbox_neofetch_vim.png
+
 # exec bspwm
 exec awesome
+
