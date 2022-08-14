@@ -212,6 +212,13 @@ function _M.get()
                 awful.spawn("firefox")
             end,
             {description = "start firefox", group = "lancher"}
+        ),
+        awful.key(
+            {modkey}, "x",
+            function()
+                RC.xrandr.xrandr()
+            end,
+            {description = "xrandr configuration script", group = "scripts"}
         )
         -- awful.key(
         --     {modkey}, "x",
