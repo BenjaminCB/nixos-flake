@@ -32,4 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec bspwm
+xrandr --output DVI-D-0 --mode 1920x1080 --pos 3000x587 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate left --output DP-0 --primary --mode 1920x1080 --pos 1080x364 --rotate normal --output DP-1 --off --output DVI-D-1 --off
+
+# exec bspwm
+exec awesome
