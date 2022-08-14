@@ -129,14 +129,14 @@ function _M.get()
         --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         -- Layout manipulation
         awful.key(
-            {modkey, "Shift"}, "l",
+            {modkey, "Control"}, "l",
             function()
                 awful.tag.incmwfact(0.05)
             end,
             {description = "increase master width factor", group = "layout"}
         ),
         awful.key(
-            {modkey, "Shift"}, "h",
+            {modkey, "Control"}, "h",
             function()
                 awful.tag.incmwfact(-0.05)
             end,
