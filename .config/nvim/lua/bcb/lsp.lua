@@ -39,6 +39,7 @@ local servers = { "tsserver"
                 , "elmls"
                 , "purescriptls"
                 , "sumneko_lua"
+                , "yamlls"
                 }
 
 for _, lsp in ipairs(servers) do
