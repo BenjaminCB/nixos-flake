@@ -9,6 +9,7 @@ local menubar = require("menubar")
 -- Resource Configuration
 local modkey = RC.vars.modkey
 local terminal = RC.vars.terminal
+local os = require("os")
 
 local _M = {}
 
@@ -214,9 +215,16 @@ function _M.get()
             {description = "start firefox", group = "lancher"}
         ),
         awful.key(
+            {modkey}, "d",
+            function()
+                RC.scripts.date()
+            end,
+            {description = "show date notification", group = "scripts"}
+        ),
+        awful.key(
             {modkey}, "x",
             function()
-                RC.xrandr.xrandr()
+                RC.scripts.xrandr.xrandr()
             end,
             {description = "xrandr configuration script", group = "scripts"}
         )

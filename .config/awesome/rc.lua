@@ -29,10 +29,11 @@ beautiful.wallpaper = RC.vars.wallpaper
 modkey = RC.vars.modkey
 
 local scripts = {
-    xrandr = require("scripts.xrandr")
+    xrandr = require("scripts.xrandr"),
+    date   = require("scripts.date")
 }
 
-RC.xrandr = scripts.xrandr
+RC.scripts = scripts
 
 -- Custom Local Library
 local main = {
