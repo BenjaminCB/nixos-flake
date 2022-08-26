@@ -212,7 +212,14 @@ function _M.get()
             function()
                 awful.spawn("firefox")
             end,
-            {description = "start firefox", group = "lancher"}
+            {description = "start firefox", group = "launcher"}
+        ),
+        awful.key(
+            {}, "Print",
+            function()
+                awful.spawn("flameshot gui")
+            end,
+            {description = "screenshot gui", group = "launcher"}
         ),
         awful.key(
             {modkey}, "d",
