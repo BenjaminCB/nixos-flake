@@ -9,7 +9,7 @@ require('telescope').setup {
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
-        layout_strategy = "vertical",
+        layout_strategy = "horizontal",
 
         mappings = {
             i = {
