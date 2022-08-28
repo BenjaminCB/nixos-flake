@@ -58,6 +58,7 @@ local binding = {
 -- a variable needed in main.tags, and statusbar
 -- awful.layout.layouts = main.layouts()
 RC.layouts = main.layouts()
+awful.layout.layouts = RC.layouts
 -- }}}
 
 -- {{{ Tags
