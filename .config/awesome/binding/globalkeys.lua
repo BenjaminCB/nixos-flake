@@ -5,6 +5,8 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Menubar library
 local menubar = require("menubar")
+local naughty = require("naughty")
+local os = require("os")
 
 -- Resource Configuration
 local modkey = RC.vars.modkey
@@ -224,7 +226,7 @@ function _M.get()
         awful.key(
             {modkey}, "d",
             function()
-                RC.scripts.date()
+                naughty.notify({ text = os.date("%c") })
             end,
             {description = "show date notification", group = "scripts"}
         ),

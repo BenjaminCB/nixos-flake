@@ -29,12 +29,11 @@ beautiful.notification_font = RC.vars.notification_font
 
 modkey = RC.vars.modkey
 
--- local scripts = {
---     xrandr = require("scripts.xrandr"),
---     date   = require("scripts.date")
--- }
+local scripts = {
+    xrandr = require("scripts.xrandr"),
+}
 
--- RC.scripts = scripts
+RC.scripts = scripts
 
 
 -- Custom Local Library
