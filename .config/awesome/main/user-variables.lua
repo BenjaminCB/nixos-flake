@@ -19,6 +19,8 @@ local _M = {
   -- user defined wallpaper
   wallpaper = nil,
   --wallpaper = home .. "/Pictures/your-wallpaper-here.jpg",
+
+  notification_font = "Fira Code 19"
 }
 
 return _M
