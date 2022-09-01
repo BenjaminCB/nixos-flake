@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
         config = [[require('bcb.lualine')]]
     }
 
-    use 'sheerun/vim-polyglot'
+    use 'ThePrimeagen/harpoon'
 
     if packer_bootstrap then
         require('packer').sync()
