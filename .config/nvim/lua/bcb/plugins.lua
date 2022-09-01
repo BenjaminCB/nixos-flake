@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
         -- config = require('nvim-treesitter.configs').setup{highlight = { enable = true }}
     }
     -- use 'dbeniamine/cheat.sh-vim'
@@ -71,6 +72,8 @@ return require('packer').startup(function(use)
         }
       end
     }
+
+    use 'romainl/vim-qf'
 
     use 'rktjmp/lush.nvim'
     use 'morhetz/gruvbox'

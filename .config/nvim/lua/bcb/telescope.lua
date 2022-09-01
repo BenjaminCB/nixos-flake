@@ -9,12 +9,13 @@ require('telescope').setup {
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
+
         layout_strategy = "horizontal",
 
         mappings = {
             i = {
                 ["<C-x>"] = false,
-                ["<C-s>"] = actions.send_to_qflist,
+                ["<C-s>"] = actions.add_to_qflist,
             },
         }
     },
