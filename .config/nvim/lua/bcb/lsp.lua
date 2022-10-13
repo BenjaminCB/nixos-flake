@@ -29,6 +29,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
+-------- server setups
+
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
 local servers = { "tsserver"
@@ -41,7 +43,6 @@ local servers = { "tsserver"
                 , "sumneko_lua"
                 , "pylsp"
                 , "yamlls"
-                , "metals"
                 }
 
 for _, lsp in ipairs(servers) do
@@ -51,11 +52,14 @@ for _, lsp in ipairs(servers) do
     }
 end
 
+-------- c lsp
 nvim_lsp.clangd.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     root_dir = function() return vim.loop.cwd() end
 }
+
+-------- c# lsp
 
 local pid = vim.fn.getpid()
 local hostname = vim.api.nvim_exec([[echo system('hostname')]], true)
@@ -73,3 +77,15 @@ nvim_lsp.omnisharp.setup {
             "--hostPID",
             tostring(pid) };
 }
+
+-------- scala lsp
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "scala", "sbt", "java" },
+    callback = function()
+        metals_config = require("metals").bare_config()
+        metals_config.init_options.statusBarProvider = "on"
+        require("metals").initialize_or_attach(metals_config)
+    end,
+    group = nvim_metals_group,
+})
