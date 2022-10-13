@@ -88,6 +88,11 @@ return require('packer').startup(function(use)
 
     use 'ThePrimeagen/harpoon'
 
+    use {
+        'scalameta/nvim-metals',
+        requires = { "nvim-lua/plenary.nvim" }
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end
