@@ -41,6 +41,7 @@ local servers = { "tsserver"
                 , "sumneko_lua"
                 , "pylsp"
                 , "yamlls"
+                , "metals"
                 }
 
 for _, lsp in ipairs(servers) do
