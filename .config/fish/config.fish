@@ -14,10 +14,13 @@ set PATH "$HOME/.local/bin:$PATH"
 set PATH "$HOME/.dotnet/tools:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
 set PATH "$HOME/.local/share/coursier/bin:$PATH"
+set PATH "$HOME/neo4j-community-5.1.0/bin/:$PATH"
 
 export _JAVA_AWT_WM_NOREPARENTING=1
 export DOTNET_HOME=/home/bcb/dotnet
 export DOTNET_ROOT=/home/bcb/dotnet
+export JAVA_HOME=/usr/lib/jvm/openjdk17
+export NEO4J_HOME=/home/bcb/neo4j-community-5.1.0
 
 #set default editor to neovim
 export EDITOR='nvim'
