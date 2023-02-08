@@ -48,6 +48,7 @@
   home.file = {
     ".config/awesome".source = ./dotfiles/awesome;
     ".config/bspwm".source = ./dotfiles/bspwm;
+    ".config/bsp-layout".source = ./dotfiles/bsp-layout;
     ".config/dunst".source = ./dotfiles/dunst;
     ".config/fish".source = ./dotfiles/fish;
     ".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
