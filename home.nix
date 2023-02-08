@@ -6,7 +6,44 @@
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ neovim htop ];
+  home.packages = with pkgs; [
+    neovim
+    htop
+    luajit
+    alacritty
+    arandr
+    automake
+    bat
+    ungoogled-chromium
+    docker
+    fd
+    ffmpeg
+    flameshot
+    fzf
+    gimp
+    gotop
+    haskell-language-server
+    mpv
+    ncdu
+    pandoc
+    pcmanfm
+    ranger
+    redshift
+    ripgrep
+    rofi
+    spotify
+    speedtest-cli
+    sxiv
+    thunderbird
+    ueberzug
+    unzip
+    vim
+    wmname
+    xclip
+    xdg-utils
+    zathura
+    zip
+  ];
 
   home.file = {
     ".config/awesome".source = ./dotfiles/awesome;
