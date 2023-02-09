@@ -53,7 +53,7 @@
     layout = "us";
     xkbVariant = "";
     libinput.enable = true;
-    displayManager.sddm.enable = true;
+    displayManager.lightdm.greeters.slick.enable = true;
     displayManager.defaultSession = "none+awesome";
     windowManager.awesome.enable = true;
     desktopManager.xfce.enable = true;
@@ -87,6 +87,10 @@
     discord
     git
   ];
+
+  environment.sessionVariables = rec {
+    NNN_FIFO="/tmp/nnn.fifo";
+  };
 
   fonts.fonts = with pkgs; [
     noto-fonts
