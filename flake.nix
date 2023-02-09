@@ -19,10 +19,23 @@
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        bcb = lib.nixosSystem {
+        desktop = lib.nixosSystem {
           inherit system;
           modules = [ 
-            ./configuration.nix 
+            ./desktop/configuration.nix 
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.bcb = {
+                imports = [ ./home.nix ];
+              };
+            }
+          ];
+        };
+        testtop = lib.nixosSystem {
+          inherit system;
+          modules = [ 
+            ./testtop/configuration.nix 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
