@@ -60,6 +60,7 @@
   };
 
   virtualisation.docker.enable = true;
+  location.provider = "geoclue2";
   services.redshift.enable = true;
 
   # Enable sound
