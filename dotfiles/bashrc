@@ -31,7 +31,7 @@ bind "set completion-ignore-case on"
 export EDITOR='nvim'
 
 #swap caps lock and escape key
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
 
 #add doom to path
 export PATH="$HOME/.emacs.d/bin:$PATH"
