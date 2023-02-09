@@ -7,6 +7,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    ncpamixer
     kitty
     neovim
     htop
@@ -16,7 +17,6 @@
     automake
     bat
     ungoogled-chromium
-    docker
     fd
     ffmpeg
     flameshot
@@ -29,7 +29,6 @@
     pandoc
     pcmanfm
     ranger
-    redshift
     ripgrep
     rofi
     spotify

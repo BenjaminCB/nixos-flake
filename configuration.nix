@@ -59,6 +59,9 @@
     desktopManager.xfce.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+  services.redshift.enable = true;
+
   # Enable sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
