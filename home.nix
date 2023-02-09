@@ -43,6 +43,8 @@
     xdg-utils
     zathura
     zip
+    gcc
+    nodejs
   ];
 
   home.file = {
