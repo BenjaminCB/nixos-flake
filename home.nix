@@ -70,6 +70,8 @@
         ".xinitrc".source = ./dotfiles/xinitrc;
     };
 
+    # xdg-open to open
+    # $XDG_DATA_DIRS to find .desktop names
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
