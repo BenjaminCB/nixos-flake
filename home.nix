@@ -80,15 +80,24 @@
             "application/pdf" = "org.pwmt.zathura.desktop";
             "image/png" = "sxiv.desktop";
             "image/jpeg" = "sxiv.desktop";
+            "text/html" = "firefox.desktop";
+            "application/x-extension-htm" = "firefox.desktop";
+            "application/x-extension-html" = "firefox.desktop";
+            "application/x-extension-shtml" = "firefox.desktop";
+            "application/xhtml+xml" = "firefox.desktop";
+            "application/x-extension-xhtml" = "firefox.desktop";
+            "application/x-extension-xht" = "firefox.desktop";
+            "application/x-www-browser" = "firefox.desktop";
+            "x-www-browser" = "firefox.desktop";
         };
     };
 
-    home.file."${config.xdg.configHome}/nvim/spell/da.utf-8.spl".source = builtins.fetchurl {
+    home.file.".config/nvim-spell/spell/da.utf-8.spl".source = builtins.fetchurl {
         url = "http://ftp.vim.org/vim/runtime/spell/da.utf-8.spl";
         sha256 = "0cl9q1ln7y4ihbpgawl3rc86zw8xynq9hg4hl8913dbmpcl2nslj";
     };
 
-    home.file."${config.xdg.configHome}/nvim/spell/da.utf-8.sug".source = builtins.fetchurl {
+    home.file.".config/nvim-spell/spell/da.utf-8.sug".source = builtins.fetchurl {
         url = "http://ftp.vim.org/vim/runtime/spell/da.utf-8.sug";
         sha256 = "1pdnp0hq3yll65z6rlmq0l6axvn5450jw5y081vyb4x5850czdxm";
     };
