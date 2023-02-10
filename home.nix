@@ -69,11 +69,4 @@
         ".taskrc".source = ./dotfiles/taskrc;
         ".xinitrc".source = ./dotfiles/xinitrc;
     };
-
-    xdg.mime = {
-        enable = true;
-        defaultApplications = {
-            "application/pdf" = "zathura.desktop";
-        };
-    };
 }
