@@ -49,26 +49,9 @@
         unrar
         p7zip
         poppler_utils
-        highlight
-        ascii-image-converter
+        tree-sitter
+        perl
     ];
-
-    programs.lf = {
-        enable = true;
-        previewer.source = pkgs.writeShellScript "pv.sh" ''
-            #!/bin/sh
-
-            case "$1" in
-                *.tar*) tar tf "$1";;
-                *.zip) unzip -l "$1";;
-                *.rar) unrar l "$1";;
-                *.7z) 7z l "$1";;
-                *.pdf) pdftotext "$1" -;;
-                *.jpg) source "`ueberzug library`" { ImageLayer::add [identifier]="example0" [x]="0" [y]="0" [path]="$1" read } | ImageLayer;;
-                *) highlight -O ansi "$1" || cat "$1";;
-            esac
-        '';
-    };
 
     home.file = {
         ".config/awesome".source = ./dotfiles/awesome;
@@ -80,7 +63,7 @@
         ".config/kitty".source = ./dotfiles/kitty;
         ".config/nvim".source = ./dotfiles/nvim;
         ".config/qutebrowser".source = ./dotfiles/qutebrowser;
-        ".config/ranger".source = ./dotfiles/ranger;
+        #".config/ranger".source = ./dotfiles/ranger;
         ".config/rofi".source = ./dotfiles/rofi;
         ".config/zathura".source = ./dotfiles/zathura;
         ".config/redshift.conf".source = ./dotfiles/redshift.conf;
