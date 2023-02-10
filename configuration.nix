@@ -91,15 +91,6 @@
         NNN_FIFO="/tmp/nnn.fifo";
     };
 
-    xdg.mime = {
-        enable = true;
-        defaultApplications = {
-            "application/pdf" = "zathura.desktop";
-            "image/png" = "sxiv.desktop";
-            "image/jpg" = "sxiv.desktop";
-        };
-    };
-
     fonts.fonts = with pkgs; [
         noto-fonts
         noto-fonts-cjk

@@ -69,4 +69,14 @@
         ".taskrc".source = ./dotfiles/taskrc;
         ".xinitrc".source = ./dotfiles/xinitrc;
     };
+
+    xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+            "application/pdf" = "zathura.desktop";
+            "image/png" = "sxiv.desktop";
+            "image/jpeg" = "sxiv.desktop";
+        };
+    };
+
 }
