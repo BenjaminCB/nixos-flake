@@ -45,6 +45,7 @@
         zip
         gcc
         nodejs
+        nitrogen
     ];
 
     home.file = {
@@ -68,6 +69,7 @@
         ".ghci".source = ./dotfiles/ghci;
         ".taskrc".source = ./dotfiles/taskrc;
         ".xinitrc".source = ./dotfiles/xinitrc;
+        "wallpapers".source = ./wallpapers;
     };
 
     # xdg-open to open
