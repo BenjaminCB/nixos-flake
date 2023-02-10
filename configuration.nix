@@ -91,6 +91,7 @@
 
     environment.sessionVariables = rec {
         NNN_FIFO="/tmp/nnn.fifo";
+        EDITOR="nvim";
     };
 
     fonts.fonts = with pkgs; [
