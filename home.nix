@@ -73,7 +73,7 @@
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
-            "application/pdf" = "zathura.desktop";
+            "application/pdf" = "org.pwmt.zathura.desktop";
             "image/png" = "sxiv.desktop";
             "image/jpeg" = "sxiv.desktop";
         };
