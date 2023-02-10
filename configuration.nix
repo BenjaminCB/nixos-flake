@@ -95,6 +95,8 @@
         enable = true;
         defaultApplications = {
             "application/pdf" = "zathura.desktop";
+            "image/png" = "sxiv.desktop";
+            "image/jpg" = "sxiv.desktop";
         };
     };
 
