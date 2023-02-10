@@ -5,18 +5,14 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../configuration.nix
+    imports = [ # Include the results of the hardware scan.
+        ./hardware-configuration.nix
+        ../configuration.nix
     ];
 
-  services.xserver = {
-    #videoDrivers = [ "nvidia" ];
-    displayManager.setupCommands = ''
-      ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-1 --mode 1920x1080 --pos 3000x536 --rotate normal --output DVI-D-2 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --primary --mode 1920x1080 --pos 1080x331 --rotate normal
-    '';
-  };
-
-
+    services.xserver = {
+        displayManager.setupCommands = ''
+            ${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-1 --mode 1920x1080 --pos 3000x536 --rotate normal --output DVI-D-2 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --primary --mode 1920x1080 --pos 1080x331 --rotate normal
+        '';
+    };
 }
