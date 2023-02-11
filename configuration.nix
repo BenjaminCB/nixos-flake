@@ -67,9 +67,11 @@
     sound.enable = true;
     hardware.pulseaudio.enable = true;
 
-    system.activationScripts.stdio.text = ''
-        cp -r ./dotfiles/nvim ~/.config/nvim
-    '';
+    system.userActivationScripts = {
+        neovimSetup.text = ''
+            cp -r ~/nixos-flake/dotfiles/nvim ~/.config/nvim
+        '';
+    };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.bcb = {
