@@ -67,6 +67,10 @@
     sound.enable = true;
     hardware.pulseaudio.enable = true;
 
+    system.activationScripts.stdio.text = ''
+        cp -r ./dotfiles/nvim ~/.config/nvim
+    '';
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.bcb = {
         isNormalUser = true;

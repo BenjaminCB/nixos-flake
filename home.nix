@@ -64,14 +64,12 @@ in
         poppler_utils
         tree-sitter
         perl
+        yarn
     ];
 
     programs.neovim = {
         enable = true;
         withNodeJs = true;
-        extraConfig = ''
-            source ./dotfiles/nvim/init.vim
-        '';
     };
 
     home.file = {
