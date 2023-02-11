@@ -67,6 +67,8 @@
     sound.enable = true;
     hardware.pulseaudio.enable = true;
 
+    # TODO copying might not be the best solution
+    # original problem is that packer needs write access to config dir
     system.userActivationScripts = {
         neovimSetup.text = ''
             cp -r ~/nixos-flake/dotfiles/nvim ~/.config/nvim
