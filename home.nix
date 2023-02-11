@@ -12,7 +12,6 @@ in
     home.packages = with pkgs; [
         ncpamixer
         kitty
-        htop
         luajit
         alacritty
         arandr
@@ -25,7 +24,6 @@ in
         fzf
         gimp
         gotop
-        haskell-language-server
         mpv
         ncdu
         pandoc
@@ -51,7 +49,6 @@ in
         thunderbird
         ueberzug
         unzip
-        vim
         wmname
         xclip
         xdg-utils
@@ -63,7 +60,6 @@ in
         p7zip
         poppler_utils
         tree-sitter
-        perl
         yarn
     ];
 
