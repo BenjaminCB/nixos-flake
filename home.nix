@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+    link = config.lib.file.mkOutOfStoreSymlink;
+in
 {
     home.username = "bcb";
     home.homeDirectory = "/home/bcb";
@@ -9,7 +12,6 @@
     home.packages = with pkgs; [
         ncpamixer
         kitty
-        neovim
         htop
         luajit
         alacritty
@@ -56,7 +58,6 @@
         zathura
         zip
         gcc
-        nodejs
         nitrogen
         unrar
         p7zip
@@ -64,6 +65,14 @@
         tree-sitter
         perl
     ];
+
+    programs.neovim = {
+        enable = true;
+        withNodeJs = true;
+        extraConfig = ''
+            source ./dotfiles/nvim/init.vim
+        '';
+    };
 
     home.file = {
         ".config/awesome".source = ./dotfiles/awesome;
@@ -73,7 +82,7 @@
         ".config/fish".source = ./dotfiles/fish;
         ".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
         ".config/kitty".source = ./dotfiles/kitty;
-        ".config/nvim".source = ./dotfiles/nvim;
+        #".config/nvim".source = link ./dotfiles/nvim;
         ".config/qutebrowser".source = ./dotfiles/qutebrowser;
         #".config/ranger".source = ./dotfiles/ranger;
         ".config/rofi".source = ./dotfiles/rofi;
