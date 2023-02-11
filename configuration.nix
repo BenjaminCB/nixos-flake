@@ -54,7 +54,7 @@
         libinput.enable = true;
         displayManager.lightdm.greeters.slick.enable = true;
         displayManager.defaultSession = "none+awesome";
-        displayManager.lightdm.background = ./wallpapers/i_am_root.jpg;
+        displayManager.lightdm.background = ./wallpapers/nix-wallpaper-nineish-dark-gray.png;
         windowManager.awesome.enable = true;
         desktopManager.xfce.enable = true;
     };
