@@ -16,7 +16,7 @@
         '';
         sessionCommands = ''
             nitrogen --head=1 --set-zoom-fill ~/wallpapers/Shiomiya_Shiori_Holding_Shy_C_Programming_language_wp_gruvbox.png
-            nitrogen --head=0 --set-auto ~/wallpapers/i_am_root_gruvbox.jpg
+            nitrogen --head=0 --set-auto ~/wallpapers/i_am_root_gruvbox.png
             nitrogen --head=2 --set-auto ~/wallpapers/anime_book_computer_grevbox_neofetch_vim.png
         '';
     };
