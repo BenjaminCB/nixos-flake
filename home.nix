@@ -61,6 +61,7 @@ in
         poppler_utils
         tree-sitter
         yarn
+        insomnia
     ];
 
     programs.neovim = {
