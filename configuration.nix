@@ -61,7 +61,7 @@
 
     virtualisation.docker.rootless = {
         enable = true;
-        setSockerVariable = true;
+        setSocketVariable = true;
     };
 
     location.provider = "geoclue2";
