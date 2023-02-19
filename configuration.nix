@@ -59,7 +59,11 @@
         desktopManager.xfce.enable = true;
     };
 
-    virtualisation.docker.enable = true;
+    virtualisation.docker.rootless = {
+        enable = true;
+        setSockerVariable = true;
+    };
+
     location.provider = "geoclue2";
     services.redshift.enable = true;
 
@@ -85,7 +89,7 @@
     users.users.bcb = {
         isNormalUser = true;
         description = "bcb";
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [ "networkmanager" "wheel" ];
         shell = pkgs.fish;
         packages = with pkgs; [];
     };
