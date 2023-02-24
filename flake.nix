@@ -32,6 +32,19 @@
                     }
                 ];
             };
+            laptop = lib.nixosSystem {
+                inherit system;
+                modules = [
+                    ./laptop/configuration.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.users.bcb = {
+                            imports = [ ./home.nix ];
+                        };
+                    }
+                ];
+            };
             testtop = lib.nixosSystem {
                 inherit system;
                 modules = [
