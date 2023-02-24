@@ -69,6 +69,12 @@ in
         withNodeJs = true;
     };
 
+    programs.git = {
+        enable = true;
+        userEmail = "benjamincb@hotmail.dk";
+        userName = "bcb";
+    };
+
     home.file = {
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
