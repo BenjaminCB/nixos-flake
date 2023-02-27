@@ -56,7 +56,7 @@ local servers = { "tsserver"
                 , "hls"
                 , "elmls"
                 , "purescriptls"
-                , "sumneko_lua"
+                , "lua_ls"
                 , "pylsp"
                 , "yamlls"
                 }
