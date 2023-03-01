@@ -6,7 +6,7 @@ in
 {
     home.username = "bcb";
     home.homeDirectory = "/home/bcb";
-    home.stateVersion = "22.11";
+    home.stateVersion = "23.05";
     programs.home-manager.enable = true;
 
     home.packages = with pkgs; [
