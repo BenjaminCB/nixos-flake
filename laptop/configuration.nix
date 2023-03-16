@@ -8,7 +8,6 @@
     imports = [ # Include the results of the hardware scan.
         ./hardware-configuration.nix
         ../configuration.nix
-        ./home.nix
     ];
 
     services.xserver.displayManager = {
