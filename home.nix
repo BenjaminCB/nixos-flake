@@ -62,6 +62,7 @@ in
         tree-sitter
         yarn
         insomnia
+        texlive.combined.scheme-full
     ];
 
     programs.neovim = {
