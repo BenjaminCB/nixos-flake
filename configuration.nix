@@ -107,6 +107,8 @@
         git
     ];
 
+    programs.fish.enable = true;
+
     environment.sessionVariables = rec {
         NNN_FIFO="/tmp/nnn.fifo";
         EDITOR="nvim";
