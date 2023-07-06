@@ -57,6 +57,7 @@ nnoremap <leader>lc <cmd>lclose<cr>
 nnoremap <C-n> o<Esc>k
 
 filetype plugin on
+filetype indent on
 
 " better readability and spell checking in documents
 " go to the previous spelling mistake and open the suggestions
