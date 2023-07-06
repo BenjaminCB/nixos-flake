@@ -63,6 +63,7 @@ in
         yarn
         insomnia
         texlive.combined.scheme-full
+        coq_8_9
     ];
 
     programs.neovim = {
