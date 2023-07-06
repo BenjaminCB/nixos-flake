@@ -66,6 +66,8 @@ in
         coq_8_9
     ];
 
+    programs.fish.enable = true;
+
     programs.neovim = {
         enable = true;
         withNodeJs = true;
