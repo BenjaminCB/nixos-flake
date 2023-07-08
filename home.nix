@@ -64,6 +64,7 @@ in
         insomnia
         texlive.combined.scheme-full
         coq_8_9
+        nodejs
     ];
 
     programs.neovim = {
