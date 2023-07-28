@@ -2,6 +2,7 @@
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
+    dev-environments = (import ./scripts/dev-environments.nix { inherit pkgs; });
 in
 {
     home.username = "bcb";
@@ -9,63 +10,65 @@ in
     home.stateVersion = "22.11";
     programs.home-manager.enable = true;
 
-    home.packages = with pkgs; [
-        ncpamixer
-        kitty
-        luajit
-        alacritty
-        arandr
-        automake
-        bat
-        ungoogled-chromium
-        fd
-        ffmpeg
-        flameshot
-        fzf
-        gimp
-        gotop
-        mpv
-        ncdu
-        pandoc
-        pcmanfm
-        (ranger.overrideAttrs (r: {
-          preConfigure = r.preConfigure + ''
-            # Specify path to Überzug
-            substituteInPlace ranger/ext/img_display.py \
-              --replace "Popen(['ueberzug'" \
-                        "Popen(['${pkgs.ueberzug}/bin/ueberzug'"
+    home.packages =
+        [ dev-environments ] ++
+        with pkgs; [
+            ncpamixer
+            kitty
+            luajit
+            alacritty
+            arandr
+            automake
+            bat
+            ungoogled-chromium
+            fd
+            ffmpeg
+            flameshot
+            fzf
+            gimp
+            gotop
+            mpv
+            ncdu
+            pandoc
+            pcmanfm
+            (ranger.overrideAttrs (r: {
+              preConfigure = r.preConfigure + ''
+                # Specify path to Überzug
+                substituteInPlace ranger/ext/img_display.py \
+                  --replace "Popen(['ueberzug'" \
+                            "Popen(['${pkgs.ueberzug}/bin/ueberzug'"
 
-            # Use Überzug as the default method
-            substituteInPlace ranger/config/rc.conf \
-              --replace 'set preview_images_method w3m' \
-                        'set preview_images_method ueberzug'
-          '';
-        }))
-        ripgrep
-        rofi
-        spotify
-        speedtest-cli
-        sxiv
-        thunderbird
-        ueberzug
-        unzip
-        wmname
-        xclip
-        xdg-utils
-        zathura
-        zip
-        gcc
-        nitrogen
-        unrar
-        p7zip
-        poppler_utils
-        tree-sitter
-        yarn
-        insomnia
-        texlive.combined.scheme-full
-        coq_8_9
-        nodejs
-    ];
+                # Use Überzug as the default method
+                substituteInPlace ranger/config/rc.conf \
+                  --replace 'set preview_images_method w3m' \
+                            'set preview_images_method ueberzug'
+              '';
+            }))
+            ripgrep
+            rofi
+            spotify
+            speedtest-cli
+            sxiv
+            thunderbird
+            ueberzug
+            unzip
+            wmname
+            xclip
+            xdg-utils
+            zathura
+            zip
+            gcc
+            nitrogen
+            unrar
+            p7zip
+            poppler_utils
+            tree-sitter
+            yarn
+            insomnia
+            texlive.combined.scheme-full
+            coq_8_9
+            nodejs
+        ];
 
     programs.neovim = {
         enable = true;

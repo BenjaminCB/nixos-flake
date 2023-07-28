@@ -106,8 +106,6 @@
         discord
         git
     ]
-    ++
-    [ (import ./scripts/dev-environments.nix { inherit pkgs; }) ];
 
     programs.fish.enable = true;
 
