@@ -2,7 +2,7 @@
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
-    dev-environments = (import ./scripts/dev-environments.nix { inherit pkgs; });
+    dev-environments = import ./scripts/dev-environments.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -12,7 +12,7 @@ in
 
     home.packages =
         [ dev-environments ] ++
-        with pkgs; [
+        (with pkgs; [
             ncpamixer
             kitty
             luajit
@@ -68,7 +68,7 @@ in
             texlive.combined.scheme-full
             coq_8_9
             nodejs
-        ];
+        ]);
 
     programs.neovim = {
         enable = true;

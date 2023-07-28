@@ -105,7 +105,7 @@
         firefox
         discord
         git
-    ]
+    ];
 
     programs.fish.enable = true;
 
