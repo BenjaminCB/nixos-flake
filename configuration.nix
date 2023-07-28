@@ -75,7 +75,7 @@
     # original problem is that packer needs write access to config dir
     system.userActivationScripts = {
         neovimSetup.text = ''
-            cp -r ~/nixos-flake/dotfiles/nvim ~/.config/nvim
+            cp -r ~/nixos-flake/dotfiles/nvim ~/.config/
         '';
     };
 
