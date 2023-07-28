@@ -79,12 +79,6 @@
         '';
     };
 
-    system.activationScripts = {
-        easyBash.text = ''
-            ln -s /bin/sh /usr/bin/bash
-        '';
-    };
-
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.bcb = {
         isNormalUser = true;
