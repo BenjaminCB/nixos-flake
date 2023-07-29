@@ -47,17 +47,19 @@
     };
 
     # Configure keymap in X11
-    services.xserver = {
-        enable = true;
-        layout = "us";
-        xkbVariant = "";
-        libinput.enable = true;
-        displayManager.lightdm.greeters.slick.enable = true;
-        displayManager.defaultSession = "none+awesome";
-        displayManager.lightdm.background = ./wallpapers/nix-wallpaper-nineish-dark-gray.png;
-        windowManager.awesome.enable = true;
-        desktopManager.xfce.enable = true;
-    };
+    # services.xserver = {
+        # enable = true;
+        # layout = "us";
+        # xkbVariant = "";
+        # libinput.enable = true;
+        # displayManager.lightdm.greeters.slick.enable = true;
+        # displayManager.defaultSession = "none+awesome";
+        # displayManager.lightdm.background = ./wallpapers/nix-wallpaper-nineish-dark-gray.png;
+        # windowManager.awesome.enable = true;
+        # desktopManager.xfce.enable = true;
+    # };
+
+    programs.hyprland.enable = true;
 
     virtualisation.docker.rootless = {
         enable = true;
