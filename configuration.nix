@@ -60,10 +60,14 @@
     # };
     services.xserver = {
         enable = true;
-        displayManager.gdm = {
+        displayManager.sddm = {
             enable = true;
-            wayland = true;
+            theme = "sugar-dark";
         };
+        #displayManager.gdm = {
+            #enable = true;
+            #wayland = true;
+        #};
     };
 
     programs.hyprland = {

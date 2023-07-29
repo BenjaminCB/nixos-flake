@@ -3,6 +3,7 @@
 let
     link = config.lib.file.mkOutOfStoreSymlink;
     dev-environments = import ./scripts/dev-environments.nix { inherit pkgs; };
+    gruvboxplus = import ./gtk/gruvboxplus.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -81,6 +82,23 @@ in
         enable = true;
         userEmail = "benjamincb@hotmail.dk";
         userName = "bcb";
+    };
+
+    gtk = {
+        enable = true;
+        cursorTheme.package = pkgs.bibata-cursors;
+        cursorTheme.name = "Bibata-Modern-Ice";
+        theme.package = pkgs.adw-gtk3;
+        theme.name = "adw-gtk3";
+        iconTheme.package = gruvboxplus;
+        iconTheme.name = "GruvboxPlus";
+    };
+
+    qt = {
+        enable = true;
+        platformTheme = "gtk";
+        style.name = "breeze-dark";
+        style.package = pkgs.adwaita-qt;
     };
 
     home.file = {
