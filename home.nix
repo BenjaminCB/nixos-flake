@@ -68,6 +68,7 @@ in
             texlive.combined.scheme-full
             coq_8_9
             nodejs
+            acpi
         ]);
 
     programs.neovim = {
