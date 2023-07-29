@@ -63,7 +63,7 @@
         layout = "us";
         xkbVariant = "";
         libinput.enable = true;
-        displayManeger.sddm = {
+        displayManager.sddm = {
             enable = true;
             theme = "breeze";
             wayland = true;
