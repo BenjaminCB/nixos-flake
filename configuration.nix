@@ -63,9 +63,8 @@
         layout = "us";
         xkbVariant = "";
         libinput.enable = true;
-        displayManager.sddm = {
+        displayManager.gdm = {
             enable = true;
-            theme = "breeze";
             wayland = true;
         };
     };
