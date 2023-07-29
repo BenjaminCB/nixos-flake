@@ -58,8 +58,22 @@
         # windowManager.awesome.enable = true;
         # desktopManager.xfce.enable = true;
     # };
+    services.xserver = {
+        enable = true;
+        layout = "us";
+        xkbVariant = "";
+        libinput.enable = true;
+        displayManeger.sddm = {
+            enable = true;
+            theme = "breeze";
+            wayland = true;
+        };
+    };
 
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
+    };
 
     virtualisation.docker.rootless = {
         enable = true;
