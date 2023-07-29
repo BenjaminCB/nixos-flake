@@ -45,7 +45,8 @@ in
               '';
             }))
             ripgrep
-            rofi
+            # rofi
+            rofi-wayland
             spotify
             speedtest-cli
             sxiv
