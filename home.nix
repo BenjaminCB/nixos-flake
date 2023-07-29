@@ -2,8 +2,8 @@
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
-    dev-environments = import ./scripts/dev-environments.nix { inherit pkgs; };
-    gruvboxplus = import ./gtk/gruvboxplus.nix { inherit pkgs; };
+    dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
+    gruvboxplus = import ./derivations/gruvboxplus.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
