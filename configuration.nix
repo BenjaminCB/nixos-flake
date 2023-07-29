@@ -62,7 +62,7 @@
         enable = true;
         displayManager.sddm = {
             enable = true;
-            theme = "sugar-dark";
+            theme = "${import ./derivations/sddm-sugar-dark.nix { inherit pkgs; }}";
         };
         #displayManager.gdm = {
             #enable = true;
