@@ -12,4 +12,4 @@ pkgs.stdenv.mkDerivation {
         mkdir -p $out
         cp -R ./* $out/
     '';
-};
+}
