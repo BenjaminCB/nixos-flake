@@ -86,7 +86,7 @@ in
         userName = "bcb";
     };
 
-    services.dunst {
+    services.dunst = {
         enable = true;
         configFile = "${dracula-dunst}/dunstrc";
     };
