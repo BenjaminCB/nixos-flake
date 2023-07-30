@@ -4,7 +4,6 @@ let
     link = config.lib.file.mkOutOfStoreSymlink;
     dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
     gruvboxplus = import ./derivations/gruvboxplus.nix { inherit pkgs; };
-    dracula-dunst = import ./derivations/dracula-dunst.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -106,7 +105,7 @@ in
     };
 
     home.file = {
-        # ".config/dunst".source = dracula-dunst;
+        ".config/dunst".source = ./dotfiles/dunst;
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;
