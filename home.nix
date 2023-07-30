@@ -106,7 +106,7 @@ in
     };
 
     home.file = {
-        ".config/dunst".source = "${dracula-dunst}";
+        ".config/dunst".source = dracula-dunst;
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;

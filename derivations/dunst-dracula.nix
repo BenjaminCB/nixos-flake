@@ -10,6 +10,6 @@ pkgs.stdenv.mkDerivation {
     };
     installPhase = ''
         mkdir -p $out
-        cp ./dunstrc $out/dunstrc
+        cp $src/dunstrc $out/dunstrc
     '';
 }
