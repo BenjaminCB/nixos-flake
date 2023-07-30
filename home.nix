@@ -115,6 +115,8 @@ in
         ".config/rofi".source = ./dotfiles/rofi;
         ".config/zathura".source = ./dotfiles/zathura;
         ".config/redshift.conf".source = ./dotfiles/redshift.conf;
+        ".config/tofi".source = ./dotfiles/tofi;
+        ".config/hypr".source = ./dotfiles/hypr;
         ".jira.d".source = ./dotfiles/jira.d;
         ".vieb".source = ./dotfiles/vieb;
         ".Xresources".source = ./dotfiles/Xresources;
