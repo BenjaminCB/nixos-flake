@@ -4,6 +4,7 @@ let
     link = config.lib.file.mkOutOfStoreSymlink;
     dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
     gruvboxplus = import ./derivations/gruvboxplus.nix { inherit pkgs; };
+    dracula-dunst = import ./derivations/dracula-dunst.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -84,6 +85,8 @@ in
         userName = "bcb";
     };
 
+    services.dunst.enable = true;
+
     gtk = {
         enable = true;
         cursorTheme.package = pkgs.bibata-cursors;
@@ -105,7 +108,7 @@ in
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;
-        ".config/dunst".source = ./dotfiles/dunst;
+        ".config/dunst".source = "${dracula-dunst}";
         ".config/fish".source = ./dotfiles/fish;
         ".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
         ".config/kitty".source = ./dotfiles/kitty;
