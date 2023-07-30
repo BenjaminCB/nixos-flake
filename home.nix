@@ -86,10 +86,7 @@ in
         userName = "bcb";
     };
 
-    services.dunst = {
-        enable = true;
-        configFile = "${dracula-dunst}/dunstrc";
-    };
+    services.dunst.enable = true;
 
     gtk = {
         enable = true;
@@ -109,6 +106,7 @@ in
     };
 
     home.file = {
+        ".config/dunst".source = "${dracula-dunst}";
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;
