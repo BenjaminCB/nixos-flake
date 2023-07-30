@@ -32,19 +32,21 @@ in
             ncdu
             pandoc
             pcmanfm
-            (ranger.overrideAttrs (r: {
-              preConfigure = r.preConfigure + ''
-                # Specify path to Überzug
-                substituteInPlace ranger/ext/img_display.py \
-                  --replace "Popen(['ueberzug'" \
-                            "Popen(['${pkgs.ueberzug}/bin/ueberzug'"
-
-                # Use Überzug as the default method
-                substituteInPlace ranger/config/rc.conf \
-                  --replace 'set preview_images_method w3m' \
-                            'set preview_images_method ueberzug'
-              '';
-            }))
+            # (ranger.overrideAttrs (r: {
+              # preConfigure = r.preConfigure + ''
+                # # Specify path to Überzug
+                # substituteInPlace ranger/ext/img_display.py \
+                  # --replace "Popen(['ueberzug'" \
+                            # "Popen(['${pkgs.ueberzug}/bin/ueberzug'"
+#
+                # # Use Überzug as the default method
+                # substituteInPlace ranger/config/rc.conf \
+                  # --replace 'set preview_images_method w3m' \
+                            # 'set preview_images_method ueberzug'
+              # '';
+            # }))
+            foot
+            lsix
             ripgrep
             # rofi
             tofi
@@ -52,7 +54,7 @@ in
             speedtest-cli
             sxiv
             thunderbird
-            ueberzug
+            # ueberzug
             unzip
             wmname
             xclip
