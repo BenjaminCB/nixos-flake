@@ -2,6 +2,6 @@
 
 {
     home.file = {
-        ".config/hypr/monitors.conf".source = ../dotfiles/hypr/desktop-monitors.conf;
+        ".config/hypr-extra/monitors.conf".source = ../dotfiles/hypr/desktop-monitors.conf;
     };
 }
