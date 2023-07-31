@@ -27,7 +27,7 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.users.bcb = {
-                            imports = [ ./home.nix ];
+                            imports = [ ./home.nix ./desktop/home.nix ];
                         };
                     }
                 ];
@@ -40,7 +40,7 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.users.bcb = {
-                            imports = [ ./home.nix ];
+                            imports = [ ./home.nix ./laptop/home.nix ];
                         };
                     }
                 ];
