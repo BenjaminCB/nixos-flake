@@ -14,65 +14,42 @@ in
     home.packages =
         [ dev-environments ] ++
         (with pkgs; [
-            ncpamixer
-            kitty
-            luajit
-            alacritty
-            arandr
-            automake
-            bat
-            ungoogled-chromium
-            fd
-            ffmpeg
-            flameshot
-            fzf
-            gimp
-            gotop
-            mpv
-            ncdu
-            pandoc
-            pcmanfm
-            # (ranger.overrideAttrs (r: {
-              # preConfigure = r.preConfigure + ''
-                # # Specify path to Überzug
-                # substituteInPlace ranger/ext/img_display.py \
-                  # --replace "Popen(['ueberzug'" \
-                            # "Popen(['${pkgs.ueberzug}/bin/ueberzug'"
-#
-                # # Use Überzug as the default method
-                # substituteInPlace ranger/config/rc.conf \
-                  # --replace 'set preview_images_method w3m' \
-                            # 'set preview_images_method ueberzug'
-              # '';
-            # }))
-            lsix
-            ripgrep
-            # rofi
+            ### gui applications
+            ungoogled-chromium gimp mpv pcmanfm spotify
+            kitty alacritty insomnia thunderbird zathura sxiv
+
+            # rofi -- not wayland compatible
             tofi
-            spotify
-            speedtest-cli
-            sxiv
-            thunderbird
-            # ueberzug
-            unzip
-            wmname
-            xclip
-            xdg-utils
-            zathura
-            zip
-            gcc
-            # nitrogen
+
+            # arandr -- not wayland compatible
+            # flameshot -- not wayland compatible
+
+            ### term applications
+            ncpamixer
+            gotop
+            # ranger is not working with ueberzug
+            # (ranger.overrideAttrs (r: {
+            #   preConfigure = r.preConfigure + ''
+            #     # Specify path to Überzug
+            #     substituteInPlace ranger/ext/img_display.py \
+            #       --replace "Popen(['ueberzug'" \
+            #                 "Popen(['${pkgs.ueberzug}/bin/ueberzug'"
+            #     # Use Überzug as the default method
+            #     substituteInPlace ranger/config/rc.conf \
+            #       --replace 'set preview_images_method w3m' \
+            #                 'set preview_images_method ueberzug'
+            #   '';
+            # }))
+
+            ### utilities
+            automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
+            speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
+            unrar p7zip tree-sitter acpi
+            # nitrogen -- not wayland compatible, or maybe it is? but using hyprpaper instead
             hyprpaper
-            unrar
-            p7zip
-            poppler_utils
-            tree-sitter
-            yarn
-            insomnia
-            texlive.combined.scheme-full
-            coq_8_9
-            nodejs
-            acpi
+
+            ### programming stuff
+            luajit gcc yarn texlive.combined.scheme-full coq_8_9 nodejs
         ]);
 
     programs.foot = {
