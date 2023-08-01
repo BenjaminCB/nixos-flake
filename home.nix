@@ -61,7 +61,8 @@ in
             zathura
             zip
             gcc
-            nitrogen
+            # nitrogen
+            hyprpaper
             unrar
             p7zip
             poppler_utils

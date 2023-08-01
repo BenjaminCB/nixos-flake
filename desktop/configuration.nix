@@ -25,4 +25,7 @@
     };
 
     programs.hyprland.nvidiaPatches = true;
+    # Most wayland compositors need this
+    # from vimjoyer nixos + hyprland video
+    hardware.nvidia.modesetting.enable = true;
 }

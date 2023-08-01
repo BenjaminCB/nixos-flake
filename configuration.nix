@@ -75,17 +75,33 @@
         xwayland.enable = true;
     };
 
+    # Hint electron apps to use wayland
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     virtualisation.docker.rootless = {
         enable = true;
         setSocketVariable = true;
     };
+
+    # From vimjoyer nixos + hyprland video
+    hardware.opengl.enable = true;
 
     # location.provider = "geoclue2";
     # services.redshift.enable = true;
 
     # Enable sound
     sound.enable = true;
-    hardware.pulseaudio.enable = true;
+    security.rtkit.enable = true;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        jack.enable = true;
+    };
+
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     # TODO copying might not be the best solution
     # original problem is that packer needs write access to config dir
