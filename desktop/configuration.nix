@@ -23,4 +23,6 @@
             nitrogen --head=2 --set-auto ~/wallpapers/anime_book_computer_grevbox_neofetch_vim.png
         '';
     };
+
+    programs.hyprland.nvidiaPatches = true;
 }
