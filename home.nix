@@ -53,7 +53,7 @@ in
         ]);
 
     programs.foot = {
-        enable = true;
+        enable = false;
         server.enable = true;
         settings.main = {
             term = "xterm-256color";
@@ -62,6 +62,18 @@ in
         };
         settings.mouse.hide-when-typing = "yes";
         settings.colors.background = "282828";
+    };
+
+    programs.wezterm = {
+        enable = true;
+        colorSchemes.myTheme.background = "#282828";
+        extraConfig = ''
+            return {
+                font = wezterm.font("FiraCode"),
+                font_size = 18.0,
+                color_scheme = "myTheme"
+            }
+        '';
     };
 
     programs.lf = {
