@@ -7,9 +7,13 @@
             url = github:nix-community/home-manager;
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        hyprland-contrib = {
+            url = "github:hyprwm/contrib";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, home-manager }:
+    outputs = { self, nixpkgs, home-manager, ... }@attrs:
     let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
@@ -31,6 +35,7 @@
                         };
                     }
                 ];
+                specialArgs = attrs;
             };
             laptop = lib.nixosSystem {
                 inherit system;
@@ -44,6 +49,7 @@
                         };
                     }
                 ];
+                specialArgs = attrs;
             };
             testtop = lib.nixosSystem {
                 inherit system;
@@ -57,6 +63,7 @@
                         };
                     }
                 ];
+                specialArgs = attrs;
             };
         };
     };
