@@ -31,6 +31,7 @@
                     home-manager.users.bcb = {
                         imports = homes;
                     };
+                    home-manager.extraSpecialArgs = attrs;
                 }
             ];
             specialArgs = attrs;
