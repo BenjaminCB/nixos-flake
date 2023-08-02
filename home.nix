@@ -2,6 +2,7 @@
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
+    xwaylandvideobridge = import ./derivations/xwayland-video-bridge.nix { inherit pkgs; };
     dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
     work-monitor = import ./derivations/work-monitor.nix { inherit pkgs; };
     gruvboxplus = import ./derivations/gruvboxplus.nix { inherit pkgs; };
@@ -13,7 +14,7 @@ in
     programs.home-manager.enable = true;
 
     home.packages =
-        [ dev-environments work-monitor ] ++
+        [ dev-environments work-monitor xwaylandvideobridge ] ++
         (with pkgs; [
             ### gui applications
             ungoogled-chromium gimp mpv pcmanfm spotify
