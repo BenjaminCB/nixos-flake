@@ -1,7 +1,7 @@
 { pkgs }:
 
 pkgs.stdenv.mkDerivation rec {
-  pname = "xwaylandvideobridge";
+  name = "xwaylandvideobridge";
   # version = "unstable-2023-03-28";
 
   src = pkgs.fetchFromGitLab {
