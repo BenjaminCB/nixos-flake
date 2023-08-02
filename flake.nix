@@ -21,49 +21,36 @@
             config.allowUnfree = true;
         };
         lib = nixpkgs.lib;
+        nixosSystem = { system, pkgs, configuration, homes }: lib.nixosSystem {
+            inherit system;
+            modules = [
+                configuration
+                home-manager.nixosModules.home-manager {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.bcb = {
+                        imports = homes;
+                    };
+                }
+            ];
+            specialArgs = attrs;
+        };
     in {
         nixosConfigurations = {
-            desktop = lib.nixosSystem {
-                inherit system;
-                modules = [
-                    ./desktop/configuration.nix
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.bcb = {
-                            imports = [ ./home.nix ./desktop/home.nix ];
-                        };
-                    }
-                ];
-                specialArgs = attrs;
+            desktop = nixosSystem {
+                inherit system pkgs;
+                configuration = ./desktop/configuration.nix;
+                homes = [ ./home.nix ./desktop/home.nix ];
             };
-            laptop = lib.nixosSystem {
-                inherit system;
-                modules = [
-                    ./laptop/configuration.nix
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.bcb = {
-                            imports = [ ./home.nix ./laptop/home.nix ];
-                        };
-                    }
-                ];
-                specialArgs = attrs;
+            laptop = nixosSystem {
+                inherit system pkgs;
+                configuration = ./laptop/configuration.nix;
+                homes = [ ./home.nix ./laptop/home.nix ];
             };
-            testtop = lib.nixosSystem {
-                inherit system;
-                modules = [
-                    ./testtop/configuration.nix
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.bcb = {
-                            imports = [ ./home.nix ];
-                        };
-                    }
-                ];
-                specialArgs = attrs;
+            testtop = nixosSystem {
+                inherit system pkgs;
+                configuration = ./testtop/configuration.nix;
+                homes = [ ./home.nix ];
             };
         };
     };
