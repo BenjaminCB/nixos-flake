@@ -25,6 +25,7 @@ in
 
         # arandr -- not wayland compatible
         # flameshot -- does not seem to work
+        grim slurp
 
         ### term applications
         ncpamixer
