@@ -7,10 +7,10 @@ pkgs.writeScriptBin "dev-environments" ''
     case "$environment" in
         "typescript")
             echo "typescript"
-            nix-shell ~/nixos-flake/derivations/environments/foresting-tomorrow.nix
         ;;
         "foresting-tomorrow")
             echo "foresting-tomorrow"
+            nix-shell ~/nixos-flake/derivations/environments/foresting-tomorrow.nix
         ;;
     esac
 ''
