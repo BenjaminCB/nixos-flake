@@ -100,6 +100,11 @@ in
         withNodeJs = true;
     };
 
+    programs.fish = {
+        enable = true;
+        interactiveShellInit = "echo 'fish shell init'";
+    };
+
     programs.git = {
         enable = true;
         delta.enable = true;
@@ -131,7 +136,7 @@ in
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;
-        ".config/fish".source = ./dotfiles/fish;
+        #".config/fish".source = ./dotfiles/fish;
         ".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
         ".config/kitty".source = ./dotfiles/kitty;
         #".config/nvim".source = link ./dotfiles/nvim;
