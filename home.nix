@@ -100,9 +100,15 @@ in
         withNodeJs = true;
     };
 
+    # enabled in configuration.nix since we are setting user shell in that file as well
     programs.fish = {
-        enable = true;
-        interactiveShellInit = "echo 'fish shell init'";
+        interactiveShellInit = ''
+            echo 'fish shell init'
+        '';
+
+        plugins = [
+            { name = "bobthefish"; src = pkgs.fishPlugins.bobthefish; }
+        ];
     };
 
     programs.git = {
