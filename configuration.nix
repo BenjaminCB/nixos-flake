@@ -116,8 +116,12 @@
         isNormalUser = true;
         description = "bcb";
         extraGroups = [ "networkmanager" "wheel" ];
-        shell = pkgs.fish;
         packages = with pkgs; [];
+    };
+
+    users.defaultUserShell = pkgs.fish;
+    programs.fish = {
+        enable = true;
     };
 
     # Allow unfree packages
@@ -126,16 +130,15 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        vim
-        wget
-        firefox
-        discord
-        git
+        vim wget firefox discord git
         libsForQt5.qt5.qtquickcontrols2
         libsForQt5.qt5.qtgraphicaleffects
+        fishPlugins.bobthefish
+        fishPlugins.z
+        fishPlugins.puffer
+        fishPlugins.async-prompt
+        fishPlugins.forgit
     ];
-
-    programs.fish.enable = true;
 
     environment.sessionVariables = rec {
         NNN_FIFO="/tmp/nnn.fifo";
