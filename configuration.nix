@@ -133,10 +133,9 @@
         vim wget firefox discord git
         libsForQt5.qt5.qtquickcontrols2
         libsForQt5.qt5.qtgraphicaleffects
-        fishPlugins.bobthefish
+        fishPlugins.hydro
         fishPlugins.z
         fishPlugins.puffer
-        fishPlugins.async-prompt
         fishPlugins.forgit
     ];
 
