@@ -122,6 +122,9 @@
     users.defaultUserShell = pkgs.fish;
     programs.fish = {
         enable = true;
+        interactiveShellInit = ''
+            afetch
+        '';
     };
 
     # Allow unfree packages
@@ -137,6 +140,7 @@
         fishPlugins.z
         fishPlugins.puffer
         fishPlugins.forgit
+        afetch
     ];
 
     environment.sessionVariables = rec {
