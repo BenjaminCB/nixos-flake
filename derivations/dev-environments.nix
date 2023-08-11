@@ -10,7 +10,7 @@ pkgs.writeScriptBin "dev-environments" ''
         ;;
         "foresting-tomorrow")
             echo "foresting-tomorrow"
-            nix-shell ~/nixos-flake/derivations/environments/foresting-tomorrow.nix
+            nix-shell ~/nixos-flake/derivations/environments/foresting-tomorrow.nix --run fish
         ;;
     esac
 ''
