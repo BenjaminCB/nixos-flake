@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, secrets, ... }:
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
     xwaylandvideobridge = import ./derivations/xwayland-video-bridge.nix { inherit pkgs; };
-    dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
+    dev-environments = import ./derivations/dev-environments.nix { inherit pkgs secrets; };
     dir-jumper = import ./derivations/dir-jumper.nix { inherit pkgs; };
     work-monitor = import ./derivations/work-monitor.nix { inherit pkgs; };
     gruvboxplus = import ./derivations/gruvboxplus.nix { inherit pkgs; };
