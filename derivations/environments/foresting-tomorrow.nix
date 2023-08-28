@@ -9,6 +9,7 @@
         docker
         fzf
         cowsay
+        git-crypt
     ];
 
     shellHook = ''
