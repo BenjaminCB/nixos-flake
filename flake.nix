@@ -21,7 +21,6 @@
             config.allowUnfree = true;
         };
         lib = nixpkgs.lib;
-        secrets = import ./secrets.nix;
         nixosSystem = { system, pkgs, configuration, homes }: lib.nixosSystem {
             inherit system;
             modules = [
@@ -32,10 +31,10 @@
                     home-manager.users.bcb = {
                         imports = homes;
                     };
-                    home-manager.extraSpecialArgs = attrs // { inherit secrets; };
+                    home-manager.extraSpecialArgs = attrs;
                 }
             ];
-            specialArgs = attrs // { inherit secrets; };
+            specialArgs = attrs;
         };
     in {
         nixosConfigurations = {
