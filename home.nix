@@ -55,11 +55,11 @@ in
         luajit gcc yarn texlive.combined.scheme-full coq_8_9 nodejs
     ]);
 
-    programs.foot = import './nix-dotfiles/foot.nix';
-    programs.wezterm = import './nix-dotfiles/wezterm.nix';
-    programs.lf = import './nix-dotfiles/lf.nix' { inherit pkgs; };
-    programs.neovim = import './nix-dotfiles/neovim.nix';
-    programs.git = import './nix-dotfiles/git.nix';
+    programs.foot = import ./nix-dotfiles/foot.nix;
+    programs.wezterm = import ./nix-dotfiles/wezterm.nix;
+    programs.lf = import ./nix-dotfiles/lf.nix { inherit pkgs; };
+    programs.neovim = import ./nix-dotfiles/neovim.nix;
+    programs.git = import ./nix-dotfiles/git.nix;
 
     services.dunst.enable = true;
 
