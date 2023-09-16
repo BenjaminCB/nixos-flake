@@ -6,7 +6,6 @@ let
     dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
     zfzf = import ./derivations/zfzf.nix { inherit pkgs; };
     work-monitor = import ./derivations/work-monitor.nix { inherit pkgs; };
-    gruvboxplus = import ./derivations/gruvboxplus.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -47,24 +46,10 @@ in
     programs.neovim = import ./nix-dotfiles/neovim.nix;
     programs.git = import ./nix-dotfiles/git.nix;
 
+    gtk = import ./nix-dotfiles/gtk.nix { inherit pkgs; };
+    qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
+
     services.dunst.enable = true;
-
-    gtk = {
-        enable = true;
-        cursorTheme.package = pkgs.bibata-cursors;
-        cursorTheme.name = "Bibata-Modern-Ice";
-        theme.package = pkgs.adw-gtk3;
-        theme.name = "adw-gtk3";
-        iconTheme.package = gruvboxplus;
-        iconTheme.name = "GruvboxPlus";
-    };
-
-    qt = {
-        enable = true;
-        platformTheme = "gtk";
-        style.name = "breeze-dark";
-        style.package = pkgs.adwaita-qt;
-    };
 
     home.file = {
         ".config/dunst".source = ./dotfiles/dunst;
