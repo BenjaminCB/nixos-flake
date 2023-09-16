@@ -55,58 +55,11 @@ in
         luajit gcc yarn texlive.combined.scheme-full coq_8_9 nodejs
     ]);
 
-    programs.foot = {
-        enable = false;
-        server.enable = true;
-        settings.main = {
-            term = "xterm-256color";
-            font = "FiraCode:size=18";
-            dpi-aware = "yes";
-        };
-        settings.mouse.hide-when-typing = "yes";
-        settings.colors.background = "282828";
-    };
-
-    programs.wezterm = {
-        enable = true;
-        colorSchemes.myTheme.background = "#282828";
-        extraConfig = ''
-            return {
-                font = wezterm.font("FiraCode"),
-                font_size = 18.0,
-                color_scheme = "myTheme",
-                hide_mouse_cursor_when_typing = false
-            }
-        '';
-    };
-
-    programs.lf = {
-        enable = true;
-        previewer.source = pkgs.writeShellScript "pv.sh" ''
-            case "$1" in
-                *.tar*) ${pkgs.gnutar}/bin/tar tf "$1";;
-                *.zip) ${pkgs.unzip}/bin/unzip -l "$1";;
-                *.rar) ${pkgs.unrar}/bin/unrar l "$1";;
-                *.7z) ${pkgs.p7zip}/bin/7z l "$1";;
-                *.png) ${pkgs.libsixel}/bin/img2sixel "$1";;
-                *.jpg) ${pkgs.libsixel}/bin/img2sixel "$1";;
-                *.jpeg) ${pkgs.libsixel}/bin/img2sixel "$1";;
-                *) highlight -O ansi "$1" || cat "$1";;
-            esac
-        '';
-    };
-
-    programs.neovim = {
-        enable = true;
-        withNodeJs = true;
-    };
-
-    programs.git = {
-        enable = true;
-        delta.enable = true;
-        userEmail = "benjamincb@hotmail.dk";
-        userName = "bcb";
-    };
+    programs.foot = import './nix-dotfiles/foot.nix';
+    programs.wezterm = import './nix-dotfiles/wezterm.nix';
+    programs.lf = import './nix-dotfiles/lf.nix' { inherit pkgs; };
+    programs.neovim = import './nix-dotfiles/neovim.nix';
+    programs.git = import './nix-dotfiles/git.nix';
 
     services.dunst.enable = true;
 

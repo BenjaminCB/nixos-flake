@@ -1,0 +1,4 @@
+{
+    enable = true;
+    withNodeJs = true;
+}
