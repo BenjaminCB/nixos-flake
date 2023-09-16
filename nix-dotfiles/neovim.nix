@@ -3,5 +3,5 @@
     withNodeJs = true;
     viAlias = true;
     vimAlias = true;
-    vimDiffAlias = true;
+    vimdiffAlias = true;
 }
