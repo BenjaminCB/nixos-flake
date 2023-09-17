@@ -4,4 +4,7 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    extraLuaConfig = ''
+        ${builtins.readFile ./init.lua}
+    '';
 }
