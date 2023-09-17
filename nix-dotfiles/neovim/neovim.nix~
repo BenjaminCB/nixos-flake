@@ -5,6 +5,6 @@
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
-        ${builtins.readFile ./options.lua}
+        ${builtins.readFile ./init.lua}
     '';
 }
