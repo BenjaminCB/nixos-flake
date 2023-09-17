@@ -103,14 +103,6 @@
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-    # TODO copying might not be the best solution
-    # original problem is that packer needs write access to config dir
-    system.userActivationScripts = {
-        neovimSetup.text = ''
-            cp -r ~/nixos-flake/dotfiles/nvim ~/.config/
-        '';
-    };
-
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.bcb = {
         isNormalUser = true;
