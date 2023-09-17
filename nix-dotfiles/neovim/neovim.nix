@@ -1,6 +1,6 @@
 { pkgs }:
 
-let 
+let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
 in
@@ -21,5 +21,8 @@ in
                 let g:gruvbox_conrast_dark = 'hard'
             '';
         }
+        nvim-lspconfig
+        nvim-compe
+        telescope-nvim
     ];
 }
