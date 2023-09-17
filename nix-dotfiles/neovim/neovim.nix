@@ -23,6 +23,12 @@ in
         }
         nvim-lspconfig
         nvim-compe
-        telescope-nvim
+        # popup-nvim
+        # plenary-nvim
+        {
+            plugin = telescope-nvim;
+            config = toLuaFile ./plugins/telescope.lua;
+        }
+
     ];
 }

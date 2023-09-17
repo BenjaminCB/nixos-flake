@@ -27,7 +27,7 @@ require('telescope').setup {
     }
 }
 
-require('telescope').load_extension('fzy_native')
+-- require('telescope').load_extension('fzy_native')
 
 local remapper = function (keys, mapping)
     vim.api.nvim_set_keymap(
