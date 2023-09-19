@@ -36,23 +36,23 @@ in
             plugin = nvim-treesitter;
             config = toLua "require('nvim-treesitter.configs').setup({highlight = { enable = true }})";
         }
-        vim-surround
-        vim-commentary
-        vim-closer
-        markdown-preview-nvim
-
         {
             # nvim-web-devicons and lsp-colors-nvim are dependencies,
             # but maybe not required when getting from nixpkgs
             plugin = trouble-nvim;
             config = toLua "require('trouble').setup()";
         }
-
         {
             plugin = lualine-nvim;
             config = toLuaFile ./plugins/lualine.lua;
         }
 
+        vim-surround
+        vim-commentary
+        vim-closer
+        markdown-preview-nvim
+        Coqtail
+        copilot-lua
         nvim-lspconfig
         nvim-compe
 
