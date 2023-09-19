@@ -23,25 +23,6 @@ vim.opt.updatetime = 100
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 
-vim.g.mapleader = " "
-
-local remapper = function (keys, mapping)
-    vim.api.nvim_set_keymap("n", "<leader>" .. keys, mapping, { noremap = true })
-end
-
--- go to next, previous and close the list
-remapper("cn", "<cmd>cnext<cr>")
-remapper("cp", "<cmd>cprev<cr>")
-remapper("co", "<cmd>copen<cr>")
-remapper("cc", "<cmd>cclose<cr>")
-remapper("cf", ":call setqflist([])<cr>")
-
--- Same as above but for local quickfix list
-remapper("ln", "<cmd>lnext<cr>")
-remapper("lp", "<cmd>lprev<cr>")
-remapper("lo", "<cmd>lopen<cr>")
-remapper("lc", "<cmd>lclose<cr>")
-
 -- TODO write augroups with neovim api
 -- " better readability and spell checking in documents
 -- " go to the previous spelling mistake and open the suggestions

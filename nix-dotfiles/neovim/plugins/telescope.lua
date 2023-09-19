@@ -28,18 +28,3 @@ require('telescope').setup {
 }
 
 -- require('telescope').load_extension('fzy_native')
-
-local remapper = function (keys, mapping)
-    vim.api.nvim_set_keymap(
-        "n",
-        "<leader>" .. keys,
-        "<cmd>lua require('telescope.builtin')." .. mapping .. "<cr>",
-        { noremap = true }
-    )
-end
-
-remapper("pf", "find_files()")
-remapper("pt", "treesitter()")
-remapper("pb", "buffers()")
-remapper("pl", "lsp_references()")
-remapper("ps", "grep_string({ search = vim.fn.input(\"Grep for > \") })")

@@ -12,6 +12,7 @@ in
     vimdiffAlias = true;
     extraLuaConfig = ''
         ${builtins.readFile ./options.lua}
+        ${builtins.readFile ./keymaps.lua}
     '';
     plugins = with pkgs.vimPlugins; [
         {
@@ -23,9 +24,9 @@ in
         }
         nvim-lspconfig
         nvim-compe
-        # popup-nvim
-        # plenary-nvim
         {
+            # popup-nvim and plenary-nvim are dependencies,
+            # but maybe not required when getting from nixpkgs
             plugin = telescope-nvim;
             config = toLuaFile ./plugins/telescope.lua;
         }
