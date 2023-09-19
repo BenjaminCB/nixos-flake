@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
+-- | vanilla neovim keymaps
 local remapper = function (keys, mapping)
     vim.api.nvim_set_keymap("n", "<leader>" .. keys, mapping, { noremap = true })
 end
@@ -17,6 +18,7 @@ remapper("lp", "<cmd>lprev<cr>")
 remapper("lo", "<cmd>lopen<cr>")
 remapper("lc", "<cmd>lclose<cr>")
 
+-- | telescope keymaps
 local telescope_remapper = function (keys, mapping)
     vim.api.nvim_set_keymap(
         "n",
