@@ -22,6 +22,9 @@ vim.opt.writebackup = false
 vim.opt.updatetime = 100
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+vim.opt.completeopt = "menuone,noinsert,noselect"
+vim.opt.shortmess = "c"
+vim.opt.cmdheight = 2
 
 -- TODO write augroups with neovim api
 -- " better readability and spell checking in documents

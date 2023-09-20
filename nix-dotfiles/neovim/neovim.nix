@@ -49,12 +49,33 @@ in
 
         vim-surround
         vim-commentary
+
         vim-closer
         markdown-preview-nvim
-        Coqtail
-        copilot-lua
-        nvim-lspconfig
-        nvim-compe
 
+        {
+            plugin = Coqtail;
+            config = "let g:coqtail_nomap = 1";
+        }
+
+        {
+            plugin = vim-gitgutter;
+            config = "let g:gutgutter_map_keys=0";
+        }
+
+        {
+            plugin = copilot-lua;
+            config = toLua "require('copilot').setup({})";
+        }
+
+        {
+            plugin = nvim-lspconfig;
+            config = toLuaFile ./plugins/lsp.lua;
+        }
+
+        {
+            plugin = nvim-compe;
+            config = toLuaFile ./plugins/compe.lua;
+        }
     ];
 }
