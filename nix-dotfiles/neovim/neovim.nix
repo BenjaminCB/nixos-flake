@@ -73,5 +73,9 @@ in
             plugin = nvim-compe;
             config = toLuaFile ./plugins/compe.lua;
         }
+        {
+            plugin = oil-nvim;
+            config = toLua "require('oil').setup()";
+        }
     ];
 }
