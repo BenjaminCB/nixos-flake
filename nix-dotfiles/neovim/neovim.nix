@@ -52,6 +52,7 @@ in
 
         vim-closer
         markdown-preview-nvim
+        copilot-vim
 
         {
             plugin = Coqtail;
@@ -61,11 +62,6 @@ in
         {
             plugin = vim-gitgutter;
             config = "let g:gutgutter_map_keys=0";
-        }
-
-        {
-            plugin = copilot-lua;
-            config = toLua "require('copilot').setup({})";
         }
 
         {
