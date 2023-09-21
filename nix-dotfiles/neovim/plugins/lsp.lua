@@ -10,6 +10,11 @@ on_attach = function(client, bufnr)
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     if client.server_capabilities.documentHighlightProvider then
+        vim.cmd [[
+            hi! LspReferenceRead cterm=bold ctermbg=235 guibg=Black
+            hi! LspReferenceText cterm=bold ctermbg=235 guibg=Black
+            hi! LspReferenceWrite cterm=bold ctermbg=235 guibg=Black
+        ]]
         vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
         vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
         vim.api.nvim_create_autocmd("CursorHold", {
