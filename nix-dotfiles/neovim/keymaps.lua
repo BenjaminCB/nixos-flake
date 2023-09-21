@@ -1,95 +1,66 @@
 vim.g.mapleader = " "
 
--- | vanilla neovim keymaps
-local remapper = function (keys, mapping)
-    vim.api.nvim_set_keymap("n", "<leader>" .. keys, mapping, { noremap = true })
-end
+local wk = require("which-key")
 
--- go to next, previous and close the list
-remapper("cn", "<cmd>cnext<cr>")
-remapper("cp", "<cmd>cprev<cr>")
-remapper("co", "<cmd>copen<cr>")
-remapper("cc", "<cmd>cclose<cr>")
-remapper("cf", ":call setqflist([])<cr>")
-
--- Same as above but for local quickfix list
-remapper("ln", "<cmd>lnext<cr>")
-remapper("lp", "<cmd>lprev<cr>")
-remapper("lo", "<cmd>lopen<cr>")
-remapper("lc", "<cmd>lclose<cr>")
-
--- | telescope keymaps
-local telescope_remapper = function (keys, mapping)
-    vim.api.nvim_set_keymap(
-        "n",
-        "<leader>" .. keys,
-        "<cmd>lua require('telescope.builtin')." .. mapping .. "<cr>",
-        { noremap = true }
-    )
-end
-
-telescope_remapper("pf", "find_files()")
-telescope_remapper("pt", "treesitter()")
-telescope_remapper("pb", "buffers()")
-telescope_remapper("pl", "lsp_references()")
-telescope_remapper("ps", "grep_string({ search = vim.fn.input(\"Grep for > \") })")
-
--- | markdown-preview keymaps
-vim.api.nvim_set_keymap("n", "<leader>mp", ":MarkdownPreview<cr>", { noremap = true})
-
--- | coqtail keymaps
-local coqtail_remapper = function(keys, mapping)
-    vim.api.nvim_set_keymap(
-        "n",
-        "<leader>" .. keys,
-        "<cmd>" .. mapping .. "<cr>",
-        { noremap = true }
-    )
-end
-
-coqtail_remapper("os", "CoqStart")
-coqtail_remapper("oq", "CoqStop")
-coqtail_remapper("oi", "CoqInterrupt")
-coqtail_remapper("oj", "CoqNext")
-coqtail_remapper("ok", "CoqUndo")
-coqtail_remapper("ol", "CoqToLine")
-coqtail_remapper("ot", "CoqToTop")
-coqtail_remapper("oG", "CoqJumpToEnd")
-coqtail_remapper("oE", "CoqJumpToError")
-coqtail_remapper("ogd", "CoqGoToDef[!]<arg>")
-coqtail_remapper("or", "CoqRestorePanels")
-
--- | lsp keymaps
-local lsp_remapper = function(keys, mapping)
-    vim.api.nvim_set_keymap(
-        "n",
-        "<leader>" .. keys,
-        ":lua vim.lsp." .. mapping .. "<CR>",
-        { noremap = true }
-    )
-end
-
-lsp_remapper("vd", "buf.definition()")
-lsp_remapper("vi", "buf.implementation()")
-lsp_remapper("vsh", "buf.signature_help()")
-lsp_remapper("vrr", "buf.references()")
-lsp_remapper("vrn", "buf.rename()")
-lsp_remapper("vh", "buf.hover()")
-lsp_remapper("vca", "buf.code_action()")
-lsp_remapper("vsd", "util.show_line_diagnostics()")
-lsp_remapper("vn", "diagnostic.goto_next()")
-lsp_remapper("vll", "diagnostic.set_loclist()")
-
--- | trouble keymaps
-local trouble_remapper = function(keys, mapping)
-    vim.api.nvim_set_keymap(
-        "n",
-        "<leader>" .. keys,
-        "<cmd>" .. mapping .. "<cr>",
-        { noremap = true }
-    )
-end
-
-trouble_remapper("xx", "TroubleToggle")
-trouble_remapper("xw", "TroubleToggle workspace_diagnostics")
-trouble_remapper("xd", "TroubleToggle document_diagnostics")
+wk.register({
+    c = {
+        name = "Quickfix",
+        n = { "<cmd>cnext<cr>", "Next" },
+        p = { "<cmd>cprev<cr>", "Previous" },
+        o = { "<cmd>copen<cr>", "Open" },
+        c = { "<cmd>cclose<cr>", "Close" },
+        f = { ":call setqflist([])<cr>", "Flush" },
+    },
+    l = {
+        name = "Local Quickfix",
+        n = { "<cmd>lnext<cr>", "Next" },
+        p = { "<cmd>lprev<cr>", "Previous" },
+        o = { "<cmd>lopen<cr>", "Open" },
+        c = { "<cmd>lclose<cr>", "Close" },
+    },
+    p = {
+        name = "Telescope",
+        f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        t = { "<cmd>Telescope treesitter<cr>", "Treesitter" },
+        b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+        l = { "<cmd>Telescope lsp_references<cr>", "LSP References" },
+        s = { "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input(\"Grep for > \")})<cr>", "Grep String" },
+    },
+    m = {
+        name = "Markdown",
+        p = { "<cmd>MarkdownPreview<cr>", "Preview" },
+    },
+    o = {
+        name = "Coqtail",
+        s = { "<cmd>CoqStart<cr>", "Start" },
+        q = { "<cmd>CoqStop<cr>", "Stop" },
+        i = { "<cmd>CoqInterrupt<cr>", "Interrupt" },
+        j = { "<cmd>CoqNext<cr>", "Next" },
+        k = { "<cmd>CoqUndo<cr>", "Undo" },
+        l = { "<cmd>CoqToLine<cr>", "To Line" },
+        t = { "<cmd>CoqToTop<cr>", "To Top" },
+        G = { "<cmd>CoqJumpToEnd<cr>", "Jump to End" },
+        E = { "<cmd>CoqJumpToError<cr>", "Jump to Error" },
+        gd = { "<cmd>CoqGoToDef[!]<arg>", "Go to Definition" },
+        r = { "<cmd>CoqRestorePanels<cr>", "Restore Panels" },
+    },
+    v = {
+        name = "Lsp",
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+        sh = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+        rr = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+        rn = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+        ca = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        sd = { "<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>", "Show Line Diagnostics" },
+        n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+        ll = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Set Loclist" },
+    },
+    x = {
+        name = "Trouble",
+        x = { "<cmd>TroubleToggle<cr>", "Trouble" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
+    }
+}, { prefix = "<leader>" })

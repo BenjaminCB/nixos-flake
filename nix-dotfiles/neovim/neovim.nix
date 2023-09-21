@@ -77,5 +77,13 @@ in
             plugin = oil-nvim;
             config = toLua "require('oil').setup()";
         }
+        {
+            plugin = which-key-nvim;
+            config = toLua ''
+                vim.o.timeout = true
+                vim.o.timeoutlen = 500
+                require("which-key").setup()
+            '';
+        }
     ];
 }
