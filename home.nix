@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, secrets, ... }:
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
@@ -43,7 +43,7 @@ in
     programs.foot = import ./nix-dotfiles/foot.nix;
     programs.wezterm = import ./nix-dotfiles/wezterm.nix;
     programs.lf = import ./nix-dotfiles/lf.nix { inherit pkgs; };
-    programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs; };
+    programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; };
     programs.git = import ./nix-dotfiles/git.nix;
 
     gtk = import ./nix-dotfiles/gtk.nix { inherit pkgs; };
