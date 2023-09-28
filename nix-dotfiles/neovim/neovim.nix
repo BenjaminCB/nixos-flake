@@ -75,7 +75,7 @@ in
         }
         {
             plugin = oil-nvim;
-            config = toLua "require('oil').setup()";
+            config = toLua "require('oil').setup({ view_options = { show_hidden = true }})";
         }
         {
             plugin = which-key-nvim;
