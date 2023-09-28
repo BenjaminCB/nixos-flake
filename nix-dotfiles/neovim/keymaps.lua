@@ -62,5 +62,28 @@ wk.register({
         x = { "<cmd>TroubleToggle<cr>", "Trouble" },
         w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
         d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
+    },
+    g = {
+        name = "ChatGPT",
+        p = {
+            "<cmd>ChatGPT<cr>",
+            "Prompt",
+        },
     }
-}, { prefix = "<leader>" })
+}, {
+    prefix = "<leader>",
+    mode = "n",
+})
+
+wk.register({
+    g = {
+        name = "ChatGPT",
+        c = {
+            "<cmd>ChatGPTEditWithInstructions<cr>",
+            "Edit with instructions",
+        },
+    },
+}, {
+    prefix = "<leader>",
+    mode = "v",
+})
