@@ -28,7 +28,7 @@ in
         grim slurp
 
         ### term applications
-        ncpamixer gotop
+        ncpamixer gotop chatgpt-cli
 
         ### utilities
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep

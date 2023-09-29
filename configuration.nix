@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, secrets, ... }:
 
 {
     imports = [ # Include the results of the hardware scan.
@@ -75,9 +75,6 @@
         xwayland.enable = true;
     };
 
-    # Hint electron apps to use wayland
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
     virtualisation.docker.rootless = {
         enable = true;
         setSocketVariable = true;
@@ -147,6 +144,9 @@
     environment.sessionVariables = rec {
         NNN_FIFO="/tmp/nnn.fifo";
         EDITOR="nvim";
+        # Hint electron apps to use wayland
+        NIXOS_OZONE_WL = "1";
+        OPENAI_API_KEY = secrets.openai;
     };
 
     fonts.fonts = with pkgs; [
