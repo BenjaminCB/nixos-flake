@@ -23,3 +23,5 @@ alias ll='ls -lAh'
 alias lock='xsecurelock'
 
 cat ~/.config/kitty/ascii_cat.txt
+
+direnv hook fish | source
