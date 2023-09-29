@@ -36,6 +36,14 @@ in
             plugin = nvim-treesitter;
             config = toLua "require('nvim-treesitter.configs').setup({highlight = { enable = true }})";
         }
+        nvim-treesitter-parsers.bash
+        nvim-treesitter-parsers.nix
+        nvim-treesitter-parsers.json
+        nvim-treesitter-parsers.yaml
+        nvim-treesitter-parsers.typescript
+        nvim-treesitter-parsers.haskell
+        nvim-treesitter-parsers.lua
+        nvim-treesitter-parsers.python
         {
             # nvim-web-devicons and lsp-colors-nvim are dependencies,
             # but maybe not required when getting from nixpkgs
