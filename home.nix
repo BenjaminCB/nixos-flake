@@ -37,7 +37,7 @@ in
         # nitrogen -- not wayland compatible, or maybe it is?
         wpaperd
         ### programming stuff
-        luajit gcc yarn coq_8_9 nodejs lua-language-server
+        luajit gcc yarn coq_8_9 nodejs lua-language-server rnix-lsp
     ]);
 
     programs.foot = import ./nix-dotfiles/foot.nix;
