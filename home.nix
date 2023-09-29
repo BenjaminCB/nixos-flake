@@ -53,6 +53,8 @@ in
     services.dunst.enable = true;
 
     home.file = {
+        ".config/chatgpt/config.json".text =
+            builtins.toJSON (import ./nix-dotfiles/chatgpt-cli.nix { inherit secrets; });
         ".config/dunst".source = ./dotfiles/dunst;
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;

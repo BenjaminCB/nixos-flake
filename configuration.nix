@@ -146,7 +146,6 @@
         EDITOR="nvim";
         # Hint electron apps to use wayland
         NIXOS_OZONE_WL = "1";
-        OPENAI_API_KEY = secrets.openai;
     };
 
     fonts.fonts = with pkgs; [
