@@ -45,6 +45,7 @@ in
     programs.lf = import ./nix-dotfiles/lf.nix { inherit pkgs; };
     programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; };
     programs.git = import ./nix-dotfiles/git.nix;
+    programs.direnv = import ./nix-dotfiles/direnv.nix;
 
     gtk = import ./nix-dotfiles/gtk.nix { inherit pkgs; };
     qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
