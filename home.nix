@@ -6,6 +6,7 @@ let
     dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
     zfzf = import ./derivations/zfzf.nix { inherit pkgs; };
     work-monitor = import ./derivations/work-monitor.nix { inherit pkgs; };
+    dir-imgs = import ./derivations/dir-imgs.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -14,7 +15,7 @@ in
     programs.home-manager.enable = true;
 
     home.packages = [
-        dev-environments work-monitor xwaylandvideobridge zfzf
+        dev-environments work-monitor xwaylandvideobridge zfzf dir-imgs
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
