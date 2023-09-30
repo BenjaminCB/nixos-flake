@@ -19,7 +19,6 @@ set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
 ###############################################
 #aliases
 ###############################################
-alias ll='ls -lAh'
 alias lock='xsecurelock'
 
 cat ~/.config/kitty/ascii_cat.txt
