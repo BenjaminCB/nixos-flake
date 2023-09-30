@@ -126,6 +126,8 @@
             alias ll='eza -lah'
             alias tree='eza --tree'
             alias lock='xsecurelock'
+            alias dirimgs='find . -name "*.png" -name "*.jpg" -name "*.gif"  -name "*.svg" -exec echo {} \; -exec wezterm imgcat {} \;'
+            alias img='wezterm imgcat'
             set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
         '';
     };
