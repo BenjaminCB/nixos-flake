@@ -28,7 +28,7 @@ in
         grim slurp
 
         ### term applications
-        ncpamixer gotop chatgpt-cli
+        ncpamixer gotop chatgpt-cli ranger
 
         ### utilities
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
@@ -42,7 +42,7 @@ in
 
     programs.foot = import ./nix-dotfiles/foot.nix;
     programs.wezterm = import ./nix-dotfiles/wezterm.nix;
-    programs.lf = import ./nix-dotfiles/lf.nix { inherit pkgs; };
+    programs.lf = (import ./nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = false; };
     programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; };
     programs.git = import ./nix-dotfiles/git.nix;
     programs.direnv = import ./nix-dotfiles/direnv.nix;

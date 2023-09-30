@@ -122,6 +122,7 @@
         enable = true;
         interactiveShellInit = ''
             afetch
+            alias rr='ranger'
             alias ll='eza -lah'
             alias tree='eza --tree'
             alias lock='xsecurelock'
