@@ -122,6 +122,10 @@
         enable = true;
         interactiveShellInit = ''
             afetch
+            alias ll='eza -lah'
+            alias tree='eza --tree'
+            alias lock='xsecurelock'
+            set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
         '';
     };
 
