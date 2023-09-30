@@ -16,11 +16,6 @@ export EDITOR='nvim'
 #set manpager
 set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
 
-###############################################
-#aliases
-###############################################
-alias lock='xsecurelock'
-
 cat ~/.config/kitty/ascii_cat.txt
 
 direnv hook fish | source
