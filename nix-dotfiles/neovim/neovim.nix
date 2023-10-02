@@ -44,6 +44,8 @@ in
         nvim-treesitter-parsers.haskell
         nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.python
+
+	nvim-web-devicons
         {
             # nvim-web-devicons and lsp-colors-nvim are dependencies,
             # but maybe not required when getting from nixpkgs
