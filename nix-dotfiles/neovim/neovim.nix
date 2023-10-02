@@ -22,9 +22,11 @@ in
                 let g:gruvbox_conrast_dark = 'hard'
             '';
         }
+
+        popup-nvim
+        plenary-nvim
         {
             # popup-nvim and plenary-nvim are dependencies,
-            # but maybe not required when getting from nixpkgs
             plugin = telescope-nvim;
             config = toLuaFile ./plugins/telescope.lua;
         }
@@ -45,10 +47,10 @@ in
         nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.python
 
-	nvim-web-devicons
+	    nvim-web-devicons
+        lsp-colors-nvim
         {
             # nvim-web-devicons and lsp-colors-nvim are dependencies,
-            # but maybe not required when getting from nixpkgs
             plugin = trouble-nvim;
             config = toLua "require('trouble').setup()";
         }
