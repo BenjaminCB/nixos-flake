@@ -43,7 +43,7 @@ in
 
     programs.foot = import ./nix-dotfiles/foot.nix;
     programs.wezterm = import ./nix-dotfiles/wezterm.nix;
-    programs.lf = (import ./nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = false; };
+    programs.lf = (import ./nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = true; };
     programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; };
     programs.git = import ./nix-dotfiles/git.nix;
     programs.direnv = import ./nix-dotfiles/direnv.nix;
