@@ -99,6 +99,7 @@
 
     services.postgresql = {
         enable = true;
+        package = pkgs.postgresql_15.withPackages (p: with p; [ postgis ]);
         ensureDatabases = [ "mydatabase" ];
         authentication = pkgs.lib.mkOverride 10 ''
             #type database  DBuser  auth-method
@@ -146,6 +147,7 @@
         fishPlugins.puffer
         fishPlugins.forgit
         afetch
+        pgadmin4-desktopmode
     ];
 
     environment.sessionVariables = rec {
