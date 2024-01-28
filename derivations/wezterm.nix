@@ -4,7 +4,7 @@ pkgs.rustPlatform.buildRustPackage rec {
   pname = "wezterm";
   version = "20240127-113634-bbcac864";
 
-  src = fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "wez";
     repo = pname;
     rev = version;
