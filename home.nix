@@ -7,7 +7,6 @@ let
     zfzf = import ./derivations/zfzf.nix { inherit pkgs; };
     work-monitor = import ./derivations/work-monitor.nix { inherit pkgs; };
     dir-imgs = import ./derivations/dir-imgs.nix { inherit pkgs; };
-    wezterm = import ./derivations/wezterm.nix { inherit pkgs; };
 in
 {
     home.username = "bcb";
@@ -16,7 +15,7 @@ in
     programs.home-manager.enable = true;
 
     home.packages = [
-        dev-environments work-monitor xwaylandvideobridge zfzf dir-imgs wezterm
+        dev-environments work-monitor xwaylandvideobridge zfzf dir-imgs
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
@@ -43,7 +42,7 @@ in
     ]);
 
     programs.foot = import ./nix-dotfiles/foot.nix;
-    # programs.wezterm = import ./nix-dotfiles/wezterm.nix;
+    programs.wezterm = import ./nix-dotfiles/wezterm.nix;
     programs.lf = (import ./nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = true; };
     programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; };
     programs.git = import ./nix-dotfiles/git.nix;
