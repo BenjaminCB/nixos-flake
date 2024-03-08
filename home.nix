@@ -57,21 +57,21 @@ in
 
     home.file = {
         "justfile".source = import ./nix-dotfiles/just.nix { inherit pkgs; };
-        ".config/chatgpt/config.json".text =
-            builtins.toJSON (import ./nix-dotfiles/chatgpt-cli.nix { inherit secrets; });
-        ".config/dunst".source = ./dotfiles/dunst;
-        ".config/awesome".source = ./dotfiles/awesome;
-        ".config/bspwm".source = ./dotfiles/bspwm;
-        ".config/bsp-layout".source = ./dotfiles/bsp-layout;
-        ".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
+        #".config/chatgpt/config.json".text =
+            #builtins.toJSON (import ./nix-dotfiles/chatgpt-cli.nix { inherit secrets; });
+        #".config/dunst".source = ./dotfiles/dunst;
+        #".config/awesome".source = ./dotfiles/awesome;
+        #".config/bspwm".source = ./dotfiles/bspwm;
+        #".config/bsp-layout".source = ./dotfiles/bsp-layout;
+        #".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
         #".config/nvim".source = link ./dotfiles/nvim;
-        ".config/qutebrowser".source = ./dotfiles/qutebrowser;
+        #".config/qutebrowser".source = ./dotfiles/qutebrowser;
         #".config/ranger".source = ./dotfiles/ranger;
-        ".config/rofi".source = ./dotfiles/rofi;
-        ".config/zathura".source = ./dotfiles/zathura;
-        ".config/redshift.conf".source = ./dotfiles/redshift.conf;
-        ".config/tofi".source = ./dotfiles/tofi;
-        ".config/hypr".source = ./dotfiles/hypr;
+        #".config/rofi".source = ./dotfiles/rofi;
+        #".config/zathura".source = ./dotfiles/zathura;
+        #".config/redshift.conf".source = ./dotfiles/redshift.conf;
+        #".config/tofi".source = ./dotfiles/tofi;
+        #".config/hypr".source = ./dotfiles/hypr;
         ".jira.d".source = ./dotfiles/jira.d;
         ".vieb".source = ./dotfiles/vieb;
         ".Xresources".source = ./dotfiles/Xresources;
