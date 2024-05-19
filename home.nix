@@ -34,7 +34,7 @@ in
         ### utilities
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
         speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
-        unrar p7zip tree-sitter acpi git-crypt kitty-themes just
+        unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
         # nitrogen -- not wayland compatible, or maybe it is?
         wpaperd
         ### programming stuff
