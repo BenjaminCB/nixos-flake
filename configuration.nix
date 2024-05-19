@@ -212,7 +212,7 @@
 
     nix = {
         package = pkgs.nixFlakes;
-        settings.trustedUsers = [ "root" "bcb" "@wheel" ];
+        settings.trusted-users = [ "root" "bcb" "@wheel" ];
         extraOptions = "experimental-features = nix-command flakes";
     };
 }
