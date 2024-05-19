@@ -70,12 +70,12 @@
         # windowManager.awesome.enable = true;
         # desktopManager.xfce.enable = true;
     # };
+    services.displayManager.sddm = {
+        enable = true;
+        theme = "${import ./derivations/sddm-sugar-dark.nix { inherit pkgs; }}";
+    };
     services.xserver = {
         enable = true;
-        displayManager.sddm = {
-            enable = true;
-            theme = "${import ./derivations/sddm-sugar-dark.nix { inherit pkgs; }}";
-        };
         #displayManager.gdm = {
             #enable = true;
             #wayland = true;
