@@ -52,7 +52,7 @@ local servers = { "tsserver"
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
-        capabilities = capabilities,
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
         on_attach = on_attach,
     }
 end

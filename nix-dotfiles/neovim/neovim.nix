@@ -81,9 +81,11 @@ in
             config = toLuaFile ./plugins/lsp.lua;
         }
 
+        luasnip
+        cmp_luasnip
         {
-            plugin = nvim-compe;
-            config = toLuaFile ./plugins/compe.lua;
+            plugin = nvim-cmp;
+            config = toLuaFile ./plugins/cmp.lua;
         }
         {
             plugin = oil-nvim;
