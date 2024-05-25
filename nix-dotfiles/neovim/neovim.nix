@@ -83,6 +83,7 @@ in
 
         luasnip
         cmp_luasnip
+	cmp-nvim-lsp
         {
             plugin = nvim-cmp;
             config = toLuaFile ./plugins/cmp.lua;
