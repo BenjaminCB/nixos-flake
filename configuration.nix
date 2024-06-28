@@ -107,10 +107,14 @@
         alsa.support32Bit = true;
         pulse.enable = true;
         jack.enable = true;
+        wireplumber.enable = true;
     };
 
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland # needed for screen sharing
+    ];
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.bcb = {
