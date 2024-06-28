@@ -36,7 +36,7 @@ in
         unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
         xwaylandvideobridge
         # nitrogen -- not wayland compatible, or maybe it is?
-        wpaperd
+
         ### programming stuff
         luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
     ]);
