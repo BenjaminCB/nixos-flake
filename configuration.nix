@@ -141,7 +141,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        vim wget firefox discord git
+        vim wget firefox git
         libsForQt5.qt5.qtquickcontrols2
         libsForQt5.qt5.qtgraphicaleffects
         fishPlugins.hydro
@@ -189,18 +189,6 @@
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
-
-    nixpkgs.overlays = [
-        (self: super: {
-            discord = super.discord.overrideAttrs (
-                _: { src = builtins.fetchTarball {
-                    url = "https://discord.com/api/download?platform=linux&format=tar.gz";
-                    # sha256 = "12yrhlbigpy44rl3icir3jj2p5fqq2ywgbp5v3m1hxxmbawsm6wi";
-                    sha256 = "087p8z538cyfa9phd4nvzjrvx4s9952jz1azb2k8g6pggh1vxwm8";
-                }; }
-            );
-        })
-    ];
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
