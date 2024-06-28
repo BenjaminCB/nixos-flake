@@ -25,8 +25,7 @@ in
         tofi
 
         # arandr -- not wayland compatible
-        # flameshot -- does not seem to work
-        grim slurp
+        grim slurp swappy
 
         ### term applications
         ncpamixer gotop chatgpt-cli
