@@ -19,6 +19,7 @@ in
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
         alacritty insomnia thunderbird zathura sxiv
+        webcord
 
         # rofi -- not wayland compatible
         tofi
