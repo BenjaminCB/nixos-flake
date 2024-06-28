@@ -34,9 +34,7 @@ in
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
         speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
         unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
-        xwaylandvideobridge
-        # nitrogen -- not wayland compatible, or maybe it is?
-        wpaperd
+        xwaylandvideobridge hyprpaper
         ### programming stuff
         luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
     ]);
