@@ -2,7 +2,6 @@
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
-    xwaylandvideobridge = import ./derivations/xwayland-video-bridge.nix { inherit pkgs; };
     dev-environments = import ./derivations/dev-environments.nix { inherit pkgs; };
     zfzf = import ./derivations/zfzf.nix { inherit pkgs; };
     work-monitor = import ./derivations/work-monitor.nix { inherit pkgs; };
@@ -15,7 +14,7 @@ in
     programs.home-manager.enable = true;
 
     home.packages = [
-        dev-environments work-monitor xwaylandvideobridge zfzf dir-imgs
+        dev-environments work-monitor zfzf dir-imgs
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
@@ -35,6 +34,7 @@ in
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
         speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
         unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
+        xwaylandvideobridge
         # nitrogen -- not wayland compatible, or maybe it is?
         wpaperd
         ### programming stuff
