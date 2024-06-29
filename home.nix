@@ -50,8 +50,6 @@ in
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
 
-    qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
-
     home.file = {
         "justfile".source = import ./nix-dotfiles/just.nix { inherit pkgs; };
         ".config/chatgpt/config.json".text =
