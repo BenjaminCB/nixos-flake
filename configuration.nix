@@ -196,6 +196,7 @@
             desktop = 14;
             popups = 14;
         };
+        polarity = "dark";
     };
 
     # Some programs need SUID wrappers, can be configured further or are
