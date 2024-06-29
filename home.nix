@@ -52,13 +52,10 @@ in
 
     qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
 
-    services.dunst.enable = true;
-
     home.file = {
         "justfile".source = import ./nix-dotfiles/just.nix { inherit pkgs; };
         ".config/chatgpt/config.json".text =
             builtins.toJSON (import ./nix-dotfiles/chatgpt-cli.nix { inherit secrets; });
-        ".config/dunst".source = ./dotfiles/dunst;
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;
