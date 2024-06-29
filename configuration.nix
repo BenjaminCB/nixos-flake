@@ -190,6 +190,12 @@
             serif.package = pkgs.noto-fonts;
             serif.name = "Noto Serif";
         };
+        fonts.sizes = {
+            applications = 14;
+            terminal = 18;
+            desktop = 14;
+            popups = 14;
+        };
     };
 
     # Some programs need SUID wrappers, can be configured further or are
