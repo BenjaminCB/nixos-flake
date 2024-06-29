@@ -50,6 +50,8 @@ in
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
 
+    wayland.windowManager.hyprland = import ./nix-dotfiles/hyprland.nix { inherit pkgs; };
+
     gtk = import ./nix-dotfiles/gtk.nix { inherit pkgs; };
     qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
 
@@ -71,7 +73,6 @@ in
         ".config/zathura".source = ./dotfiles/zathura;
         ".config/redshift.conf".source = ./dotfiles/redshift.conf;
         ".config/tofi".source = ./dotfiles/tofi;
-        ".config/hypr".source = ./dotfiles/hypr;
         ".jira.d".source = ./dotfiles/jira.d;
         ".vieb".source = ./dotfiles/vieb;
         ".Xresources".source = ./dotfiles/Xresources;
