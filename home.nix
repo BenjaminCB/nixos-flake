@@ -50,8 +50,6 @@ in
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
 
-    wayland.windowManager.hyprland = import ./nix-dotfiles/hyprland.nix { inherit pkgs; };
-
     gtk = import ./nix-dotfiles/gtk.nix { inherit pkgs; };
     qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
 
