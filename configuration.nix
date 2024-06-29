@@ -180,6 +180,16 @@
         enable = true;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/summerfruit-dark.yaml";
         image = ./wallpapers/hyprland.png;
+        cursor.package = pkgs.bibata-cursors;
+        cursor.name = "Bibata-Modern-Ice";
+        fonts = {
+            monospace.package = pkgs.fira-code;
+            monospace.name = "Fira Code";
+            sansSerif.package = pkgs.noto-fonts;
+            sansSerif.name = "Noto Sans";
+            serif.package = pkgs.noto-fonts;
+            serif.name = "Noto Serif";
+        };
     };
 
     # Some programs need SUID wrappers, can be configured further or are
