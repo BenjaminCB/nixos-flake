@@ -11,15 +11,15 @@
             ];
 
             workspace = [
-                "0, monitor:DP-1, default:true"
-                "1, monitor:DP-1, default:false"
+                "10, monitor:DP-1, default:true"
                 "2, monitor:DP-1, default:false"
-                "3, monitor:DP-1, default:false"
-                "4, monitor:HDMI-A-1, default:true"
-                "5, monitor:HDMI-A-1, default:false"
-                "6, monitor:HDMI-A-1, default:false"
-                "7, monitor:DVI-D-1, default:true"
-                "8, monitor:DVI-D-1, default:false"
+                "5, monitor:DP-1, default:false"
+                "8, monitor:DP-1, default:false"
+                "1, monitor:HDMI-A-1, default:true"
+                "4, monitor:HDMI-A-1, default:false"
+                "7, monitor:HDMI-A-1, default:false"
+                "3, monitor:DVI-D-1, default:true"
+                "6, monitor:DVI-D-1, default:false"
                 "9, monitor:DVI-D-1, default:false"
             ];
         };
