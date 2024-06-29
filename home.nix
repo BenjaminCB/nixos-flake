@@ -72,7 +72,6 @@ in
         ".config/hypr".source = ./dotfiles/hypr;
         ".jira.d".source = ./dotfiles/jira.d;
         ".vieb".source = ./dotfiles/vieb;
-        ".Xresources".source = ./dotfiles/Xresources;
         ".bashrc".source = ./dotfiles/bashrc;
         ".ghci".source = ./dotfiles/ghci;
         ".taskrc".source = ./dotfiles/taskrc;
