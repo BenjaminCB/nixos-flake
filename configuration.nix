@@ -180,8 +180,8 @@
         enable = true;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/summerfruit-dark.yaml";
         image = ./wallpapers/hyprland.png;
-        cursor.package = pkgs.bibata-cursors;
-        cursor.name = "Bibata-Modern-Ice";
+        cursor.package = pkgs.vimix-cursor-theme;
+        cursor.name = "Vimix-Cursors";
         fonts = {
             monospace.package = pkgs.fira-code;
             monospace.name = "Fira Code";
