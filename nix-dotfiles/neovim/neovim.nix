@@ -15,14 +15,6 @@ in
         ${builtins.readFile ./keymaps.lua}
     '';
     plugins = with pkgs.vimPlugins; [
-        {
-            plugin = gruvbox;
-            config = ''
-                colorscheme gruvbox
-                let g:gruvbox_conrast_dark = 'hard'
-            '';
-        }
-
         popup-nvim
         plenary-nvim
         {
