@@ -178,6 +178,7 @@
 
     stylix = {
         enable = true;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/summerfruit-dark.yaml";
         image = ./wallpapers/hyprland.png;
     };
 
