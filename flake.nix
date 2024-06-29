@@ -11,6 +11,7 @@
             url = "github:hyprwm/contrib";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        stylix.url = "github:danth/stylix";
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@attrs:
@@ -35,6 +36,7 @@
                     };
                     home-manager.extraSpecialArgs = extraArgs;
                 }
+                attrs.stylix.nixosModules.stylix
             ];
             specialArgs = extraArgs;
         };
