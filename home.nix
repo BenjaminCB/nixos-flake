@@ -50,7 +50,6 @@ in
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
 
-    gtk = import ./nix-dotfiles/gtk.nix { inherit pkgs; };
     qt = import ./nix-dotfiles/qt.nix { inherit pkgs; };
 
     services.dunst.enable = true;
@@ -63,7 +62,6 @@ in
         ".config/awesome".source = ./dotfiles/awesome;
         ".config/bspwm".source = ./dotfiles/bspwm;
         ".config/bsp-layout".source = ./dotfiles/bsp-layout;
-        ".config/gtk-3.0".source = ./dotfiles/gtk-3.0;
         #".config/nvim".source = link ./dotfiles/nvim;
         ".config/qutebrowser".source = ./dotfiles/qutebrowser;
         #".config/ranger".source = ./dotfiles/ranger;
