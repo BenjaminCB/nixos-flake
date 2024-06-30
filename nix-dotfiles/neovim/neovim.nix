@@ -1,4 +1,4 @@
-{ pkgs, secrets }:
+{ pkgs, ... }:
 
 let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
