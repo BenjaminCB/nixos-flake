@@ -46,6 +46,8 @@ in
     programs.tofi = import ./nix-dotfiles/tofi.nix;
     programs.zathura = import ./nix-dotfiles/zathura.nix;
 
+    services.mako.enable = true;
+
     # xdg-open to open
     # $XDG_DATA_DIRS to find .desktop names
     xdg.mimeApps = {
