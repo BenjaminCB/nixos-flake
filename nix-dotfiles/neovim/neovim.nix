@@ -75,7 +75,7 @@ in
 
         luasnip
         cmp_luasnip
-	cmp-nvim-lsp
+	    cmp-nvim-lsp
         {
             plugin = nvim-cmp;
             config = toLuaFile ./plugins/cmp.lua;
@@ -83,6 +83,14 @@ in
         {
             plugin = oil-nvim;
             config = toLua "require('oil').setup({ view_options = { show_hidden = true }})";
+        }
+        {
+            plugin = which-key-nvim;
+            config = toLua ''
+                vim.o.timeout = true
+                vim.o.timeoutlen = 500
+                require("which-key").setup()
+            '';
         }
     ];
 }
