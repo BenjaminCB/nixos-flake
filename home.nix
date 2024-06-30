@@ -37,6 +37,8 @@ in
         luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
     ]);
 
+    stylix.targets.vim.enable = false;
+
     programs.foot = import ./nix-dotfiles/foot.nix;
     programs.wezterm = import ./nix-dotfiles/wezterm.nix // { enable = false; };
     programs.kitty = import ./nix-dotfiles/kitty.nix // { enable = true; };
@@ -45,29 +47,6 @@ in
     programs.git = import ./nix-dotfiles/git.nix;
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
-
-    home.file = {
-        "justfile".source = import ./nix-dotfiles/just.nix { inherit pkgs; };
-        ".config/chatgpt/config.json".text =
-            builtins.toJSON (import ./nix-dotfiles/chatgpt-cli.nix { inherit secrets; });
-        ".config/awesome".source = ./dotfiles/awesome;
-        ".config/bspwm".source = ./dotfiles/bspwm;
-        ".config/bsp-layout".source = ./dotfiles/bsp-layout;
-        #".config/nvim".source = link ./dotfiles/nvim;
-        ".config/qutebrowser".source = ./dotfiles/qutebrowser;
-        #".config/ranger".source = ./dotfiles/ranger;
-        ".config/rofi".source = ./dotfiles/rofi;
-        ".config/zathura".source = ./dotfiles/zathura;
-        ".config/redshift.conf".source = ./dotfiles/redshift.conf;
-        ".config/tofi".source = ./dotfiles/tofi;
-        ".jira.d".source = ./dotfiles/jira.d;
-        ".vieb".source = ./dotfiles/vieb;
-        ".bashrc".source = ./dotfiles/bashrc;
-        ".ghci".source = ./dotfiles/ghci;
-        ".taskrc".source = ./dotfiles/taskrc;
-        ".xinitrc".source = ./dotfiles/xinitrc;
-        "wallpapers".source = ./wallpapers;
-    };
 
     # xdg-open to open
     # $XDG_DATA_DIRS to find .desktop names
