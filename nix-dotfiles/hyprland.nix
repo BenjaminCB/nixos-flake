@@ -4,7 +4,6 @@
     enable = true;
     settings = monitorSetup // {
         exec-once = [
-            "${pkgs.swaybg}/bin/swaybg -i ~/wallpapers/hyprland.png -m fill &"
             "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         ];
 
