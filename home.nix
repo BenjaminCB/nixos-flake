@@ -27,7 +27,7 @@ in
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
         speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
         unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
-        xwaylandvideobridge tofi
+        xwaylandvideobridge
 
         ### programming stuff
         luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
@@ -43,6 +43,7 @@ in
     programs.git = import ./nix-dotfiles/git.nix;
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
+    programs.tofi = import ./nix-dotfiles/tofi.nix;
 
     # xdg-open to open
     # $XDG_DATA_DIRS to find .desktop names
