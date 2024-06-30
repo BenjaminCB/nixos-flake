@@ -21,7 +21,7 @@ in
         alacritty insomnia webcord
 
         ### term applications
-        ncpamixer gotop
+        ncpamixer gotop yazi
 
         ### utilities
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
