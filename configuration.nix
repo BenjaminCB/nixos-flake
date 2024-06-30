@@ -121,7 +121,7 @@
         isNormalUser = true;
         description = "bcb";
         extraGroups = [ "networkmanager" "wheel" ];
-        packages = with pkgs; [];
+        packages = [];
     };
 
     users.defaultUserShell = pkgs.fish;
