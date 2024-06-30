@@ -21,11 +21,7 @@ in
         alacritty insomnia thunderbird zathura sxiv
         webcord
 
-        # rofi -- not wayland compatible
         tofi
-
-        # arandr -- not wayland compatible
-        grim slurp swappy
 
         ### term applications
         ncpamixer gotop chatgpt-cli
@@ -64,7 +60,6 @@ in
         ".config/zathura".source = ./dotfiles/zathura;
         ".config/redshift.conf".source = ./dotfiles/redshift.conf;
         ".config/tofi".source = ./dotfiles/tofi;
-        ".config/hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
         ".jira.d".source = ./dotfiles/jira.d;
         ".vieb".source = ./dotfiles/vieb;
         ".bashrc".source = ./dotfiles/bashrc;
