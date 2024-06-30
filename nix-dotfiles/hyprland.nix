@@ -23,6 +23,10 @@
             sensitivity = 0;
         };
 
+        windowrulev2 = [
+            "tile,title:File Upload"
+        ];
+
         general = {
             # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
