@@ -88,7 +88,7 @@
             "$mainMod, F, exec, firefox"
             "$mainMod, Q, killactive,"
             "$mainMod, R, exec, tofi-drun --drun-launch=true"
-            "$mainMod, G, exec, grim -g \"$(slurp)\" - | swappy -f -"
+            "$mainMod, G, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.swappy}/bin/swappy -f -"
 
             # Move focus with mainMod + [HL]
             "$mainMod, H, layoutmsg, cycleprev"

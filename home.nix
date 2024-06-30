@@ -21,11 +21,7 @@ in
         alacritty insomnia thunderbird zathura sxiv
         webcord
 
-        # rofi -- not wayland compatible
         tofi
-
-        # arandr -- not wayland compatible
-        grim slurp swappy
 
         ### term applications
         ncpamixer gotop chatgpt-cli
