@@ -18,7 +18,7 @@ in
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
-        alacritty insomnia zathura webcord
+        alacritty insomnia webcord
 
         ### term applications
         ncpamixer gotop chatgpt-cli
@@ -44,6 +44,7 @@ in
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
     programs.tofi = import ./nix-dotfiles/tofi.nix;
+    programs.zathura = import ./nix-dotfiles/zathura.nix;
 
     # xdg-open to open
     # $XDG_DATA_DIRS to find .desktop names
