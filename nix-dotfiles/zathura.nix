@@ -6,5 +6,6 @@
     options = {
         recolor = true;
         guioptions = "";
+        font = "FiraCode 16";
     };
 }
