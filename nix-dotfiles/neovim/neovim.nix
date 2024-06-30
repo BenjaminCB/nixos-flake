@@ -84,12 +84,5 @@ in
             plugin = oil-nvim;
             config = toLua "require('oil').setup({ view_options = { show_hidden = true }})";
         }
-        {
-            plugin = ChatGPT-nvim;
-            # TODO try to get some proper keymaps
-            config = toLua ''require('chatgpt').setup({
-                api_key_cmd = 'echo ${secrets.openai}',
-            })'';
-        }
     ];
 }
