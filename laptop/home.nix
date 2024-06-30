@@ -9,4 +9,15 @@
             ];
         };
     };
+
+    services.batsignal = {
+        enable = true;
+        extraArgs = [
+            "-w 20"
+            "-c 10"
+            "-d 5"
+            "-f 80"
+            "-p"
+        ];
+    };
 }
