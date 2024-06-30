@@ -85,14 +85,6 @@ in
             config = toLua "require('oil').setup({ view_options = { show_hidden = true }})";
         }
         {
-            plugin = which-key-nvim;
-            config = toLua ''
-                vim.o.timeout = true
-                vim.o.timeoutlen = 500
-                require("which-key").setup()
-            '';
-        }
-        {
             plugin = ChatGPT-nvim;
             # TODO try to get some proper keymaps
             config = toLua ''require('chatgpt').setup({
