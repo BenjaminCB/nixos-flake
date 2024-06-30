@@ -18,10 +18,7 @@ in
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
-        alacritty insomnia thunderbird zathura sxiv
-        webcord
-
-        tofi
+        alacritty insomnia zathura webcord
 
         ### term applications
         ncpamixer gotop chatgpt-cli
@@ -30,8 +27,7 @@ in
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
         speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
         unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
-        xwaylandvideobridge
-        # nitrogen -- not wayland compatible, or maybe it is?
+        xwaylandvideobridge tofi
 
         ### programming stuff
         luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
