@@ -33,7 +33,7 @@ in
         luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
     ]);
 
-    stylix.targets.vim.enable = false;
+    stylix.targets.tofi.enable = false;
 
     programs.foot = import ./nix-dotfiles/foot.nix;
     programs.wezterm = import ./nix-dotfiles/wezterm.nix // { enable = false; };
