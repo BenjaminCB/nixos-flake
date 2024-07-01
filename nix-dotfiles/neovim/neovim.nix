@@ -12,7 +12,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
-        vim.api.nvim_set_hl(0, 'FloatBorder', {bg='#${base16.base00}', fg='#${base16.base0F}'})
+        vim.api.nvim_set_hl(0, 'FloatBorder', {bg='#${base16.base00}', fg='#${base16.base05}'})
         vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#${base16.base00}'})
         ${builtins.readFile ./options.lua}
         ${builtins.readFile ./keymaps.lua}
