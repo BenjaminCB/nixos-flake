@@ -92,7 +92,11 @@ in
             config = toLua ''
                 vim.o.timeout = true
                 vim.o.timeoutlen = 500
-                require("which-key").setup()
+                require("which-key").setup({
+                    window = {
+                        border = "single"
+                    }
+                })
             '';
         }
     ];
