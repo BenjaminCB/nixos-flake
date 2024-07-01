@@ -3,6 +3,7 @@
 let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+    base16 = import ../../base16.nix;
 in
 {
     enable = true;
@@ -11,8 +12,8 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
-        vim.api.nvim_set_hl(0, 'FloatBorder', {bg='#3B4252', fg='#5E81AC'})
-        vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#3B4252'})
+        vim.api.nvim_set_hl(0, 'FloatBorder', {bg='#${base16.base00}', fg='#${base16.base0F}'})
+        vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#${base16.base00}'})
         ${builtins.readFile ./options.lua}
         ${builtins.readFile ./keymaps.lua}
     '';
