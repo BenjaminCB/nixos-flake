@@ -178,7 +178,7 @@
 
     stylix = {
         enable = true;
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+        base16Scheme = (import ./base16.nix).tokyo-night-dark;
         image = ./wallpapers/hyprland.png;
         cursor.package = pkgs.vimix-cursor-theme;
         cursor.name = "Vimix-Cursors";
