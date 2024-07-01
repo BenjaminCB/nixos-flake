@@ -169,11 +169,10 @@
         noto-fonts-cjk
         noto-fonts-emoji
         liberation_ttf
-        fira-code
-        fira-code-symbols
         mplus-outline-fonts.githubRelease
         dina-font
         proggyfonts
+        (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
     stylix = {
@@ -183,8 +182,8 @@
         cursor.package = pkgs.vimix-cursor-theme;
         cursor.name = "Vimix-Cursors";
         fonts = {
-            monospace.package = pkgs.fira-code;
-            monospace.name = "Fira Code";
+            monospace.package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+            monospace.name = "FiraCode Nerd Font Mono";
             sansSerif.package = pkgs.noto-fonts;
             sansSerif.name = "Noto Sans";
             serif.package = pkgs.noto-fonts;

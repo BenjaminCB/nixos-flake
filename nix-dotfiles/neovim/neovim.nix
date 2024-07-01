@@ -42,7 +42,16 @@ in
         nvim-treesitter-parsers.lua
         nvim-treesitter-parsers.python
 
-	    nvim-web-devicons
+        {
+            plugin = nvim-web-devicons;
+            config = toLua ''
+                require('nvim-web-devicons').setup({
+                    default = true;
+                    strict = true;
+                })
+            '';
+        }
+
         lsp-colors-nvim
         {
             # nvim-web-devicons and lsp-colors-nvim are dependencies,
