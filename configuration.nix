@@ -93,7 +93,7 @@
     };
 
     # From vimjoyer nixos + hyprland video
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
 
     # location.provider = "geoclue2";
     # services.redshift.enable = true;
