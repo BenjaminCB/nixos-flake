@@ -51,7 +51,7 @@ wk.register({
         sh = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
         rr = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
         rn = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+        h = { require('hover').hover, "Hover" },
         ca = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         sd = { "<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>", "Show Line Diagnostics" },
         n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },

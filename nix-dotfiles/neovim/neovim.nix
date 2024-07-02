@@ -43,6 +43,28 @@ in
         nvim-treesitter-parsers.python
 
         {
+            plugin = hover-nvim;
+            config = toLua ''
+                require("hover").setup {
+                    init = function()
+                        require("hover.providers.lsp")
+                    end,
+                    preview_opts = {
+                        border = 'single'
+                    },
+                    -- Whether the contents of a currently open hover window should be moved
+                    -- to a :h preview-window when pressing the hover keymap.
+                    preview_window = false,
+                    title = true,
+                    mouse_providers = {
+                        'LSP'
+                    },
+                    mouse_delay = 1000
+                }
+            '';
+        }
+
+        {
             plugin = nvim-web-devicons;
             config = toLua ''
                 require('nvim-web-devicons').setup({
