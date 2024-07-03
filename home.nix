@@ -46,12 +46,7 @@ in
     programs.tofi = import ./nix-dotfiles/tofi.nix;
     programs.zathura = import ./nix-dotfiles/zathura.nix;
 
-    programs.nixvim = {
-    	enable = true;
-	plugins = {
-	    lualine.enable = true;
-	};
-    };
+    programs.nixvim = import ./nix-dotfiles/nixvim.nix;
 
     services.mako.enable = true;
 
