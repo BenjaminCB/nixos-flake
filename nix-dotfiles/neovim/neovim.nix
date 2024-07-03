@@ -74,7 +74,6 @@ in
             '';
         }
 
-        lsp-colors-nvim
         {
             # nvim-web-devicons and lsp-colors-nvim are dependencies,
             plugin = trouble-nvim;
