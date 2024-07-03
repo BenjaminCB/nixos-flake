@@ -1,18 +1,18 @@
 {
-  base00= "1e1e2e";# base
-  base01= "181825";# mantle
-  base02= "313244";# surface0
-  base03= "45475a";# surface1
-  base04= "585b70";# surface2
-  base05= "cdd6f4";# text
-  base06= "f5e0dc";# rosewater
-  base07= "b4befe";# lavender
-  base08= "f38ba8";# red
-  base09= "fab387";# peach
-  base0A= "f9e2af";# yellow
-  base0B= "a6e3a1";# green
-  base0C= "94e2d5";# teal
-  base0D= "89b4fa";# blue
-  base0E= "cba6f7";# mauve
-  base0F= "f2cdcd";# flamingo
+  base00= "1c1c1c";# Default Background
+  base01= "af005f";# Lighter Background (Used for status bars, line number and folding marks)
+  base02= "5faf00";# Selection Background
+  base03= "d7af5f";# Comments, Invisibles, Line Highlighting
+  base04= "5fafd7";# Dark Foreground (Used for status bars)
+  base05= "808080";# Default Foreground, Caret, Delimiters, Operators
+  base06= "d7875f";# Light Foreground (Not often used)
+  base07= "d0d0d0";# Light Background (Not often used)
+  base08= "585858";# Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+  base09= "5faf5f";# Integers, Boolean, Constants, XML Attributes, Markup Link Url
+  base0A= "afd700";# Classes, Markup Bold, Search Text Background
+  base0B= "af87d7";# Strings, Inherited Class, Markup Code, Diff Inserted
+  base0C= "ffaf00";# Support, Regular Expressions, Escape Characters, Markup Quotes
+  base0D= "ff5faf";# Functions, Methods, Attribute IDs, Headings
+  base0E= "00afaf";# Keywords, Storage, Selector, Markup Italic, Diff Changed
+  base0F= "5f8787";# Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 }
