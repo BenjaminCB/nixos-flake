@@ -145,7 +145,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        vim wget firefox git
+        vim wget firefox-esr git
         libsForQt5.qt5.qtquickcontrols2
         libsForQt5.qt5.qtgraphicaleffects
         fishPlugins.hydro
