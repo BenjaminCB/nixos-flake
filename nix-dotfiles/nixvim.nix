@@ -47,6 +47,31 @@
     ];
 	plugins = {
 	    lualine.enable = true;
+        treesitter.enable = true;
+        noice.enable = true;
+        lsp = {
+            enable = true;
+            servers = {
+                tsserver.enable = true;
+                hls.enable = true;
+                lua-ls.enable = true;
+                yamlls.enable = true;
+                jsonls.enable = true;
+                nixd.enable = true;
+            };
+            keymaps.lspBuf = {
+                "<leader>vd" = "definiton";
+                "<leader>vi" = "implementation";
+                "<leader>vsh" = "signature_help";
+                "<leader>vrr" = "references";
+                "<leader>vrn" = "rename";
+                "<leader>vh" = "hover";
+                "<leader>vca" = "code_action";
+                # vsd = { "<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>", "Show Line Diagnostics" },
+                # vn = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+                # vll = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Set Loclist" },
+            };
+        };
         telescope = {
             enable = true;
             extensions.fzy-native = {
