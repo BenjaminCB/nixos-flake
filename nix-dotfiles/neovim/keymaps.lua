@@ -59,8 +59,9 @@ wk.register({
     },
     x = {
         name = "Trouble",
-        x = { "<cmd>Trouble diagnostics toggle<cr>", "Trouble" },
-        d = { "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Document Diagnostics" },
+        x = { "<cmd>TroubleToggle<cr>", "Trouble" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
     },
     g = {
         name = "ChatGPT",
