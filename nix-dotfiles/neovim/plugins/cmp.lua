@@ -6,13 +6,12 @@ local borderstyle = {
 }
 
 cmp.setup({
-    -- snippet = {
-    --     -- REQUIRED - you must specify a snippet engine
-    --     expand = function(args)
-    --         -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    --         vim.snippet.expand(args.body)
-    --     end,
-    -- },
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        end,
+    },
     window = {
         completion = borderstyle,
         documentation = borderstyle,
@@ -27,7 +26,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         -- { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
+        { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
     }, {
