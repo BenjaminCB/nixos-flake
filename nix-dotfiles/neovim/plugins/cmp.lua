@@ -6,6 +6,16 @@ local borderstyle = {
 }
 
 cmp.setup({
+    enabled = function ()
+        -- disable cmp for some filetypes
+        local filetypes = {
+            'typst',
+        }
+        if vim.tbl_contains(filetypes, vim.bo.filetype) then
+            return false
+        end
+        return true
+    end,
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
