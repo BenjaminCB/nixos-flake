@@ -106,8 +106,6 @@ in
             config = toLuaFile ./plugins/lsp.lua;
         }
 
-        luasnip
-        cmp_luasnip
 	    cmp-nvim-lsp
         {
             plugin = nvim-cmp;
