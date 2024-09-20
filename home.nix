@@ -1,4 +1,4 @@
-{ config, pkgs, secrets, ... }:
+{ config, pkgs, pkgs-stable, secrets, ... }:
 
 let
     link = config.lib.file.mkOutOfStoreSymlink;
@@ -14,7 +14,7 @@ in
     programs.home-manager.enable = true;
 
     home.packages = [
-        dev-environments work-monitor zfzf dir-imgs
+        dev-environments work-monitor zfzf dir-imgs pkgs-stable.coqPackages.coq-lsp
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
@@ -30,7 +30,7 @@ in
         xwaylandvideobridge
 
         ### programming stuff
-        luajit gcc yarn coq_8_9 nodejs lua-language-server nixd
+        luajit gcc yarn coq nodejs lua-language-server nixd
     ]);
 
     stylix.targets.tofi.enable = false;

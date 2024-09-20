@@ -3,6 +3,7 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +15,7 @@
         stylix.url = "github:danth/stylix";
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }@attrs:
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@attrs:
     let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
@@ -23,7 +24,13 @@
         };
         lib = nixpkgs.lib;
         secrets = import ./secrets.nix;
-        extraArgs = attrs // { secrets = secrets; };
+        extraArgs = attrs // {
+            secrets = secrets;
+            pkgs-stable = import nixpkgs-stable {
+                inherit system;
+                config.allowUnfree = true;
+            };
+        };
         nixosSystem = { system, pkgs, configuration, homes }: lib.nixosSystem {
             inherit system;
             modules = [

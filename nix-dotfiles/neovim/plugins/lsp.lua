@@ -12,6 +12,7 @@ local servers = { "tsserver"
                 , "pylsp"
                 , "yamlls"
                 , "nixd"
+                , "coq_lsp"
                 }
 
 for _, lsp in ipairs(servers) do
