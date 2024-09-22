@@ -72,7 +72,7 @@
 
         master = {
             # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-            new_is_master = true;
+            new_status = "master";
         };
 
         gestures = {
@@ -94,7 +94,7 @@
             "$mainMod, H, layoutmsg, cycleprev"
             "$mainMod, L, layoutmsg, cyclenext"
             "$mainMod, M, fullscreen"
-            "$mainMod, B, fakefullscreen"
+            "$mainMod, B, fullscreenstate, -1, 2"
 
             # Switch workspaces with mainMod + [0-9]
             "$mainMod, 1, workspace, 1"
