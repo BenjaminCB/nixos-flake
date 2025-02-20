@@ -70,22 +70,19 @@
         # windowManager.awesome.enable = true;
         # desktopManager.xfce.enable = true;
     # };
-    services.displayManager.sddm = {
-        enable = true;
-        theme = "${import ./derivations/sddm-sugar-dark.nix { inherit pkgs; }}";
-    };
-    services.xserver = {
-        enable = true;
-        #displayManager.gdm = {
-            #enable = true;
-            #wayland = true;
-        #};
+    services = {
+        xserver.enable = true;
+        displayManager.sddm = {
+            enable = true;
+            theme = "${import ./derivations/sddm-sugar-dark.nix { inherit pkgs; }}";
+        };
+        desktopManager.plasma6.enable = true;
     };
 
-    programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
-    };
+    #programs.hyprland = {
+    #    enable = true;
+    #    xwayland.enable = true;
+    #};
 
     virtualisation.docker.rootless = {
         enable = true;
@@ -93,7 +90,7 @@
     };
 
     # From vimjoyer nixos + hyprland video
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
 
     # location.provider = "geoclue2";
     # services.redshift.enable = true;
