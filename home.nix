@@ -30,7 +30,7 @@ in
         xwaylandvideobridge
 
         ### programming stuff
-        luajit gcc yarn coq nodejs lua-language-server nixd
+        luajit gcc yarn coq nodejs lua-language-server nixd vscode
     ]);
 
     stylix.targets.tofi.enable = false;
