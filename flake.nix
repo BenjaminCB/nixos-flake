@@ -13,9 +13,13 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         stylix.url = "github:danth/stylix";
+        nixvim = {
+            url = "github:nix-community/nixvim";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@attrs:
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixvim, ... }@attrs:
     let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
@@ -39,7 +43,7 @@
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
                     home-manager.users.bcb = {
-                        imports = homes;
+                        imports = homes ++ [nixvim.homeManagerModules.nixvim];
                     };
                     home-manager.extraSpecialArgs = extraArgs;
                 }

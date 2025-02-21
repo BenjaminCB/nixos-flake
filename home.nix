@@ -39,12 +39,14 @@ in
     programs.wezterm = import ./nix-dotfiles/wezterm.nix // { enable = false; };
     programs.kitty = import ./nix-dotfiles/kitty.nix // { enable = true; };
     programs.lf = (import ./nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = true; };
-    programs.neovim = import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; };
+    programs.neovim = (import ./nix-dotfiles/neovim/neovim.nix { inherit pkgs secrets; }) // { enable = false; };
     programs.git = import ./nix-dotfiles/git.nix;
     programs.direnv = import ./nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
     programs.tofi = import ./nix-dotfiles/tofi.nix;
     programs.zathura = import ./nix-dotfiles/zathura.nix;
+
+    programs.nixvim = import ./nix-dotfiles/nixvim.nix;
 
     services.mako.enable = true;
 
