@@ -71,18 +71,18 @@
         # desktopManager.xfce.enable = true;
     # };
     services = {
+        #desktopManager.plasma6.enable = true;
         xserver.enable = true;
         displayManager.sddm = {
             enable = true;
             theme = "${import ./derivations/sddm-sugar-dark.nix { inherit pkgs; }}";
         };
-        desktopManager.plasma6.enable = true;
     };
 
-    #programs.hyprland = {
-    #    enable = true;
-    #    xwayland.enable = true;
-    #};
+    programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
+    };
 
     virtualisation.docker.rootless = {
         enable = true;
