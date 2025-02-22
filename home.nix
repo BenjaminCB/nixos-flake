@@ -46,7 +46,7 @@ in
     programs.tofi = import ./nix-dotfiles/tofi.nix;
     programs.zathura = import ./nix-dotfiles/zathura.nix;
 
-    programs.nixvim = import ./nix-dotfiles/nixvim.nix;
+    programs.nixvim = import ./nix-dotfiles/nixvim/nixvim.nix;
 
     services.mako.enable = true;
 

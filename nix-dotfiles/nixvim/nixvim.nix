@@ -33,24 +33,24 @@
         register = "unnamedplus";
         providers.wl-copy.enable = true;
     };
-    autoCmd = [
-        {
-            command = "setlocal wrap colorcolumn=0 spell spelllang=da,en_gb";
-            event = [ "BufEnter" "BufWinEnter" ];
-            pattern = [ "*.md" ];
-        }
-        {
-            command = "nnoremap <buffer> <leader>sc [slz=";
-            event = [ "BufEnter" "BufWinEnter" ];
-            pattern = [ "*.md" ];
-        }
-    ];
+    # autoCmd = [
+        # {
+            # command = "setlocal wrap colorcolumn=0 spell spelllang=da,en_gb";
+            # event = [ "BufEnter" "BufWinEnter" ];
+            # pattern = [ "*.md" ];
+        # }
+        # {
+            # command = "nnoremap <buffer> <leader>sc [slz=";
+            # event = [ "BufEnter" "BufWinEnter" ];
+            # pattern = [ "*.md" ];
+        # }
+    # ];
 	plugins = {
 	    lualine.enable = true;
         treesitter.enable = true;
-        noice.enable = true;
         lsp = {
             enable = true;
+            inlayHints = true;
             servers = {
                 ts_ls.enable = true;
                 hls = {
@@ -63,17 +63,62 @@
                 nixd.enable = true;
             };
             keymaps.lspBuf = {
-                "<leader>vd" = "definiton";
-                "<leader>vi" = "implementation";
-                "<leader>vsh" = "signature_help";
-                "<leader>vrr" = "references";
-                "<leader>vrn" = "rename";
-                "<leader>vh" = "hover";
-                "<leader>vca" = "code_action";
+                "<leader>vd" = { 
+                    action = "definiton";
+                    desc = "Go to definition";
+                };
+                "<leader>vi" = {
+                    action = "implementation";
+                    desc = "Go to implementation";
+                };
+                "<leader>vsh" = {
+                    action = "signature_help";
+                    desc = "View signature";
+                };
+                "<leader>vrr" = {
+                    action = "references";
+                    desc = "View references";
+                };
+                "<leader>vrn" = {
+                    action = "rename";
+                    desc = "Rename binding";
+                };
+                "<leader>vh" = {
+                    action = "hover";
+                    desc = "Hover";
+                };
+                "<leader>vca" = {
+                    action = "code_action";
+                    desc = "Code action";
+                };
                 # vsd = { "<cmd>lua vim.lsp.util.show_line_diagnostics()<cr>", "Show Line Diagnostics" },
                 # vn = { "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
                 # vll = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Set Loclist" },
             };
+            onAttach = "";
+            luaConfig.post = ''
+                local _border = "rounded"
+
+                vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+                  vim.lsp.handlers.hover, {
+                    border = _border
+                  }
+                )
+
+                vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+                  vim.lsp.handlers.signature_help, {
+                    border = _border
+                  }
+                )
+
+                vim.diagnostic.config{
+                  float={border=_border}
+                };
+
+                require('lspconfig.ui.windows').default_options = {
+                  border = _border
+                }
+            '';
         };
         mini.enable = true;
         web-devicons.enable = true;
