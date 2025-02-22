@@ -45,12 +45,38 @@
             pattern = [ "*.md" ];
         }
     ];
+    keymaps = [
+        {
+            action = "<cmd>cnext<cr>";
+            key = "<leader>cn";
+            mode = "n";
+        }
+        {
+            action = "<cmd>cprev><cr>";
+            key = "<leader>cp";
+            mode = "n";
+        }
+        {
+            action = "<cmd>copen<cr>";
+            key = "<leader>co";
+            mode = "n";
+        }
+        {
+            action = "<cmd>cclose<cr>";
+            key = "<leader>cc";
+            mode = "n";
+        }
+        {
+            action = ":call setqflist([])<cr>";
+            key = "<leader>cf";
+            mode = "n";
+        }
+    ];
 	plugins = {
 	    lualine.enable = true;
         treesitter.enable = true;
         nvim-surround.enable = true;
         commentary.enable = true;
-        autoclose.enable = true;
         gitgutter.enable = true;
         lsp = {
             enable = true;
@@ -78,7 +104,12 @@
             };
             symbolInWinbar.enable = false;
         };
-        cmp = {
+        cmp = let 
+            borderstyle = {
+                border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
+                winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None";
+            };
+        in {
             enable = true;
             autoEnableSources = true;
             settings.sources = [
@@ -88,8 +119,8 @@
                 { name = "copilot"; }
             ];
             settings.window = {
-                completion.border = "solid";
-                documentation.border = "solid";
+                completion = borderstyle;
+                documentation = borderstyle;
             };
             settings.mapping = {
                 "<C-Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
