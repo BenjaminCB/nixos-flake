@@ -33,25 +33,46 @@
         register = "unnamedplus";
         providers.wl-copy.enable = true;
     };
-    # autoCmd = [
-        # {
-            # command = "setlocal wrap colorcolumn=0 spell spelllang=da,en_gb";
-            # event = [ "BufEnter" "BufWinEnter" ];
-            # pattern = [ "*.md" ];
-        # }
-        # {
-            # command = "nnoremap <buffer> <leader>sc [slz=";
-            # event = [ "BufEnter" "BufWinEnter" ];
-            # pattern = [ "*.md" ];
-        # }
-    # ];
+    autoCmd = [
+        {
+            command = "setlocal wrap colorcolumn=0 spell spelllang=da,en_gb";
+            event = [ "BufEnter" "BufWinEnter" ];
+            pattern = [ "*.md" ];
+        }
+        {
+            command = "nnoremap <buffer> <leader>sc [slz=";
+            event = [ "BufEnter" "BufWinEnter" ];
+            pattern = [ "*.md" ];
+        }
+    ];
 	plugins = {
 	    lualine.enable = true;
         treesitter.enable = true;
         lsp = {
             enable = true;
             inlayHints = true;
-            servers.lua_ls.enable = true;
+            servers = {
+                lua_ls.enable = true;
+                nixd.enable = true;
+                ts_ls.enable = true;
+            };
+            keymaps.lspBuf = {
+                "<leader>vh" = "hover";
+                "<leader>vrr" = "references";
+                "<leader>vd" = "definition";
+                "<leader>vi" = "implementation";
+                "<leader>vt" = "type_definition";
+                "<leader>vrn" = "rename";
+            };
+        };
+        lsp-lines.enable = true;
+        lspsaga = {
+            enable = true;
+            ui = {
+                border = "single";
+                devicon = true;
+            };
+            symbolInWinbar.enable = false;
         };
         mini.enable = true;
         web-devicons.enable = true;
