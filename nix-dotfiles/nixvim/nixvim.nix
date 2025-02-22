@@ -74,6 +74,8 @@
             };
             symbolInWinbar.enable = false;
         };
+        oil.enable = true;
+        copilot-lua.enable = true;
         mini.enable = true;
         web-devicons.enable = true;
         telescope = {
