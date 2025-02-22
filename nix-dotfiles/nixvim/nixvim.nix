@@ -74,8 +74,17 @@
             };
             symbolInWinbar.enable = false;
         };
+        cmp = {
+            enable = true;
+            autoEnableSources = true;
+            settings.sources = [
+                { name = "nvim_lsp"; }
+                { name = "path"; }
+                { name = "buffer"; }
+                { name = "copilot"; }
+            ];
+        };
         oil.enable = true;
-        copilot-lua.enable = true;
         mini.enable = true;
         web-devicons.enable = true;
         telescope = {
