@@ -48,6 +48,10 @@
 	plugins = {
 	    lualine.enable = true;
         treesitter.enable = true;
+        nvim-surround.enable = true;
+        commentary.enable = true;
+        autoclose.enable = true;
+        gitgutter.enable = true;
         lsp = {
             enable = true;
             inlayHints = true;
