@@ -48,7 +48,11 @@
 	plugins = {
 	    lualine.enable = true;
         treesitter.enable = true;
-        lsp = import "./lsp.nix";
+        lsp = {
+            enable = true;
+            inlayHints = true;
+            servers.lua_ls.enable = true;
+        };
         mini.enable = true;
         web-devicons.enable = true;
         telescope = {
