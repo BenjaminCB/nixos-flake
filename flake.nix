@@ -17,9 +17,13 @@
             url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+	nixos-wsl = {
+	    url = "github:nix-community/NixOS-WSL";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixvim, ... }@attrs:
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, nixvim, nixos-wsl, ... }@attrs:
     let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
@@ -63,6 +67,11 @@
                 configuration = ./laptop/configuration.nix;
                 homes = [ ./home.nix ./laptop/home.nix ];
             };
+	    wsl = nixosSystem {
+		inherit system pkgs;
+		configuration = nixos-wsl.nixosModules.default;
+		homes = [ ./wsl/home.nix ];
+	    };
             testtop = nixosSystem {
                 inherit system pkgs;
                 configuration = ./testtop/configuration.nix;
