@@ -67,7 +67,7 @@
                 configuration = ./laptop/configuration.nix;
                 homes = [ ./home.nix ./laptop/home.nix ];
             };
-	        wsl = lib.nixosSystem {
+	    wsl = lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
                     nixos-wsl.nixosModules.default
@@ -80,7 +80,7 @@
 		    home-manager.nixosModules.home-manager {
 			home-manager.useGlobalPkgs = true;
 			home-manager.useUserPackages = true;
-			home-manager.users.bcb = {
+			home-manager.users.nixos = {
 			    imports = [
 				./wsl/home.nix 
 				nixvim.homeManagerModules.nixvim
