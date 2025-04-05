@@ -1,7 +1,6 @@
 { config, pkgs, pkgs-stable, secrets, ... }:
 {
     home.username = "bcb";
-    home.homeDirectory = "/home/bcb";
     home.stateVersion = "22.11";
     programs.home-manager.enable = true;
 
@@ -16,12 +15,12 @@
 
         ### programming stuff
         luajit gcc yarn coq nodejs lua-language-server nixd vscode
-    ]);
+    ];
 
-    programs.lf = (import ./nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = true; };
-    programs.git = import ./nix-dotfiles/git.nix;
-    programs.direnv = import ./nix-dotfiles/direnv.nix;
+    programs.lf = (import ../nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = true; };
+    programs.git = import ../nix-dotfiles/git.nix;
+    programs.direnv = import ../nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };
 
-    programs.nixvim = import ./nix-dotfiles/nixvim/nixvim.nix;
+    programs.nixvim = import ../nix-dotfiles/nixvim/nixvim.nix;
 }
