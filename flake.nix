@@ -71,6 +71,7 @@
                 system = "x86_64-linux";
                 modules = [
                     nixos-wsl.nixosModules.default
+                    ./wsl/configuration.nix
                     {
                         system.stateVersion = "24.05";
                         wsl.enable = true;
