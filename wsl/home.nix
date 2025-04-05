@@ -1,23 +1,22 @@
-{ config, pkgs, pkgs-stable, secrets, ... }:
+{ config, pkgs, ... }:
 {
     home.username = "bcb";
-    home.stateVersion = "22.11";
+    home.stateVersion = "24.05";
     programs.home-manager.enable = true;
 
     home.packages = with pkgs; [
         ### term applications
-        gotop yazi
+        gotop 
 
         ### utilities
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
-        speedtest-cli unzip zip wmname xclip xdg-utils poppler_utils
-        unrar p7zip tree-sitter acpi git-crypt kitty-themes just mermaid-cli
+        speedtest-cli unzip zip xdg-utils poppler_utils
+        unrar p7zip tree-sitter git-crypt kitty-themes just 
 
         ### programming stuff
-        luajit gcc yarn coq nodejs lua-language-server nixd vscode
+        luajit gcc yarn nodejs lua-language-server nixd vscode
     ];
 
-    programs.lf = (import ../nix-dotfiles/lf.nix { inherit pkgs; }) // { enable = true; };
     programs.git = import ../nix-dotfiles/git.nix;
     programs.direnv = import ../nix-dotfiles/direnv.nix;
     programs.eza = { enable = true; };

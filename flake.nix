@@ -76,6 +76,18 @@
                         system.stateVersion = "24.05";
                         wsl.enable = true;
                     }
+                    attrs.stylix.nixosModules.stylix
+		    home-manager.nixosModules.home-manager {
+			home-manager.useGlobalPkgs = true;
+			home-manager.useUserPackages = true;
+			home-manager.users.bcb = {
+			    imports = [
+				./wsl/home.nix 
+				nixvim.homeManagerModules.nixvim
+ 			    ];
+			};
+			home-manager.extraSpecialArgs = extraArgs;
+	           }
                 ];
             };
             testtop = nixosSystem {

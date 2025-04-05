@@ -91,7 +91,10 @@
 
     stylix = {
         enable = true;
-        base16Scheme = import ./base16.nix;
+        base16Scheme = import ../base16.nix;
+        image = ../wallpapers/hyprland.png;
+        cursor.package = pkgs.vimix-cursor-theme;
+        cursor.name = "Vimix-Cursors";
         fonts = {
             monospace.package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
             monospace.name = "FiraCode Nerd Font Mono";
@@ -118,7 +121,7 @@
     # this value at the release version of the first install of this system.
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "22.11"; # Did you read the comment?
+    system.stateVersion = "24.05"; # Did you read the comment?
 
     nix = {
         package = pkgs.nixFlakes;
