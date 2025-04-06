@@ -6,7 +6,7 @@
 
     home.packages = with pkgs; [
         ### term applications
-        gotop 
+        gotop tmux
 
         ### utilities
         automake bat fd ffmpeg fzf ncdu pandoc lsix ripgrep
