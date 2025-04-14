@@ -14,7 +14,7 @@
         unrar p7zip tree-sitter git-crypt kitty-themes just 
 
         ### programming stuff
-        luajit gcc yarn nodejs lua-language-server nixd vscode
+        luajit gcc yarn nodejs lua-language-server nixd 
     ];
 
     programs.git = import ../nix-dotfiles/git.nix;
