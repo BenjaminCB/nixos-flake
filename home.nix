@@ -18,7 +18,7 @@ in
     ] ++ (with pkgs; [
         ### gui applications
         ungoogled-chromium gimp mpv pcmanfm spotify
-        alacritty insomnia webcord
+        alacritty insomnia webcord steam
 
         ### term applications
         ncpamixer gotop yazi
