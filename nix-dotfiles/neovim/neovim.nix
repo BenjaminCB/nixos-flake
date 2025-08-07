@@ -89,7 +89,7 @@ in
 
         vim-closer
         markdown-preview-nvim
-        copilot-vim
+        # copilot-vim
 
         {
             plugin = Coqtail;

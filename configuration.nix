@@ -162,23 +162,24 @@
 
     fonts.packages = with pkgs; [
         noto-fonts
-        noto-fonts-cjk
+        noto-fonts-cjk-sans
         noto-fonts-emoji
         liberation_ttf
         mplus-outline-fonts.githubRelease
         dina-font
         proggyfonts
-        (nerdfonts.override { fonts = [ "FiraCode" ]; })
+        nerd-fonts.fira-code
+        # (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
     stylix = {
         enable = true;
         base16Scheme = import ./base16.nix;
         image = ./wallpapers/hyprland.png;
-        cursor.package = pkgs.vimix-cursor-theme;
-        cursor.name = "Vimix-Cursors";
+        # cursor.package = pkgs.vimix-cursor-theme;
+        # cursor.name = "Vimix-Cursors";
         fonts = {
-            monospace.package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+            monospace.package = pkgs.nerd-fonts.fira-code;
             monospace.name = "FiraCode Nerd Font Mono";
             sansSerif.package = pkgs.noto-fonts;
             sansSerif.name = "Noto Sans";
@@ -222,7 +223,7 @@
     system.stateVersion = "22.11"; # Did you read the comment?
 
     nix = {
-        package = pkgs.nixFlakes;
+        package = pkgs.nixVersions.stable;
         settings.trusted-users = [ "root" "bcb" "@wheel" ];
         extraOptions = "experimental-features = nix-command flakes";
     };

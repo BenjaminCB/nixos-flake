@@ -116,7 +116,7 @@
                 { name = "nvim_lsp"; }
                 { name = "path"; }
                 { name = "buffer"; }
-                { name = "copilot"; }
+                # { name = "copilot"; }
             ];
             settings.window = {
                 completion = borderstyle;

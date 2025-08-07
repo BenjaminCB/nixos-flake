@@ -93,7 +93,7 @@
         enable = true;
         base16Scheme = import ../base16.nix;
         image = ../wallpapers/hyprland.png;
-        cursor.package = pkgs.vimix-cursor-theme;
+        cursor.package = pkgs.vimix-cursors;
         cursor.name = "Vimix-Cursors";
         fonts = {
             monospace.package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
