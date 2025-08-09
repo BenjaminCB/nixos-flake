@@ -87,8 +87,8 @@
     enable = true;
     interactiveShellInit = ''
       ${pkgs.afetch}/bin/afetch
-      alias ll='eza -lah'
-      set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
+      alias ll='${pkgs.eza}/bin/eza -lah'
+      set -x MANPAGER "${pkgs.bat}/bin/bat -p --tabs 2 --theme gruvbox-dark"
     '';
   };
 
