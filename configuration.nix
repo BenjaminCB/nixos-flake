@@ -125,7 +125,7 @@
 
   # bigger font in tty
   console = {
-    font = "latacyrheb-sun32";
+    font = "latarcyrheb-sun32";
     keyMap = "us";
   };
 
