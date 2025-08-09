@@ -9,15 +9,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf.url = "github:BenjaminCB/nvf";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    stylix,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	modules = [
+        modules = [
+          stylix.nixosModules.stylix
           ./configuration.nix
-	  ./desktop-hardware-configuration.nix
+          ./desktop-hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -28,8 +38,8 @@
             # extraSpecialArgs = ...
           }
         ];
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
       };
-    };  
+    };
   };
 }

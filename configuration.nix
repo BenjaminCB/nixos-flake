@@ -118,6 +118,8 @@
       inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
+  environment.sessionVariables.EDITOR = "nvim";
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -129,7 +131,28 @@
     nerd-fonts.fira-code
   ];
 
-  environment.sessionVariables.EDITOR = "nvim";
+  stylix = {
+    enable = true;
+    base16Scheme = import ./base16.nix;
+    image = ./wallpaper.png;
+    # cursor.package = pkgs.vimix-cursor-theme;
+    # cursor.name = "Vimix-Cursors";
+    fonts = {
+      monospace.package = pkgs.nerd-fonts.fira-code;
+      monospace.name = "FiraCode Nerd Font Mono";
+      sansSerif.package = pkgs.noto-fonts;
+      sansSerif.name = "Noto Sans";
+      serif.package = pkgs.noto-fonts;
+      serif.name = "Noto Serif";
+    };
+    fonts.sizes = {
+      applications = 14;
+      terminal = 18;
+      desktop = 14;
+      popups = 14;
+    };
+    polarity = "dark";
+  };
 
   # enable docker
   virtualisation.docker.rootless = {
