@@ -8,8 +8,6 @@
     firefox ungoogled-chromium mpv pcmanfm spotify alacritty discord
     bat ffmpeg fzf pandoc speedtest-cli unzip zip xdg-utils poppler_utils
     unrar p7zip tree-sitter acpi git-crypt just gotop
-
-    neovim
   ];
 
   programs.git = import ./programs/git.nix;

@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvf.url = "github:BenjaminCB/nvf";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {
@@ -27,6 +28,7 @@
             # extraSpecialArgs = ...
           }
         ];
+        specialArgs = { inherit inputs; };
       };
     };  
   };

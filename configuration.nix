@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Bootloader.
@@ -104,13 +104,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
+    vim
     git
     fishPlugins.z
     fishPlugins.puffer
     fishPlugins.hydro
     fishPlugins.sponge
+  ] ++ [ 
+    inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+              
 
   environment.sessionVariables.EDITOR = "nvim";
 
