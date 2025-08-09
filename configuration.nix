@@ -105,6 +105,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
+    git
     fishPlugins.z
     fishPlugins.puffer
     fishPlugins.hydro
@@ -113,18 +114,20 @@
 
   environment.sessionVariables.EDITOR = "nvim";
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
+  # enable docker
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+
+  # bigger font in tty
+  console = {
+    font = "latacyrheb-sun32";
+    keyMap = "us";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
