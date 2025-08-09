@@ -82,6 +82,12 @@
     ];
   };
 
+  # enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   users.defaultUserShell = pkgs.fish;
   programs.fish = {
     enable = true;
@@ -95,12 +101,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -109,7 +109,7 @@
     fishPlugins.z
     fishPlugins.puffer
     fishPlugins.hydro
-  #  wget
+    fishPlugins.sponge
   ];
 
   environment.sessionVariables.EDITOR = "nvim";
