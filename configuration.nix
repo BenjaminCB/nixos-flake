@@ -1,10 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -76,14 +78,14 @@
   users.users.bcb = {
     isNormalUser = true;
     description = "bcb";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
   # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -103,18 +105,29 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    fishPlugins.z
-    fishPlugins.puffer
-    fishPlugins.hydro
-    fishPlugins.sponge
-  ] ++ [ 
-    inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      vim
+      git
+      fishPlugins.z
+      fishPlugins.puffer
+      fishPlugins.hydro
+      fishPlugins.sponge
+    ]
+    ++ [
+      inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
 
-              
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    nerd-fonts.fira-code
+  ];
 
   environment.sessionVariables.EDITOR = "nvim";
 
