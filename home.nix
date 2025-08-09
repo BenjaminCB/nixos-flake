@@ -7,25 +7,13 @@
   home.packages = with pkgs; [
     firefox ungoogled-chromium mpv pcmanfm spotify alacritty discord
     bat ffmpeg fzf pandoc speedtest-cli unzip zip xdg-utils poppler_utils
-    unrar p7zip tree-sitter acpi git-crypt kitty-themes just gotop
+    unrar p7zip tree-sitter acpi git-crypt just gotop
 
     neovim
   ];
 
   programs.git = import ./programs/git.nix;
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "25.05";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs.kitty = import ./programs/kitty.nix;
 
   xdg.mimeApps = {
     enable = true;
@@ -48,4 +36,17 @@
       "x-scheme-handler/unknown"      = "firefox.desktop";
     };
   };
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = "25.05";
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }
