@@ -82,6 +82,16 @@
     ];
   };
 
+  users.defaultUserShell = pkgs.fish;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      ${pkgs.afetch}/bin/afetch
+      alias ll='eza -lah'
+      set -x MANPAGER "bat -p --tabs 2 --theme gruvbox-dark"
+    '';
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -95,6 +105,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
+    fishPlugins.z
+    fishPlugins.puffer
+    fishPlugins.hydro
   #  wget
   ];
 
