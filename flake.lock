@@ -289,11 +289,11 @@
         "nvf": "nvf_2"
       },
       "locked": {
-        "lastModified": 1754753266,
-        "narHash": "sha256-EFo2rKaYwiHjZZX7TSeCGZWHxuAR+d3sIlnv92QgFmI=",
+        "lastModified": 1754774540,
+        "narHash": "sha256-rAd2Am27VTpF7Fv450pZV3ukkZfMyusEMtLQLHLCkDs=",
         "owner": "BenjaminCB",
         "repo": "nvf",
-        "rev": "e342b7f4eeef2da421d0f46dd2190b25d8eb1ba2",
+        "rev": "113850faa358227c647b84b1bed43ce229756abf",
         "type": "github"
       },
       "original": {
