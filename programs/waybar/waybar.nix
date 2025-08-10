@@ -1,5 +1,112 @@
 {
   enable = true;
   style = ./style.css;
-  settings = builtins.fromJSON (builtins.readFile ./config.jsonc);
+  settings = {
+    "layer" = "top";
+    "position" = "top";
+    "margin-bottom" = -10;
+    "spacing" = 0;
+
+    "modules-left" = [
+      "custom/uptime"
+      "cpu"
+    ];
+    "modules-center" = ["clock"];
+    "modules-right" = [
+      "bluetooth"
+      "network"
+      "pulseaudio"
+      #"backlight"
+      #"battery"
+    ];
+
+    "bluetooth" = {
+      "format" = "󰂲";
+      "format-on" = "{icon}";
+      "format-off" = "{icon}";
+      "format-connected" = "{icon}";
+      "format-icons" = {
+        "on" = "󰂯";
+        "off" = "󰂲";
+        "connected" = "󰂱";
+      };
+      "on-click" = "blueman-manager";
+      "tooltip-format-connected" = "{device_enumerate}";
+    };
+
+    "clock" = {
+      "timezone" = "Europe/Copenhagen";
+      "tooltip" = false;
+      "format" = "{:%H:%M:%S  -  %A, %d}";
+      "interval" = 1;
+    };
+
+    "network" = {
+      "format-wifi" = "󰤢";
+      "format-ethernet" = "󰈀 ";
+      "format-disconnected" = "󰤠 ";
+      "interval" = 5;
+      "tooltip-format" = "{essid} ({signalStrength}%)";
+      "on-click" = "nm-connection-editor";
+    };
+
+    "cpu" = {
+      "interval" = 1;
+      "format" = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
+      "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+      "on-click" = "ghostty -e htop";
+    };
+
+    "memory" = {
+      "interval" = 30;
+      "format" = "  {used:0.1f}G/{total:0.1f}G";
+      "tooltip-format" = "Memory";
+    };
+
+    "custom/uptime" = {
+      "format" = "{}";
+      "format-icon" = [""];
+      "tooltip" = false;
+      "interval" = 1600;
+      "exec" = "$HOME/.config/waybar/scripts/uptime.sh";
+    };
+
+    # "backlight" = {
+    #   "format" = "{icon}  {percent}%";
+    #   "format-icons" = ["" "󰃜" "󰃛" "󰃞" "󰃝" "󰃟" "󰃠"];
+    #   "tooltip" = false;
+    # };
+
+    "pulseaudio" = {
+      "format" = "{icon}  {volume}%";
+      "format-muted" = "";
+      "format-icons" = {
+        "default" = ["" "" " "];
+      };
+      "on-click" = "pavucontrol";
+    };
+
+    # "battery" = {
+    #   "interval" = 2;
+    #   "states" = {
+    #     # // "good"= 95;
+    #     "warning" = 30;
+    #     "critical" = 15;
+    #   };
+    #   "format" = "{icon}  {capacity}%";
+    #   "format-full" = "{icon}  {capacity}%";
+    #   "format-charging" = " {capacity}%";
+    #   "format-plugged" = " {capacity}%";
+    #   "format-alt" = "{icon} {time}";
+    #   # // "format-good"= "", // An empty format will hide the module
+    #   # // "format-full"= "";
+    #   "format-icons" = ["" "" "" "" ""];
+    # };
+
+    "custom/lock" = {
+      "tooltip" = false;
+      "on-click" = "sh -c '(sleep 0s; hyprlock)' & disown";
+      "format" = "";
+    };
+  };
 }
