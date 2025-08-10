@@ -112,7 +112,6 @@
       fishPlugins.z
       fishPlugins.puffer
       fishPlugins.hydro
-      fishPlugins.sponge
     ]
     ++ [
       inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
