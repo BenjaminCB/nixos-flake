@@ -31,6 +31,12 @@
     git-crypt
     just
     gotop
+
+    # stuff for screen mirroring
+    wl-mirror
+    slurp
+    wofi
+    pipectl
   ];
 
   programs.git = import ./programs/git.nix;
