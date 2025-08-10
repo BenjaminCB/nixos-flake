@@ -37,6 +37,13 @@
   programs.zathura = import ./programs/zathura.nix;
   programs.direnv = import ./programs/direnv.nix;
 
+  home.file.niri = {
+    enable = true;
+    recursive = true;
+    source = ./programs/niri;
+    target = ".config/niri";
+  };
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
