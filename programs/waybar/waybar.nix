@@ -1,7 +1,8 @@
-{
+{lib}: {
   enable = true;
-  style = ./style.css;
-  settings = {
+  style = lib.mkForce ./style.css;
+  systemd.enable = true;
+  settings.mainBar = {
     "layer" = "top";
     "position" = "top";
     "margin-bottom" = -10;
