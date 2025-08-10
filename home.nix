@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   home.username = "bcb";
@@ -36,7 +37,7 @@
   programs.kitty = import ./programs/kitty.nix;
   programs.zathura = import ./programs/zathura.nix;
   programs.direnv = import ./programs/direnv.nix;
-  programs.tofi = import ./programs/tofi.nix;
+  programs.tofi = import ./programs/tofi.nix {inherit lib;};
 
   home.file.niri = {
     enable = true;

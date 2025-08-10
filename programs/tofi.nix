@@ -1,4 +1,4 @@
-{
+{lib}: {
   enable = true;
   settings = {
     width = "100%";
@@ -9,8 +9,8 @@
     padding-top = "35%";
     result-spacing = 25;
     num-results = 5;
-    font = "FiraCode";
-    font-size = 16;
-    background-color = "#000A";
+    font = lib.mkForce "FiraCode";
+    font-size = lib.mkForce 16;
+    background-color = lib.mkForce "#000A";
   };
 }
