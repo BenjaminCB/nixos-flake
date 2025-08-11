@@ -31,6 +31,7 @@
     git-crypt
     just
     gotop
+    blueman
 
     # stuff for screen mirroring
     wl-mirror
