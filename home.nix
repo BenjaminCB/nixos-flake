@@ -44,7 +44,7 @@
   programs.zathura = import ./programs/zathura.nix;
   programs.direnv = import ./programs/direnv.nix;
   programs.tofi = import ./programs/tofi.nix {inherit lib;};
-  programs.waybar = import ./programs/waybar/waybar.nix {inherit lib;};
+  programs.waybar = import ./programs/waybar/waybar.nix {inherit lib pkgs;};
 
   home.file.niri = {
     enable = true;

@@ -1,0 +1,29 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["wlr/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "network", "bluetooth", "tray"],
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " {volume}%",
+    "on-click": "~/.local/bin/wpctl-toggle-default",  // device quick switch (below)
+    "scroll-step": 5
+  },
+
+  "network": {
+    "format-wifi": " {essid} {signalStrength}%",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-disconnected": "󰤭",
+    "tooltip": true
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-connected": " {num_connections}",
+    "on-click": "blueman-manager"
+  },
+
+  "tray": { "icon-size": 16, "spacing": 8 }
+}

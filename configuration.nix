@@ -162,6 +162,13 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings.General.Experimental = true;
+  };
+
   # bigger font in tty
   console = {
     font = "latarcyrheb-sun32";

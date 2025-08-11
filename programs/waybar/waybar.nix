@@ -1,113 +1,104 @@
-{lib}: {
+{
+  lib,
+  pkgs,
+}: let
+  toggleSink = pkgs.writeShellScriptBin "wpctl-toggle-sink" ''
+    set -euo pipefail
+    WPCTL=${pkgs.wireplumber}/bin/wpctl
+    AWK=${pkgs.gawk}/bin/awk
+    TR=${pkgs.coreutils}/bin/tr
+    NOTIFY=${pkgs.libnotify}/bin/notify-send
+
+    # Collect sink IDs
+    mapfile -t sinks < <(''$WPCTL status \
+      | ''$AWK '/Sinks:/{flag=1;next}/Sources:/{flag=0}flag && /ID/{gsub(/\./,"",''$2); print ''$2}')
+
+    if (( ''${#sinks[@]} == 0 )); then
+      ''$NOTIFY "Audio" "No sinks found"
+      exit 0
+    fi
+
+    current=''$(''$WPCTL status | ''$AWK '/Default Sink/{gsub(/\./,"",''$3); print ''$3}')
+    # Find current in list, then pick next (wrap around)
+    next=""
+    for i in "''${!sinks[@]}"; do
+      if [[ "''${sinks[''$i]}" = "''$current" ]]; then
+        next_index=$(( (''$i + 1) % ''${#sinks[@]} ))
+        next=''${sinks[''$next_index]}
+        break
+      fi
+    done
+    [[ -z "''$next" ]] && next=''${sinks [0]}
+
+    ''$WPCTL set-default "''$next"
+    ''$NOTIFY "Audio" "Default output → ID ''$next"
+  '';
+
+  toggleSource = pkgs.writeShellScriptBin "wpctl-toggle-source" ''
+    set -euo pipefail
+    WPCTL=${pkgs.wireplumber}/bin/wpctl
+    AWK=${pkgs.gawk}/bin/awk
+    TR=${pkgs.coreutils}/bin/tr
+    NOTIFY=${pkgs.libnotify}/bin/notify-send
+
+    # Collect source IDs
+    mapfile -t srcs < <(''$WPCTL status \
+      | ''$AWK '/Sources:/{flag=1;next}/Streams:/{flag=0}flag && /ID/{gsub(/\./,"",''$2); print ''$2}')
+
+    if (( ''${#srcs[@]} == 0 )); then
+      ''$NOTIFY "Audio" "No sources found"
+      exit 0
+    fi
+
+    current=''$(''$WPCTL status | ''$AWK '/Default Source/{gsub(/\./,"",''$3); print ''$3}')
+    next=""
+    for i in "''${!srcs[@]}"; do
+      if [[ "''${srcs[''$i]}" = "''$current" ]]; then
+        next_index=$(( (''$i + 1) % ''${#srcs[@]} ))
+        next=''${srcs[''$next_index]}
+        break
+      fi
+    done
+    [[ -z "''$next" ]] && next=''${srcs[0]}
+
+    ''$WPCTL set-default "''$next"
+    ''$NOTIFY "Audio" "Default input → ID ''$next"
+  '';
+in {
   enable = false;
   style = lib.mkForce ./style.css;
   systemd.enable = true;
   settings.mainBar = {
-    "layer" = "top";
-    "position" = "top";
-    "margin-bottom" = -10;
-    "spacing" = 0;
-
-    "modules-left" = [
-      "custom/uptime"
-      "cpu"
-    ];
+    position = "bottom";
+    layer = "top";
+    "modules-left" = ["wlr/workspaces"];
     "modules-center" = ["clock"];
-    "modules-right" = [
-      "bluetooth"
-      "network"
-      "pulseaudio"
-      #"backlight"
-      #"battery"
-    ];
+    "modules-right" = ["pulseaudio" "network" "bluetooth" "tray"];
 
-    "bluetooth" = {
-      "format" = "󰂲";
-      "format-on" = "{icon}";
-      "format-off" = "{icon}";
-      "format-connected" = "{icon}";
-      "format-icons" = {
-        "on" = "󰂯";
-        "off" = "󰂲";
-        "connected" = "󰂱";
-      };
-      "on-click" = "blueman-manager";
-      "tooltip-format-connected" = "{device_enumerate}";
+    pulseaudio = {
+      format = "{icon} {volume}%";
+      "format-muted" = " {volume}%";
+      "on-click" = ''${toggleSink}''; # cycle outputs
+      "on-click-right" = ''${toggleSource}''; # cycle inputs
+      "scroll-step" = 5;
     };
 
-    "clock" = {
-      "timezone" = "Europe/Copenhagen";
-      "tooltip" = false;
-      "format" = "{:%H:%M:%S  -  %A, %d}";
-      "interval" = 1;
+    network = {
+      "format-wifi" = " {essid} {signalStrength}%";
+      "format-ethernet" = "󰈀 {ipaddr}";
+      "format-disconnected" = "󰤭";
+      tooltip = true;
     };
 
-    "network" = {
-      "format-wifi" = "󰤢";
-      "format-ethernet" = "󰈀 ";
-      "format-disconnected" = "󰤠 ";
-      "interval" = 5;
-      "tooltip-format" = "{essid} ({signalStrength}%)";
-      "on-click" = "nm-connection-editor";
+    bluetooth = {
+      format = "";
+      "format-connected" = " {num_connections}";
+      "on-click" = ''${pkgs.blueman}/bin/blueman-applet'';
     };
 
-    "cpu" = {
-      "interval" = 1;
-      "format" = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
-      "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-      "on-click" = "ghostty -e htop";
-    };
-
-    "memory" = {
-      "interval" = 30;
-      "format" = "  {used:0.1f}G/{total:0.1f}G";
-      "tooltip-format" = "Memory";
-    };
-
-    "custom/uptime" = {
-      "format" = "{}";
-      "format-icon" = [""];
-      "tooltip" = false;
-      "interval" = 1600;
-      "exec" = "$HOME/.config/waybar/scripts/uptime.sh";
-    };
-
-    # "backlight" = {
-    #   "format" = "{icon}  {percent}%";
-    #   "format-icons" = ["" "󰃜" "󰃛" "󰃞" "󰃝" "󰃟" "󰃠"];
-    #   "tooltip" = false;
-    # };
-
-    "pulseaudio" = {
-      "format" = "{icon}  {volume}%";
-      "format-muted" = "";
-      "format-icons" = {
-        "default" = ["" "" " "];
-      };
-      "on-click" = "pavucontrol";
-    };
-
-    # "battery" = {
-    #   "interval" = 2;
-    #   "states" = {
-    #     # // "good"= 95;
-    #     "warning" = 30;
-    #     "critical" = 15;
-    #   };
-    #   "format" = "{icon}  {capacity}%";
-    #   "format-full" = "{icon}  {capacity}%";
-    #   "format-charging" = " {capacity}%";
-    #   "format-plugged" = " {capacity}%";
-    #   "format-alt" = "{icon} {time}";
-    #   # // "format-good"= "", // An empty format will hide the module
-    #   # // "format-full"= "";
-    #   "format-icons" = ["" "" "" "" ""];
-    # };
-
-    "custom/lock" = {
-      "tooltip" = false;
-      "on-click" = "sh -c '(sleep 0s; hyprlock)' & disown";
-      "format" = "";
+    tray = {
+      "icon-size" = 16;
+      spacing = 8;
     };
   };
 }
