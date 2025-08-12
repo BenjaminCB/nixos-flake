@@ -14,10 +14,10 @@
     pcmanfm
     spotify
     alacritty
-    discord
     bat
     ffmpeg
     fzf
+    dbus # required for bzmenu iwmenu niri screensharing
     pandoc
     speedtest-cli
     unzip
@@ -32,18 +32,21 @@
     just
     gotop
     myxer
+    swaybg
 
     # runner
     walker
     bzmenu # bluetooth in runner
     iwmenu # iwd in runner
-    dbus # required for bzmenu and iwmenu
 
     # stuff for screen mirroring
     wl-mirror
     slurp
     wofi
     pipectl
+
+    # screensharing on niri
+    xdg-desktop-portal-gnome
   ];
 
   services.dunst.enable = true;

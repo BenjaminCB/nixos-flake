@@ -100,6 +100,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   users.defaultUserShell = pkgs.fish;
   programs.fish = {
