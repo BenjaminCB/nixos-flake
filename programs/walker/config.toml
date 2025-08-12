@@ -260,3 +260,11 @@ icon = "accessories-dictionary"
 placeholder = "Translation"
 switcher_only = true
 provider = "googlefree"
+
+[[custom]]
+name = "Bluetooth Menu"
+exec = "bzmenu --icon xdg"
+
+[[custom]]
+name = "WiFi Menu"
+exec = "iwmenu --icon xdg"

@@ -31,7 +31,7 @@
     git-crypt
     just
     gotop
-    blueman
+    myxer
 
     # runner
     walker
@@ -67,6 +67,12 @@
     recursive = true;
     source = ./programs/walker;
     target = ".config/walker";
+  };
+
+  home.file.justfile = {
+    enable = true;
+    source = ./programs/justfile;
+    target = "justfile";
   };
 
   xdg.mimeApps = {

@@ -1,0 +1,15 @@
+# just --list
+default:
+    @just --list --unsorted
+
+# sound controls
+sound:
+    myxer
+
+# bluetooth management
+bluetooth:
+    bzmenu --launcher walker
+
+# wifi management
+wifi:
+    iwmenu --launcher walker
