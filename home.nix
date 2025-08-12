@@ -34,6 +34,11 @@
     myxer
     swaybg
 
+    # screenshot
+    grim
+    slurp # also needed for screen mirroring
+    swappy
+
     # runner
     walker
     bzmenu # bluetooth in runner
@@ -41,7 +46,6 @@
 
     # stuff for screen mirroring
     wl-mirror
-    slurp
     wofi
     pipectl
 
