@@ -32,6 +32,7 @@
     just
     gotop
     blueman
+    walker
 
     # stuff for screen mirroring
     wl-mirror
@@ -52,6 +53,13 @@
     recursive = true;
     source = ./programs/niri;
     target = ".config/niri";
+  };
+
+  home.file.walekr = {
+    enable = true;
+    recursive = true;
+    source = ./programs/walker;
+    target = ".config/walker";
   };
 
   xdg.mimeApps = {

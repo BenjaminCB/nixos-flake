@@ -117,7 +117,9 @@
       inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
-  environment.sessionVariables.EDITOR = "nvim";
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
   fonts.packages = with pkgs; [
     noto-fonts

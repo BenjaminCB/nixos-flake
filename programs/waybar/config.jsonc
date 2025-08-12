@@ -1,17 +1,17 @@
 {
     "layer": "top", 
     "position": "top",
-    "height": 24,
+    "height": 0,
     "spacing": 4,
     "modules-left": [
     ],
     "modules-center": [
+        "clock"
     ],
     "modules-right": [
         "load",
         "wireplumber",
         "backlight",
-        "clock",
         "battery",
         "tray"
     ],
@@ -23,8 +23,9 @@
         "format": " {}"
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "timezone": "Europe/Copenhagen",
+        "interval": 1,
+        "format": "{:%H:%M %Y-%m-%d}"
     },
     "cpu": {
         "format": "{usage}% ",
