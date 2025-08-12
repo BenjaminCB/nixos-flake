@@ -4,7 +4,6 @@
 }
 
 window#waybar {
-    /* `otf-font-awesome` is required for icons */
     font-family: FontAwesome, monospace;
     background-color: transparent;
     border-bottom: 0px;
@@ -13,25 +12,14 @@ window#waybar {
     transition-duration: .5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
+window#waybar.hidden { opacity: 0.2; }
 
-.modules-right {
-    margin: 5px 10px 0 0;
-}
-.modules-center {
-    margin: 5px 0 0 0;
-}
-.modules-left {
-    margin: 5px 0 0 10px;
-}
+.modules-right { margin: 5px 10px 0 0; }
+.modules-center { margin: 5px 0 0 0; }
+.modules-left  { margin: 5px 0 0 10px; }
 
-button {
-    border: none;
-}
+button { border: none; }
 
-/* Shared look for all active modules in use */
 #clock,
 #battery,
 #backlight,
@@ -39,10 +27,27 @@ button {
 #tray,
 #load,
 #network,
-#bluetooth {
+#bluetooth,
+#custom-vol_down,
+#custom-vol_up {
     padding: 0 10px;
     background-color: #282828;
     color: #ebdbb2;
+}
+
+/* Group volume buttons visually */
+#custom-vol_down {
+    border-radius: 5px 0 0 5px;
+    margin-right: 0;
+}
+#wireplumber {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+#custom-vol_up {
+    border-radius: 0 5px 5px 0;
+    margin-left: 0;
 }
 
 /* Battery states */
@@ -52,10 +57,7 @@ button {
 }
 
 @keyframes blink {
-    to {
-        background-color: #282828;
-        color: #ebdbb2;
-    }
+    to { background-color: #282828; color: #ebdbb2; }
 }
 
 #battery.critical:not(.charging) {
@@ -68,21 +70,9 @@ button {
     animation-direction: alternate;
 }
 
-/* Volume muted */
-#wireplumber.muted {
-    background-color: #458588;
-}
+#wireplumber.muted { background-color: #458588; }
 
-/* Tray */
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-}
-
-/* Menus from tray */
-#tray menu {
-    font-family: sans-serif;
-}
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+#tray menu { font-family: sans-serif; }
 
