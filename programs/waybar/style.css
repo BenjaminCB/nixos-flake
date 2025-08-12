@@ -1,12 +1,9 @@
-* {
-    font-size: 18px;
-    border-radius: 5px;
-}
+* { font-size: 18px; border-radius: 5px; }
 
 window#waybar {
     font-family: FontAwesome, monospace;
     background-color: transparent;
-    border-bottom: 0px;
+    border-bottom: 0;
     color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
@@ -14,9 +11,10 @@ window#waybar {
 
 window#waybar.hidden { opacity: 0.2; }
 
-.modules-right { margin: 5px 10px 0 0; }
-.modules-center { margin: 5px 0 0 0; }
-.modules-left  { margin: 5px 0 0 10px; }
+/* Vertical bar spacing */
+.modules-left  { margin: 10px 0 10px 10px; }
+.modules-center{ margin: 10px 0; }
+.modules-right { margin: 10px 10px 10px 0; }
 
 button { border: none; }
 
@@ -30,36 +28,30 @@ button { border: none; }
 #bluetooth,
 #custom-vol_down,
 #custom-vol_up {
-    padding: 0 10px;
+    padding: 6px 10px;
     background-color: #282828;
     color: #ebdbb2;
 }
 
-/* Group volume buttons visually */
+/* Vertical “pill”: minus (top) — readout/mute (middle) — plus (bottom) */
 #custom-vol_down {
-    border-radius: 5px 0 0 5px;
-    margin-right: 0;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
 }
 #wireplumber {
     border-radius: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 #custom-vol_up {
-    border-radius: 0 5px 5px 0;
-    margin-left: 0;
+    border-radius: 0 0 5px 5px;
+    margin-top: 0;
 }
 
 /* Battery states */
-#battery.charging, #battery.plugged {
-    background-color: #98971a;
-    color: #282828;
-}
+#battery.charging, #battery.plugged { background-color: #98971a; color: #282828; }
 
-@keyframes blink {
-    to { background-color: #282828; color: #ebdbb2; }
-}
-
+@keyframes blink { to { background-color: #282828; color: #ebdbb2; } }
 #battery.critical:not(.charging) {
     background-color: #cc241d;
     color: #ebdbb2;
@@ -70,8 +62,10 @@ button { border: none; }
     animation-direction: alternate;
 }
 
+/* Muted state for the readout */
 #wireplumber.muted { background-color: #458588; }
 
+/* Tray tweaks */
 #tray > .passive { -gtk-icon-effect: dim; }
 #tray > .needs-attention { -gtk-icon-effect: highlight; }
 #tray menu { font-family: sans-serif; }

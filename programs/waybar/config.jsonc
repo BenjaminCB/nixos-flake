@@ -1,11 +1,11 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "left",
   "height": 0,
   "spacing": 4,
-  "modules-left": [],
-  "modules-center": ["clock"],
-  "modules-right": [
+  "exclusive": true,
+
+  "modules-left": [
     "load",
     "custom/vol_down",
     "wireplumber",
@@ -14,21 +14,32 @@
     "bluetooth",
     "network",
     "battery",
-    "tray"
+    "tray",
+    "clock"
   ],
+  "modules-center": [],
+  "modules-right": [],
+
   "tray": { "icon-size": 14, "spacing": 10 },
-  "load": { "format": " {}" },
+
+  "load": { "format": " {}", "rotate": 90 },
+
   "clock": {
     "timezone": "Europe/Copenhagen",
     "interval": 1,
-    "format": "{:%H:%M %Y-%m-%d}"
+    "format": "{:%H:%M %Y-%m-%d}",
+    "rotate": 90
   },
-  "cpu": { "format": "{usage}% ", "tooltip": false },
-  "memory": { "format": "{}% " },
+
+  "cpu": { "format": "{usage}% ", "tooltip": false, "rotate": 90 },
+  "memory": { "format": "{}% ", "rotate": 90 },
+
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "rotate": 90
   },
+
   "battery": {
     "states": { "warning": 30, "critical": 15 },
     "format": "{icon} {capacity}%",
@@ -36,8 +47,10 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""],
+    "rotate": 90
   },
+
   "wireplumber": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}% ",
@@ -56,31 +69,43 @@
     "on-click-middle": "",
     "on-click-right": "",
     "on-scroll-up": "",
-    "on-scroll-down": ""
+    "on-scroll-down": "",
+    "rotate": 90
   },
+
   "custom/vol_down": {
     "format": "",
     "tooltip": "Volume down",
-    "on-click": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
+    "on-click": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-",
+    "rotate": 90
   },
   "custom/vol_up": {
     "format": "",
     "tooltip": "Volume up",
-    "on-click": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
+    "on-click": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+    "rotate": 90
   },
+
   "bluetooth": {
     "format": " {status}",
     "format-connected": " {num_connections}",
     "tooltip-format": "{controller_alias} - {status}\n{device_enumerate}",
-    "on-click": "bzmenu --launcher walker"
+    "on-click": "bzmenu --launcher walker",
+    "on-click-middle": "bzmenu --launcher walker",
+    "on-click-right": "bzmenu --launcher walker",
+    "rotate": 90
   },
+
   "network": {
     "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈀 {ifname}",
     "format-disconnected": "󰖪",
     "tooltip-format": "{ifname} {ipaddr}\n{essid}",
     "interval": 2,
-    "on-click": "iwmenu --launcher walker"
+    "on-click": "iwmenu --launcher walker",
+    "on-click-middle": "iwmenu --launcher walker",
+    "on-click-right": "iwmenu --launcher walker",
+    "rotate": 90
   }
 }
 
