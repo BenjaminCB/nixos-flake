@@ -32,7 +32,12 @@
     just
     gotop
     blueman
+
+    # runner
     walker
+    bzmenu # bluetooth in runner
+    iwmenu # iwd in runner
+    dbus # required for bzmenu and iwmenu
 
     # stuff for screen mirroring
     wl-mirror
@@ -40,6 +45,8 @@
     wofi
     pipectl
   ];
+
+  services.dunst.enable = true;
 
   programs.git = import ./programs/git.nix;
   programs.kitty = import ./programs/kitty.nix;

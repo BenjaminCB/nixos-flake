@@ -1,70 +1,95 @@
 {
-    "layer": "top", 
-    "position": "top",
-    "height": 0,
-    "spacing": 4,
-    "modules-left": [
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "load",
-        "wireplumber",
-        "backlight",
-        "battery",
-        "tray"
-    ],
-    "tray": {
-        "icon-size": 14,
-        "spacing": 10
+  "layer": "top",
+  "position": "top",
+  "height": 0,
+  "spacing": 4,
+
+  "modules-left": [],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "load",
+    "wireplumber",
+    "backlight",
+    "bluetooth",
+    "network",
+    "battery",
+    "tray"
+  ],
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+
+  "load": {
+    "format": " {}"
+  },
+
+  "clock": {
+    "timezone": "Europe/Copenhagen",
+    "interval": 1,
+    "format": "{:%H:%M %Y-%m-%d}"
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "{}% "
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "load": {
-        "format": " {}"
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "wireplumber": {
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% ",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
     },
-    "clock": {
-        "timezone": "Europe/Copenhagen",
-        "interval": 1,
-        "format": "{:%H:%M %Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "wireplumber": {
-        "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}% ",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-    }
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias} - {status}\n{device_enumerate}",
+    "on-click": "bzmenu --launcher walker"
+  },
+
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname} {ipaddr}\n{essid}",
+    "interval": 2,
+    "on-click": "iwmenu --launcher walker"
+  }
 }
+
