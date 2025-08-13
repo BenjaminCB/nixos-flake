@@ -54,9 +54,9 @@
 
   services = {
     dunst.enable = true;
-    random-background = {
+    wpaperd = {
       enable = true;
-      imageDirectory = ./wallpapers;
+      settings.default.path = ./wallpapers/wallpaper.png;
     };
   };
 

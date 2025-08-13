@@ -147,7 +147,7 @@
   stylix = {
     enable = true;
     base16Scheme = import ./base16.nix;
-    image = ./wallpaper.png;
+    # image = ./wallpaper.png;
     # cursor.package = pkgs.vimix-cursor-theme;
     # cursor.name = "Vimix-Cursors";
     fonts = {
