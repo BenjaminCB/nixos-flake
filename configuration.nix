@@ -82,6 +82,18 @@
     #media-session.enable = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+      # xdg-desktop-portal-hyprland
+      # kdePackages.xdg-desktop-portal-kde
+    ];
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

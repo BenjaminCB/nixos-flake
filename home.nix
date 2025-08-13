@@ -33,6 +33,7 @@
     gotop
     myxer
     blueman
+    obs-studio
 
     # screenshot
     grim
