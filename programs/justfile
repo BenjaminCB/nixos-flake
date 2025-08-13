@@ -14,8 +14,6 @@ bluetooth:
 wifi:
     nmtui
 
-bigcount TIME:
-    #!/usr/bin/env sh
-    stdbuf -oL termdown {{TIME}} | while IFS= read -r line; do \
-        echo "$line" | figlet | lolcat; \
-    done 
+# ex 10s 7m
+countdown TIME:
+    termdown {{TIME}} --font univers
