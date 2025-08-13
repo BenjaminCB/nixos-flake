@@ -40,6 +40,24 @@
         ];
         specialArgs = {inherit inputs;};
       };
+      laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          stylix.nixosModules.stylix
+          ./configuration.nix
+          ./laptop-hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.bcb = ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # extraSpecialArgs = ...
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
     };
   };
 }
