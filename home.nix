@@ -17,7 +17,7 @@
     bat
     ffmpeg
     fzf
-    dbus # required for bzmenu iwmenu niri screensharing
+    dbus # required for bzmenu niri screensharing
     pandoc
     speedtest-cli
     unzip
@@ -42,7 +42,6 @@
     # runner
     walker
     bzmenu # bluetooth in runner
-    iwmenu # iwd in runner
 
     # stuff for screen mirroring
     wl-mirror
