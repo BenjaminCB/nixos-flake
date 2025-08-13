@@ -13,3 +13,9 @@ bluetooth:
 # wifi management
 wifi:
     nmtui
+
+bigcount TIME:
+    #!/usr/bin/env sh
+    stdbuf -oL termdown {{TIME}} | while IFS= read -r line; do \
+        echo "$line" | figlet | lolcat; \
+    done 

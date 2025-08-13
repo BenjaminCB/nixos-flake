@@ -34,6 +34,9 @@
     myxer
     blueman
     obs-studio
+    figlet
+    lolcat
+    termdown
 
     # screenshot
     grim
