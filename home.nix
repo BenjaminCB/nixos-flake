@@ -33,6 +33,7 @@
     gotop
     myxer
     swaybg
+    blueman
 
     # screenshot
     grim
@@ -61,14 +62,7 @@
   programs.tofi = import ./programs/tofi.nix {inherit lib;};
   programs.waybar = import ./programs/waybar/waybar.nix {inherit lib;};
 
-  home.file.niri = {
-    enable = true;
-    recursive = true;
-    source = ./programs/niri;
-    target = ".config/niri";
-  };
-
-  home.file.walekr = {
+  home.file.walker = {
     enable = true;
     recursive = true;
     source = ./programs/walker;

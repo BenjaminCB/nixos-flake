@@ -50,7 +50,20 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.bcb = ./home.nix;
+            home-manager.users.bcb = [
+              ./home.nix
+              (_: let
+                monitorConfig = import ./programs/niri/laptop-monitor-config.nix;
+                niriConfig = import ./programs/niri/config.nix {inherit monitorConfig;};
+              in {
+                home.file.niri = {
+                  enable = true;
+                  recursive = true;
+                  text = niriConfig;
+                  target = ".config/niri/config.kdl";
+                };
+              })
+            ];
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # extraSpecialArgs = ...
