@@ -32,7 +32,6 @@
     just
     gotop
     myxer
-    swaybg
     blueman
 
     # screenshot
@@ -53,7 +52,13 @@
     xdg-desktop-portal-gnome
   ];
 
-  services.dunst.enable = true;
+  services = {
+    dunst.enable = true;
+    random-background = {
+      enable = true;
+      imageDirectory = ./wallpapers;
+    };
+  };
 
   programs.git = import ./programs/git.nix;
   programs.kitty = import ./programs/kitty.nix;
