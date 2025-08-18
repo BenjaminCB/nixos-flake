@@ -13,6 +13,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wooz = {
+      url = "github:negrel/wooz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

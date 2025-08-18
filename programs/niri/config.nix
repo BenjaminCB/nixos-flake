@@ -368,6 +368,7 @@
       Mod+R hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
       Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
       Mod+G hotkey-overlay-title="Screenshot" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+      Mod+Z hotkey-overlay-title="wooz (zoom)" { spawn "wooz"; }
       Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
       // You can also use a shell. Do this if you need pipes, multiple commands, etc.

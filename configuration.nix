@@ -139,6 +139,7 @@
     ]
     ++ [
       inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.wooz.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
   environment.sessionVariables = {
@@ -160,8 +161,12 @@
     enable = true;
     base16Scheme = import ./base16.nix;
     # image = ./wallpaper.png;
-    cursor.package = pkgs.whitesur-cursors;
-    cursor.name = "WhiteSur-cursors";
+    cursor = {
+      package = pkgs.whitesur-cursors;
+      name = "WhiteSur-cursors";
+      size = 20;
+    };
+
     fonts = {
       monospace.package = pkgs.nerd-fonts.fira-code;
       monospace.name = "FiraCode Nerd Font Mono";
