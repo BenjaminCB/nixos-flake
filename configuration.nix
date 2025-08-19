@@ -181,6 +181,7 @@
       desktop = 14;
       popups = 14;
     };
+    polarity = "dark";
   };
 
   # enable docker
