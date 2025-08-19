@@ -160,8 +160,8 @@
     enable = true;
     base16Scheme = import ./base16.nix;
     # image = ./wallpaper.png;
-    # cursor.package = pkgs.vimix-cursor-theme;
-    # cursor.name = "Vimix-Cursors";
+    cursor.package = pkgs.whitesur-cursors;
+    cursor.name = "WhiteSur-cursors";
     fonts = {
       monospace.package = pkgs.nerd-fonts.fira-code;
       monospace.name = "FiraCode Nerd Font Mono";
