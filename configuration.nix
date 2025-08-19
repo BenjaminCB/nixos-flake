@@ -140,6 +140,7 @@
     ++ [
       inputs.nvf.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.wooz.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
   environment.sessionVariables = {
