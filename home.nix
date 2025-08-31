@@ -35,6 +35,7 @@
     blueman
     obs-studio
     termdown
+    devenv
 
     # screenshot
     grim
@@ -50,8 +51,10 @@
     wofi
     pipectl
 
-    # screensharing on niri
+    # niri important software
     xdg-desktop-portal-gnome
+    gnome-keyring
+    kdePackages.polkit-kde-agent-1
   ];
 
   services = {

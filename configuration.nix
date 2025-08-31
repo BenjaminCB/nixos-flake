@@ -110,6 +110,9 @@
   # enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # required for chaching with devenv
+  nix.settings.trusted-users = ["root" "bcb"];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
