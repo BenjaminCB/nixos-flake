@@ -67,6 +67,7 @@
               imports = [
                 ./home.nix
                 ./programs/niri/laptop-config.nix
+                ./programs/batsignal.nix
               ];
             };
 
