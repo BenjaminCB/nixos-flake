@@ -107,11 +107,23 @@
     ];
   };
 
-  # enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # required for chaching with devenv
-  nix.settings.trusted-users = ["root" "bcb"];
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    optimise = {
+      automatic = true;
+      dates = "weekly";
+    };
+    settings = {
+      # enable flakes
+      experimental-features = ["nix-command" "flakes"];
+      # required for chaching with devenv
+      trusted-users = ["root" "bcb"];
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
