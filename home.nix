@@ -36,6 +36,8 @@
     obs-studio
     termdown
     devenv
+    libreoffice
+    typst
 
     # screenshot
     grim
