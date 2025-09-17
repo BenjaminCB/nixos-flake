@@ -65,6 +65,10 @@
       enable = true;
       settings.default.path = ./wallpapers/wallpaper.png;
     };
+    udiskie = {
+      enable = true;
+      settings.program_options.file_manager = "${pkgs.pcmanfm}/bin/pcmanfm";
+    };
   };
 
   programs.git = import ./programs/git.nix;
