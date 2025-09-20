@@ -38,6 +38,8 @@
     devenv
     libreoffice
     typst
+    obsidian
+    nautilus
 
     # screenshot
     grim
