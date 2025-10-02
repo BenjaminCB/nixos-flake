@@ -40,6 +40,7 @@
     typst
     obsidian
     nautilus
+    libreoffice
 
     # screenshot
     grim
