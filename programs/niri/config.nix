@@ -602,6 +602,9 @@ in ''
       // Mod+Shift+Space { switch-layout "prev"; }
       Mod+Space { spawn "${layout-notification}/bin/layout-notification"; }
 
+      // screen mirroring
+      Mod+M { spawn "wl-present" "mirror"; }
+
       Print { screenshot; }
       Ctrl+Print { screenshot-screen; }
       Alt+Print { screenshot-window; }
