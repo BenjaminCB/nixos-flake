@@ -41,6 +41,7 @@
     obsidian
     nautilus
     libreoffice
+    brightnessctl
 
     # screenshot
     grim
