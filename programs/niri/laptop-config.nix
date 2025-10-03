@@ -1,4 +1,4 @@
-let
+{pkgs, ...}: let
   monitorConfig = ''
     output "eDP-1" {
         mode "1920x1080@60.000"
@@ -35,7 +35,10 @@ let
         position x=1920 y=0
     };
   '';
-  niriConfig = import ./config.nix {inherit monitorConfig;};
+  niriConfig = import ./config.nix {
+    inherit monitorConfig;
+    inherit pkgs;
+  };
 in {
   home.file.niri = {
     enable = true;

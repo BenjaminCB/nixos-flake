@@ -1,4 +1,12 @@
-{monitorConfig}: ''
+{
+  pkgs,
+  monitorConfig,
+}: let
+  layout-notification = pkgs.writeShellScriptBin "layout-notification" ''
+    layout=$(niri msg keyboard-layouts | awk '/\*/ {print substr($0, index($0,$2))}')
+    ${pkgs.libnotify}/bin/notify-send "$layout"
+  '';
+in ''
   // This config is in the KDL format: https://kdl.dev
   // "/-" comments out the following node.
   // Check the wiki for a full description of the configuration:
@@ -22,6 +30,10 @@
               // If this section is empty, niri will fetch xkb settings
               // from org.freedesktop.locale1. You can control these using
               // localectl set-x11-keymap.
+
+              layout "us,dk,us"
+              variant ",,dvorak"
+              options "caps:escape,grp:win_space_toggle"
           }
 
           // Enable numlock on startup, omitting this setting disables it.
@@ -590,6 +602,7 @@
       // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
       // Mod+Space       { switch-layout "next"; }
       // Mod+Shift+Space { switch-layout "prev"; }
+      Mod+Space { spawn "${layout-notification}/bin/layout-notification"; }
 
       Print { screenshot; }
       Ctrl+Print { screenshot-screen; }

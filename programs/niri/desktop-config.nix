@@ -1,4 +1,4 @@
-let
+{pkgs, ...}: let
   monitorConfig = ''
     output "DP-2" {
         mode "2560x1080@120.000"
@@ -14,7 +14,10 @@ let
         position x=0 y=0
     };
   '';
-  niriConfig = import ./config.nix {inherit monitorConfig;};
+  niriConfig = import ./config.nix {
+    inherit monitorConfig;
+    inherit pkgs;
+  };
 in {
   home.file.niri = {
     enable = true;
