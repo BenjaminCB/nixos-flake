@@ -12,8 +12,6 @@ in ''
   // Check the wiki for a full description of the configuration:
   // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
-  spawn-at-startup "walker --gapplication-service"
-
   // Input device configuration.
   // Find the full list of options on the wiki:
   // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
@@ -377,7 +375,7 @@ in ''
 
       // Suggested binds for running programs: terminal, app launcher, screen locker.
       Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-      Mod+R hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
+      Mod+R hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "run"; }
       Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
       Mod+G hotkey-overlay-title="Screenshot" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
       Mod+Z hotkey-overlay-title="wooz (zoom)" { spawn "wooz"; }

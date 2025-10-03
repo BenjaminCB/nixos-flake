@@ -49,10 +49,6 @@
     slurp # also needed for screen mirroring
     swappy
 
-    # runner
-    walker
-    bzmenu # bluetooth in runner
-
     # stuff for screen mirroring
     wl-mirror
     wofi
@@ -82,13 +78,7 @@
   programs.direnv = import ./programs/direnv.nix;
   programs.tofi = import ./programs/tofi.nix {inherit lib;};
   programs.waybar = import ./programs/waybar/waybar.nix {inherit lib;};
-
-  home.file.walker = {
-    enable = true;
-    recursive = true;
-    source = ./programs/walker;
-    target = ".config/walker";
-  };
+  programs.rofi = import ./programs/rofi/rofi.nix {inherit lib;};
 
   home.file.justfile = {
     enable = true;
