@@ -77,6 +77,30 @@
         ];
         specialArgs = {inherit inputs;};
       };
+      worktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          stylix.nixosModules.stylix
+          ./configuration.nix
+          ./worktop-hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.bcb = {
+              imports = [
+                ./home.nix
+                ./programs/niri/worktop-config.nix
+                ./programs/batsignal.nix
+              ];
+            };
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # extraSpecialArgs = ...
+          }
+        ];
+        specialArgs = {inherit inputs;};
+      };
     };
   };
 }

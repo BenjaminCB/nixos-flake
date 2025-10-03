@@ -1,7 +1,7 @@
 let
   monitorConfig = ''
     output "eDP-1" {
-        mode "1920x1080@60.000"
+        mode "1920x1200@60.096"
         scale 1
         transform "normal"
         position x=0 y=0
