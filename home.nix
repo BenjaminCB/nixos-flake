@@ -42,6 +42,7 @@
     nautilus
     libreoffice
     brightnessctl
+    wl-mirror
 
     # screenshot
     grim
