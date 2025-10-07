@@ -4,11 +4,11 @@ default:
 
 # sound controls
 sound:
-    myxer
+    pavucontrol
 
 # bluetooth management
 bluetooth:
-    bzmenu --launcher walker
+    blueman-manager
 
 # wifi management
 wifi:

@@ -44,6 +44,7 @@
     brightnessctl
     wl-mirror
     xwayland-satellite
+    pavucontrol
 
     # screenshot
     grim
