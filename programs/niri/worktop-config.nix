@@ -21,16 +21,16 @@
         position x=-3000 y=-1200
     };
 
-    output "enovo Group Limited T27QD-40 VNAC1NVX" {
-        mode "1920x1080@120.000"
-        scale 1
+    output "Lenovo Group Limited T27QD-40 VNAC1NVX" {
+        mode "2560x1440@119.998"
+        scale 1.25
         transform "normal"
         position x=4480 y=0
     };
 
     output "Lenovo Group Limited T27QD-40 VNAC1NXD" {
-        mode "1920x1080@120.000"
-        scale 1
+        mode "2560x1440@119.998"
+        scale 1.25
         transform "normal"
         position x=1920 y=0
     };

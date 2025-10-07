@@ -43,6 +43,7 @@
     libreoffice
     brightnessctl
     wl-mirror
+    xwayland-satellite
 
     # screenshot
     grim
