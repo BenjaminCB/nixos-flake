@@ -75,6 +75,7 @@
   };
 
   programs.git = import ./programs/git.nix;
+  programs.delta.enableGitIntegration = true;
   programs.kitty = import ./programs/kitty.nix;
   programs.zathura = import ./programs/zathura.nix;
   programs.direnv = import ./programs/direnv.nix;

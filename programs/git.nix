@@ -1,6 +1,8 @@
 {
   enable = true;
-  delta.enable = true;
-  userEmail = "benjamincb@hotmail.dk";
-  userName = "bcb";
+  settings = {
+    delta.enable = true;
+    user.email = "benjamincb@hotmail.dk";
+    user.name = "bcb";
+  };
 }
