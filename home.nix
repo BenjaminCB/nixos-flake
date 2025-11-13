@@ -23,7 +23,7 @@
     unzip
     zip
     xdg-utils
-    poppler_utils
+    poppler-utils
     unrar
     p7zip
     tree-sitter
