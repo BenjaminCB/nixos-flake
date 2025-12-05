@@ -57,6 +57,9 @@
   services.displayManager.gdm.wayland = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # nix-ld
+  programs.nix-ld.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
