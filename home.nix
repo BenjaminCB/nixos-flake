@@ -45,6 +45,7 @@
     wl-mirror
     xwayland-satellite
     pavucontrol
+    quarto
 
     # screenshot
     grim
