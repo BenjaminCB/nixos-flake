@@ -46,6 +46,7 @@
     xwayland-satellite
     pavucontrol
     quarto
+    kdePackages.okular
 
     # screenshot
     grim
