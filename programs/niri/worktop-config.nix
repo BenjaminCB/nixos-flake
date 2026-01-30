@@ -25,7 +25,7 @@
         mode "2560x1440@119.998"
         scale 1.25
         transform "normal"
-        position x=3968 y=0
+        position x=1920 y=-1152
     };
 
     output "Lenovo Group Limited T27QD-40 VNAC1NXD" {
