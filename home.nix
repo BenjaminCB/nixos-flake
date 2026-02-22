@@ -47,6 +47,7 @@
     pavucontrol
     quarto
     kdePackages.okular
+    discord
 
     # screenshot
     grim
