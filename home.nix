@@ -92,6 +92,12 @@
     target = "justfile";
   };
 
+  home.file.xcompose = {
+    enable = true;
+    source = ./programs/xcompose;
+    target = ".XCompose";
+  };
+
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

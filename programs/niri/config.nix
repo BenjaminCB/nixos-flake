@@ -31,7 +31,7 @@ in ''
 
               layout "us,dk,us"
               variant ",,dvorak"
-              options "caps:escape,grp:win_space_toggle"
+              options "caps:escape,grp:win_space_toggle,compose:ralt"
           }
 
           // Enable numlock on startup, omitting this setting disables it.
