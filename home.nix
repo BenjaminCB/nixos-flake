@@ -77,7 +77,7 @@
     };
   };
 
-  gtk.gtk4.theme = null;
+  #gtk.gtk4.theme = null;
 
   programs.git = import ./programs/git.nix;
   programs.delta.enableGitIntegration = true;
