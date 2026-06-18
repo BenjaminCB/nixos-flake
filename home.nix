@@ -48,7 +48,8 @@
     quarto
     kdePackages.okular
     discord
-    miktex
+    tectonic
+    texpresso
 
     # screenshot
     grim
