@@ -48,6 +48,7 @@
     quarto
     kdePackages.okular
     discord
+    miktex
 
     # screenshot
     grim
