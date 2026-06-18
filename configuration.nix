@@ -53,8 +53,10 @@
   # wayland
   programs.niri.enable = true;
   programs.xwayland.enable = true;
-  services.displayManager.gdm.enable = true;
-  #services.displayManager.gdm.wayland = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # nix-ld
