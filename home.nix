@@ -48,8 +48,9 @@
     quarto
     kdePackages.okular
     discord
-    tectonic
+    texliveFull
     texpresso
+    aider-chat-full
 
     # screenshot
     grim

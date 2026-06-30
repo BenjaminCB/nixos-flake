@@ -17,3 +17,36 @@ wifi:
 # ex 10s 7m
 countdown TIME:
     termdown {{TIME}} --font univers
+
+run-vllm:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    models=(
+      "QuantTrio/Qwen3.6-35B-A3B-AWQ"
+    )
+
+    MODEL="$(printf '%s\n' "${models[@]}" | fzf --prompt='vLLM model> ')"
+
+    if [[ -z "${MODEL}" ]]; then
+      echo "No model selected."
+      exit 1
+    fi
+
+    echo "Starting vLLM with model: ${MODEL}"
+
+    docker run --rm -it \
+      --device=nvidia.com/gpu=all \
+      -v "$HOME/.cache/huggingface:/root/.cache/huggingface" \
+      -p 127.0.0.1:8000:8000 \
+      --ipc=host \
+      docker.io/vllm/vllm-openai:latest \
+      --model "$MODEL" \
+      --served-model-name qwen-local \
+      --api-key local-dev-key \
+      --max-model-len 8192 \
+      --max-num-seqs 1 \
+      --gpu-memory-utilization 0.90 \
+      --dtype auto \
+      --trust-remote-code \
+      --reasoning-parser qwen3
