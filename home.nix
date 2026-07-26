@@ -7,6 +7,8 @@
   home.username = "bcb";
   home.homeDirectory = "/home/bcb";
 
+  home.pointerCursor.enable = true;
+
   home.packages = with pkgs; [
     firefox
     ungoogled-chromium
