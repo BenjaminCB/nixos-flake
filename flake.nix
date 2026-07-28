@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri.url = "github:niri-wm/niri";
     nvf.url = "github:BenjaminCB/nvf";
     stylix = {
       url = "github:nix-community/stylix";
