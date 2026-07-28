@@ -341,11 +341,11 @@
         "texpresso-vim": "texpresso-vim"
       },
       "locked": {
-        "lastModified": 1785243145,
-        "narHash": "sha256-1plxcuEoJLQKRUtMaIh6KOtUR0VPBPtd4mq/qC90rj4=",
+        "lastModified": 1785246909,
+        "narHash": "sha256-+726GcDDfUcbyRnQQQZtB9qBR95wQJWtE7hSc01lDBQ=",
         "owner": "BenjaminCB",
         "repo": "nvf",
-        "rev": "569f8442c12dc8e052f1172450742c9b30071d65",
+        "rev": "209101bf43bd3f7033d7e9591df0c8a7a788847a",
         "type": "github"
       },
       "original": {
