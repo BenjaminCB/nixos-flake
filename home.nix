@@ -40,7 +40,9 @@
     devenv
     libreoffice
     typst
-    obsidian
+    (obsidian.override {
+      electron = electron_42;
+    })
     nautilus
     libreoffice
     brightnessctl
