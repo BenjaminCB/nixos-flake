@@ -55,6 +55,8 @@
     texliveFull
     texpresso
     aider-chat-full
+    claude-code
+    codex
 
     # screenshot
     grim
