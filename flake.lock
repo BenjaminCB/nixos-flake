@@ -337,15 +337,14 @@
     "nvf": {
       "inputs": {
         "nixpkgs": "nixpkgs_3",
-        "nvf": "nvf_2",
-        "texpresso-vim": "texpresso-vim"
+        "nvf": "nvf_2"
       },
       "locked": {
-        "lastModified": 1786617227,
-        "narHash": "sha256-NO2oRqPRh9DxY6j/KewIovEHCIMKZmzX9grmfMC1N7s=",
+        "lastModified": 1788941862,
+        "narHash": "sha256-VNxYMITDG+icKEGewxv1hQGKLLoofyT2ta9CvkArUjs=",
         "owner": "BenjaminCB",
         "repo": "nvf",
-        "rev": "a9f2edfbd92264883dab05ca5c0d983e58f395ca",
+        "rev": "77e7d9c413fc8ef92655155972bb4351d762277e",
         "type": "github"
       },
       "original": {
@@ -445,22 +444,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "texpresso-vim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774834501,
-        "narHash": "sha256-ZLPxy1JNTfjLerSVDJAxmqqQUWhm+SuVdDUcjRH8lEU=",
-        "owner": "let-def",
-        "repo": "texpresso.vim",
-        "rev": "5630dca6090787c446e72886812a1b6a5716c2fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "let-def",
-        "repo": "texpresso.vim",
         "type": "github"
       }
     },
