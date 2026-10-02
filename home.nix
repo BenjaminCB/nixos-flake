@@ -57,6 +57,8 @@
     aider-chat-full
     claude-code
     codex
+    en-croissant
+    stockfish
 
     # screenshot
     grim
