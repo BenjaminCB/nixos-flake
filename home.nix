@@ -53,6 +53,8 @@
     kdePackages.okular
     discord
     texliveFull
+    texlivePackages.firamath
+    texlivePackages.firamath-otf
     texpresso
     aider-chat-full
     claude-code
